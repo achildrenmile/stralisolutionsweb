@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Impressum from './components/Impressum';
+import ChatWidget from './components/chatwidget';
 
 // Homepage component
 const Homepage = ({ isMenuOpen, setIsMenuOpen }) => (
@@ -32,6 +33,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+        <ChatWidget />
       </div>
     </Router>
   );
