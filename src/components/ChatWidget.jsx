@@ -113,7 +113,7 @@ const ChatWidget = () => {
   useEffect(() => {
     if (isOpen && messages.length === 0 && !isEmailSent) {
       setMessages([{
-        text: "Bereit um das beste aus Ihrer IT herauszuholen?",
+        text: "Bereit um das Beste aus Ihrer IT herauszuholen?",
         sender: 'support',
         isAutoReply: false
       }]);
