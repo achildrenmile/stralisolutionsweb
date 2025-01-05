@@ -1,0 +1,16 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  strali-website:
+    build: .
+    container_name: strali-website
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    networks:
+      - strali-network
+
+networks:
+  strali-network:
+    driver: bridge
