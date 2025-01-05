@@ -175,7 +175,7 @@ const ChatWidget = () => {
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white relative"> 
             <img 
-              src="/public/michi.jpg" 
+              src="michi.jpg" 
               alt="Support Agent" 
               className="w-full h-full object-cover" 
             />
@@ -184,7 +184,7 @@ const ChatWidget = () => {
               style={{ transform: 'translate(25%, 25%)' }}
             />
           </div>
-          <span className="font-semibold">Michael Weber</span>
+          <span className="font-semibold">Michael</span>
         </div>
         <div className="space-x-2">
           <button
@@ -242,7 +242,7 @@ const ChatWidget = () => {
                   </div>
                 ) : (
                   <img
-                    src="/public/michi.jpg"
+                    src="michi.jpg"
                     alt="Support Agent"
                     className="w-full h-full object-cover"
                   />
