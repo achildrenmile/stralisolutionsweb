@@ -50,15 +50,6 @@ const Impressum = () => {
             <h2 className="text-xl font-semibold mb-4 mt-8">Datenschutzerklärung</h2>
             <div className="space-y-4 text-sm">
               <p>Wir legen großen Wert auf den Schutz Ihrer Daten. Die Nutzung der Webseite ist grundsätzlich ohne Angabe personenbezogener Daten möglich.</p>
-              
-              <h3 className="text-lg font-semibold mt-4">Cookies</h3>
-              <p>Diese Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Diese helfen uns dabei, unsere Website zu optimieren und Ihnen einen besseren Service zu bieten.</p>
-
-              <h3 className="text-lg font-semibold mt-4">Datensparsamkeit</h3>
-              <p>Personenbezogene Daten speichern wir gemäß den Grundsätzen der Datenvermeidung und Datensparsamkeit nur so lange, wie es erforderlich ist oder vom Gesetzgeber her vorgeschrieben wird.</p>
-
-              <h3 className="text-lg font-semibold mt-4">Ihre Rechte</h3>
-              <p>Sie haben jederzeit das Recht auf Auskunft über die betreffenden personenbezogenen Daten. Sie können jederzeit deren Berichtigung, Löschung oder Einschränkung der Verarbeitung verlangen.</p>
             </div>
           </section>
 
