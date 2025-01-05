@@ -132,7 +132,7 @@ const ChatWidget = () => {
     
     setTimeout(() => {
       setMessages(prev => [...prev, {
-        text: "Keine Zeit um auf eine Antwort zu warten? Senden Sie uns eine Email und wir kommen ehestmöglichst auf Ihr Anliegen zurück",
+        text: "Keine Zeit um auf eine Antwort zu warten? Senden Sie uns eine Email und wir kommen ehestmöglichst auf Ihr Anliegen zurück.",
         sender: 'support',
         isAutoReply: true
       }]);
