@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-// SVG Icons remain the same
+// SVG Icons components remain the same
 const MessageIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
@@ -32,17 +32,25 @@ const MinimizeIcon = () => (
 const ChatInput = React.memo(({ onSend, placeholder, isMobile }) => {
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef(null);
-  
+
+  useEffect(() => {
+    // Only auto-focus on desktop
+    if (!isMobile) {
+      inputRef.current?.focus();
+    }
+  }, [isMobile]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim()) {
       onSend(inputValue);
       setInputValue('');
+      inputRef.current?.focus();
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="border-t p-2 sm:p-4 flex gap-2 bg-white">
+    <form onSubmit={handleSubmit} className="relative border-t p-2 sm:p-4 flex gap-2 bg-white">
       <input
         ref={inputRef}
         type="text"
@@ -90,7 +98,7 @@ const EmailForm = React.memo(({ onSubmit, message, sendEmailText }) => {
       />
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
+        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors text-base"
       >
         {sendEmailText}
       </button>
@@ -107,12 +115,10 @@ const ChatWidget = () => {
   const [lastUserMessage, setLastUserMessage] = useState('');
   const messageEndRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 640);
-      setWindowHeight(window.innerHeight);
     };
     
     checkMobile();
@@ -131,15 +137,51 @@ const ChatWidget = () => {
             isAutoReply: false,
             messageId: 'welcome'
           });
+        } else if (newMessages[0].messageId === 'welcome') {
+          newMessages[0] = {
+            text: translations.chat.ready,
+            sender: 'support',
+            isAutoReply: false,
+            messageId: 'welcome'
+          };
         }
         return newMessages;
+      });
+
+      setMessages(prevMessages => {
+        return prevMessages.map(msg => {
+          if (msg.isAutoReply) {
+            return {
+              ...msg,
+              text: translations.chat.waitResponse
+            };
+          }
+          return msg;
+        });
       });
     }
   }, [translations, language, isOpen]);
 
   useEffect(() => {
-    messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    // Prevent viewport shifting on mobile
+    if (isMobile) {
+      // Prevent scrolling of the background
+      document.body.style.overflow = 'hidden';
+      // Prevent viewport height changes from keyboard
+      const metaViewport = document.querySelector('meta[name=viewport]');
+      if (metaViewport) {
+        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover');
+      }
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      const metaViewport = document.querySelector('meta[name=viewport]');
+      if (metaViewport) {
+        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1');
+      }
+    };
+  }, [isMobile, isOpen]);
 
   const handleSendMessage = (text) => {
     setMessages(prev => [...prev, { 
@@ -206,7 +248,7 @@ const ChatWidget = () => {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 right-4 bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700 transition-colors z-50"
+        className="fixed bottom-4 right-4 bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700 transition-colors z-50 md:bottom-8 md:right-8"
         aria-label="Open chat"
       >
         <MessageIcon />
@@ -214,19 +256,13 @@ const ChatWidget = () => {
     );
   }
 
-  const mobileStyle = isMobile ? {
-    height: `${windowHeight * 0.85}px`,
-    bottom: 0,
-  } : {};
+  const chatWindowClasses = isMobile
+    ? "fixed inset-x-0 bottom-0 bg-white z-50 flex flex-col h-[85dvh] rounded-t-xl shadow-xl"
+    : "fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 z-50";
 
   return (
-    <div 
-      className={`${isMobile 
-        ? 'fixed inset-x-0 bg-white z-50 rounded-t-xl shadow-xl' 
-        : 'fixed bottom-4 right-4 w-96 bg-white rounded-lg shadow-xl border border-gray-200 z-50'}`}
-      style={mobileStyle}
-    >
-      <div className="bg-blue-600 text-white p-4 flex items-center justify-between">
+    <div className={chatWindowClasses}>
+      <div className="bg-blue-600 text-white p-4 flex items-center justify-between rounded-t-xl">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-white relative"> 
             <img 
@@ -261,10 +297,7 @@ const ChatWidget = () => {
         </div>
       </div>
 
-      <div 
-        className="overflow-y-auto p-4 space-y-4"
-        style={isMobile ? { height: 'calc(100% - 130px)' } : { height: '400px' }}
-      >
+      <div className={`${isMobile ? 'flex-1 overflow-y-auto' : 'h-96'} p-4 space-y-4`}>
         {messages.map((message) => (
           <div
             key={message.messageId}
