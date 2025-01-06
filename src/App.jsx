@@ -14,8 +14,8 @@ import { LanguageProvider } from './context/LanguageContext';
 const Homepage = ({ isMenuOpen, setIsMenuOpen }) => (
   <>
     <Hero />
-    <About />
     <Services />
+    <About />
     <Contact />
   </>
 );

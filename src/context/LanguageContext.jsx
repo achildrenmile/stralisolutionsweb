@@ -35,7 +35,7 @@ export const translations = {
       values: 'Unsere Kunden schätzen unsere Fähigkeit, Projekte schnell, direkt und unkompliziert umzusetzen – immer mit einem klaren Fokus auf Qualität, Menschlichkeit und Erfolg.'
     },
     services: {
-      title: 'Unsere Leistungen',
+      title: 'Unsere Lösungen für Ihre digitale Zukunft',
       items: [
         {
           title: 'IT Consulting: Ihr Weg zur optimalen IT',
@@ -123,7 +123,7 @@ export const translations = {
       values: 'Our clients value our ability to implement projects quickly, directly, and straightforwardly – always with a clear focus on quality, humanity, and success.'
     },
     services: {
-      title: 'Our Services',
+      title: 'Our Solutions for Your Digital Future',
       items: [
         {
           title: 'IT Consulting: Your Path to Optimal IT',
