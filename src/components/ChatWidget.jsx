@@ -29,16 +29,13 @@ const MinimizeIcon = () => (
   </svg>
 );
 
-const ChatInput = React.memo(({ onSend, placeholder, isMobile }) => {
+const ChatInput = React.memo(({ onSend, placeholder }) => {
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef(null);
 
   useEffect(() => {
-    // Only auto-focus on desktop
-    if (!isMobile) {
-      inputRef.current?.focus();
-    }
-  }, [isMobile]);
+    inputRef.current?.focus();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +47,7 @@ const ChatInput = React.memo(({ onSend, placeholder, isMobile }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative border-t p-2 sm:p-4 flex gap-2 bg-white">
+    <form onSubmit={handleSubmit} className="border-t p-2 sm:p-4 flex gap-2">
       <input
         ref={inputRef}
         type="text"
@@ -163,25 +160,8 @@ const ChatWidget = () => {
   }, [translations, language, isOpen]);
 
   useEffect(() => {
-    // Prevent viewport shifting on mobile
-    if (isMobile) {
-      // Prevent scrolling of the background
-      document.body.style.overflow = 'hidden';
-      // Prevent viewport height changes from keyboard
-      const metaViewport = document.querySelector('meta[name=viewport]');
-      if (metaViewport) {
-        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover');
-      }
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-      const metaViewport = document.querySelector('meta[name=viewport]');
-      if (metaViewport) {
-        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1');
-      }
-    };
-  }, [isMobile, isOpen]);
+    messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const handleSendMessage = (text) => {
     setMessages(prev => [...prev, { 
@@ -257,12 +237,12 @@ const ChatWidget = () => {
   }
 
   const chatWindowClasses = isMobile
-    ? "fixed inset-x-0 bottom-0 bg-white z-50 flex flex-col h-[85dvh] rounded-t-xl shadow-xl"
+    ? "fixed inset-0 bg-white z-50 flex flex-col"
     : "fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 z-50";
 
   return (
     <div className={chatWindowClasses}>
-      <div className="bg-blue-600 text-white p-4 flex items-center justify-between rounded-t-xl">
+      <div className="bg-blue-600 text-white p-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-white relative"> 
             <img 
@@ -297,7 +277,7 @@ const ChatWidget = () => {
         </div>
       </div>
 
-      <div className={`${isMobile ? 'flex-1 overflow-y-auto' : 'h-96'} p-4 space-y-4`}>
+      <div className={`${isMobile ? 'flex-1' : 'h-96'} overflow-y-auto p-4 space-y-4 min-h-0`}>
         {messages.map((message) => (
           <div
             key={message.messageId}
@@ -354,7 +334,6 @@ const ChatWidget = () => {
         <ChatInput 
           onSend={handleSendMessage} 
           placeholder={translations.chat.placeholder}
-          isMobile={isMobile}
         />
       ) : isEmailSent ? (
         <div className="border-t p-4 text-center text-gray-500">
