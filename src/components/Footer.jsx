@@ -1,9 +1,16 @@
 // src/components/Footer.jsx
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
   const { translations } = useLanguage();
+  const navigate = useNavigate();
+
+  const handleImpressumClick = (e) => {
+    e.preventDefault();
+    navigate('/impressum');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <footer className="bg-gray-900 text-white py-6 px-4">
@@ -13,6 +20,7 @@ const Footer = () => {
           <div className="mt-2 md:mt-0 flex items-center gap-4">
             <Link 
               to="/impressum" 
+              onClick={handleImpressumClick}
               className="text-gray-300 hover:text-white transition-colors"
             >
               {translations.footer.imprint}
