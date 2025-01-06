@@ -50,7 +50,7 @@ const ChatInput = React.memo(({ onSend, placeholder, isMobile }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative border-t p-2 sm:p-4 flex gap-2 bg-white">
+    <form onSubmit={handleSubmit} className={`${isMobile ? 'fixed bottom-0 left-0 right-0' : 'relative'} border-t p-2 sm:p-4 flex gap-2 bg-white`}>
       <input
         ref={inputRef}
         type="text"
@@ -257,7 +257,7 @@ const ChatWidget = () => {
   }
 
   const chatWindowClasses = isMobile
-    ? "fixed inset-x-0 bottom-0 bg-white z-50 flex flex-col h-[85dvh] rounded-t-xl shadow-xl"
+    ? "fixed inset-x-0 bottom-0 bg-white z-50 h-[85dvh] rounded-t-xl shadow-xl overflow-hidden"
     : "fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 z-50";
 
   return (
@@ -297,7 +297,7 @@ const ChatWidget = () => {
         </div>
       </div>
 
-      <div className={`${isMobile ? 'flex-1 overflow-y-auto' : 'h-96'} p-4 space-y-4`}>
+      <div className={`${isMobile ? 'h-[calc(85dvh-120px)]' : 'h-96'} overflow-y-auto p-4 space-y-4`}>
         {messages.map((message) => (
           <div
             key={message.messageId}
