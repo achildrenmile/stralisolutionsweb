@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Copy, Phone, Mail, MapPin } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
+  const { translations } = useLanguage();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,7 +41,7 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Kontakt</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">{translations.contact.title}</h2>
           
           <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
             <div className="mb-8 space-y-4">
@@ -85,14 +88,14 @@ const Contact = () => {
                 className="mb-4 p-3 bg-green-100 text-green-800 rounded-lg text-sm flex items-center"
               >
                 <span>✓</span>
-                <span className="ml-2">Email-Adresse wurde in die Zwischenablage kopiert!</span>
+                <span className="ml-2">{translations.contact.copied}</span>
               </motion.div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Name
+                  {translations.contact.name}
                 </label>
                 <input
                   type="text"
@@ -106,7 +109,7 @@ const Contact = () => {
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Nachricht
+                  {translations.contact.message}
                 </label>
                 <textarea
                   id="message"
@@ -124,7 +127,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Nachricht senden
+                {translations.contact.send}
               </motion.button>
             </form>
           </div>

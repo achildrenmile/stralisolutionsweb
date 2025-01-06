@@ -66,8 +66,9 @@ npm run build
 
 ## Development
 
-- Development server runs on `http://localhost:5173`
+- Development server runs on `http://localhost:3000`
 - Uses Vite for fast development and building
+- Uses NodeJS for serve
 - Tailwind CSS for styling
 - Framer Motion for animations
 

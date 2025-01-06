@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Impressum from './components/Impressum';
 import ChatWidget from './components/ChatWidget';
+import { LanguageProvider } from './context/LanguageContext';
 
 // Homepage component
 const Homepage = ({ isMenuOpen, setIsMenuOpen }) => (
@@ -23,19 +24,21 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col">
-        <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-        <main className="flex-grow" onClick={() => isMenuOpen && setIsMenuOpen(false)}>
-          <Routes>
-            <Route path="/" element={<Homepage isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
-            <Route path="/impressum" element={<Impressum />} />
-          </Routes>
-        </main>
-        <Footer />
-        <ChatWidget />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <div className="min-h-screen flex flex-col">
+          <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+          <main className="flex-grow" onClick={() => isMenuOpen && setIsMenuOpen(false)}>
+            <Routes>
+              <Route path="/" element={<Homepage isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
+              <Route path="/impressum" element={<Impressum />} />
+            </Routes>
+          </main>
+          <Footer />
+          <ChatWidget />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 };
 

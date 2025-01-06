@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const Hero = () => {
+  const { translations } = useLanguage();
+
   return (
     <motion.section
       className="bg-gradient-to-r from-blue-600 to-blue-800 text-white pt-32 pb-20 px-4 mt-16"
@@ -15,7 +18,7 @@ const Hero = () => {
           animate={{ y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Willkommen bei Strali Solutions
+          {translations.hero.welcome}
         </motion.h1>
         <motion.p
           className="text-lg md:text-xl mb-8 text-gray-100"
@@ -23,7 +26,7 @@ const Hero = () => {
           animate={{ y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          Schnell. Direkt. Unkompliziert.
+          {translations.hero.tagline}
         </motion.p>
         <motion.a
           href="#kontakt"
@@ -31,7 +34,7 @@ const Hero = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Kontakt aufnehmen
+          {translations.hero.contactButton}
         </motion.a>
       </div>
     </motion.section>

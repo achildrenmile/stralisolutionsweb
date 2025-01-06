@@ -1,12 +1,16 @@
 // src/components/Header.jsx
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useLanguage } from '../context/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = ({ isMenuOpen, setIsMenuOpen }) => {
+  const { translations } = useLanguage();
+
   const menuItems = [
-    { name: 'Über uns', href: 'über-uns' },
-    { name: 'Leistungen', href: 'leistungen' },
-    { name: 'Kontakt', href: 'kontakt' }
+    { name: translations.nav.about, href: 'über-uns' },
+    { name: translations.nav.services, href: 'leistungen' },
+    { name: translations.nav.contact, href: 'kontakt' }
   ];
 
   return (
@@ -56,6 +60,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
                 {item.name}
               </motion.a>
             ))}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}

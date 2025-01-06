@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
-// SVG Icons as components
+// SVG Icons components remain the same
 const MessageIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
@@ -28,7 +29,7 @@ const MinimizeIcon = () => (
   </svg>
 );
 
-const ChatInput = React.memo(({ onSend }) => {
+const ChatInput = React.memo(({ onSend, placeholder }) => {
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef(null);
 
@@ -58,7 +59,7 @@ const ChatInput = React.memo(({ onSend }) => {
             handleSubmit(e);
           }
         }}
-        placeholder="Ihre Nachricht..."
+        placeholder={placeholder}
         className="flex-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <button
@@ -72,7 +73,7 @@ const ChatInput = React.memo(({ onSend }) => {
   );
 });
 
-const EmailForm = React.memo(({ onSubmit, message }) => {
+const EmailForm = React.memo(({ onSubmit, message, sendEmailText }) => {
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
@@ -96,13 +97,14 @@ const EmailForm = React.memo(({ onSubmit, message }) => {
         type="submit"
         className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
       >
-        Email senden
+        {sendEmailText}
       </button>
     </form>
   );
 });
 
 const ChatWidget = () => {
+  const { translations, language } = useLanguage();
   const [isEmailSent, setIsEmailSent] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -110,15 +112,46 @@ const ChatWidget = () => {
   const [lastUserMessage, setLastUserMessage] = useState('');
   const messageEndRef = useRef(null);
 
+  // Effect to handle initial message and language changes
   useEffect(() => {
-    if (isOpen && messages.length === 0 && !isEmailSent) {
-      setMessages([{
-        text: "Bereit um das Beste aus Ihrer IT herauszuholen?",
-        sender: 'support',
-        isAutoReply: false
-      }]);
+    if (translations && isOpen) {
+      // Update the welcome message when language changes
+      setMessages(prevMessages => {
+        const newMessages = [...prevMessages];
+        if (newMessages.length === 0) {
+          // Add initial message if there are no messages
+          newMessages.push({
+            text: translations.chat.ready,
+            sender: 'support',
+            isAutoReply: false,
+            messageId: 'welcome'
+          });
+        } else if (newMessages[0].messageId === 'welcome') {
+          // Update welcome message if language changed
+          newMessages[0] = {
+            text: translations.chat.ready,
+            sender: 'support',
+            isAutoReply: false,
+            messageId: 'welcome'
+          };
+        }
+        return newMessages;
+      });
+
+      // Update auto-reply message if it exists
+      setMessages(prevMessages => {
+        return prevMessages.map(msg => {
+          if (msg.isAutoReply) {
+            return {
+              ...msg,
+              text: translations.chat.waitResponse
+            };
+          }
+          return msg;
+        });
+      });
     }
-  }, [isOpen, isEmailSent]);
+  }, [translations, language, isOpen]);
 
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -127,14 +160,16 @@ const ChatWidget = () => {
   const handleSendMessage = (text) => {
     setMessages(prev => [...prev, { 
       text, 
-      sender: 'user'
+      sender: 'user',
+      messageId: 'user-' + Date.now()
     }]);
     
     setTimeout(() => {
       setMessages(prev => [...prev, {
-        text: "Keine Zeit um auf eine Antwort zu warten? Senden Sie uns eine Email und wir kommen ehestmöglichst auf Ihr Anliegen zurück.",
+        text: translations.chat.waitResponse,
         sender: 'support',
-        isAutoReply: true
+        isAutoReply: true,
+        messageId: 'auto-reply-' + Date.now()
       }]);
       setLastUserMessage(text);
       setShowEmailPrompt(true);
@@ -152,34 +187,36 @@ const ChatWidget = () => {
       const result = await response.json();
       
       if (!result.success) {
-        alert("fehler");
         throw new Error('Failed to send message');
       }
 
-      // Show thank you message
       setMessages(prev => [...prev, {
-        text: "Vielen Dank! Wir werden uns schnellstmöglich bei Ihnen melden.",
-        sender: 'support'
+        text: translations.chat.thankYou,
+        sender: 'support',
+        messageId: 'thank-you-' + Date.now()
       }]);
       setShowEmailPrompt(false);
+      setIsEmailSent(true);
 
-      // Close chat after delay
       setTimeout(() => {
         setIsOpen(false);
-        // Reset chat state for next conversation
         setTimeout(() => {
           setMessages([]);
           setShowEmailPrompt(false);
+          setIsEmailSent(false);
         }, 500);
       }, 3000);
     } catch (error) {
       console.error('Error sending message:', error);
       setMessages(prev => [...prev, {
-        text: "Entschuldigung, es gab einen Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.",
-        sender: 'support'
+        text: translations.chat.error,
+        sender: 'support',
+        messageId: 'error-' + Date.now()
       }]);
     }
   };
+
+  if (!translations) return null;
 
   if (!isOpen) {
     return (
@@ -229,9 +266,9 @@ const ChatWidget = () => {
       </div>
 
       <div className="h-96 overflow-y-auto p-4 space-y-4">
-        {messages.map((message, index) => (
+        {messages.map((message) => (
           <div
-            key={index}
+            key={message.messageId}
             className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {message.sender === 'support' && (
@@ -247,19 +284,13 @@ const ChatWidget = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      {/* Head */}
                       <rect x="8" y="4" width="16" height="16" rx="2" />
-                      {/* Eyes */}
                       <circle cx="12" cy="12" r="2" fill="white" />
                       <circle cx="20" cy="12" r="2" fill="white" />
-                      {/* Antenna */}
                       <line x1="16" y1="4" x2="16" y2="2" />
                       <circle cx="16" cy="1" r="1" fill="white" />
-                      {/* Neck */}
                       <line x1="16" y1="20" x2="16" y2="22" />
-                      {/* Body */}
                       <rect x="10" y="22" width="12" height="8" rx="2" />
-                      {/* Body pattern */}
                       <line x1="13" y1="25" x2="19" y2="25" />
                       <line x1="13" y1="27" x2="19" y2="27" />
                     </svg>
@@ -288,13 +319,20 @@ const ChatWidget = () => {
       </div>
 
       {!showEmailPrompt && !isEmailSent ? (
-        <ChatInput onSend={handleSendMessage} />
+        <ChatInput 
+          onSend={handleSendMessage} 
+          placeholder={translations.chat.placeholder}
+        />
       ) : isEmailSent ? (
         <div className="border-t p-4 text-center text-gray-500">
-          Danke für Ihre Nachricht. Bitte überprüfen Sie Ihre E-Mails für weitere Kommunikation.
+          {translations.chat.thankYou}
         </div>
       ) : (
-        <EmailForm onSubmit={handleEmailSubmit} message={lastUserMessage} />
+        <EmailForm 
+          onSubmit={handleEmailSubmit} 
+          message={lastUserMessage} 
+          sendEmailText={translations.chat.sendEmail}
+        />
       )}
     </div>
   );
