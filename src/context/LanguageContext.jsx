@@ -3,6 +3,20 @@ import React, { createContext, useState, useContext } from 'react';
 
 const LanguageContext = createContext();
 
+// Helper function to get browser language
+const getBrowserLanguage = () => {
+    // Get browser language (returns e.g., 'en-US' or 'de-DE')
+    const browserLang = navigator.language || navigator.userLanguage;
+    
+    // Extract the language code (e.g., 'en' or 'de')
+    const baseLanguage = browserLang.split('-')[0];
+    
+    console.log(baseLanguage);
+
+    // Check if the language is supported, if not default to 'en'
+    return ['en', 'de'].includes(baseLanguage) ? baseLanguage : 'en';
+  };
+
 export const translations = {
   de: {
     nav: {
@@ -183,14 +197,20 @@ export const translations = {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en');
+  // Initialize with browser language
+  const [language, setLanguage] = useState(getBrowserLanguage());
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'de' ? 'en' : 'de');
   };
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, translations: translations[language] }}>
+    <LanguageContext.Provider value={{ 
+      language, 
+      toggleLanguage, 
+      translations: translations[language],
+      setLanguage // Export setLanguage in case you need direct language setting
+    }}>
       {children}
     </LanguageContext.Provider>
   );
