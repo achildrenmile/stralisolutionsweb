@@ -47,7 +47,7 @@ const ChatInput = React.memo(({ onSend, placeholder }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="border-t p-4 flex gap-2">
+    <form onSubmit={handleSubmit} className="border-t p-2 sm:p-4 flex gap-2">
       <input
         ref={inputRef}
         type="text"
@@ -60,7 +60,7 @@ const ChatInput = React.memo(({ onSend, placeholder }) => {
           }
         }}
         placeholder={placeholder}
-        className="flex-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="flex-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
       />
       <button
         type="submit"
@@ -90,12 +90,12 @@ const EmailForm = React.memo(({ onSubmit, message, sendEmailText }) => {
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
         required
       />
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
+        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors text-base"
       >
         {sendEmailText}
       </button>
@@ -111,15 +111,23 @@ const ChatWidget = () => {
   const [showEmailPrompt, setShowEmailPrompt] = useState(false);
   const [lastUserMessage, setLastUserMessage] = useState('');
   const messageEndRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Effect to handle initial message and language changes
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   useEffect(() => {
     if (translations && isOpen) {
-      // Update the welcome message when language changes
       setMessages(prevMessages => {
         const newMessages = [...prevMessages];
         if (newMessages.length === 0) {
-          // Add initial message if there are no messages
           newMessages.push({
             text: translations.chat.ready,
             sender: 'support',
@@ -127,7 +135,6 @@ const ChatWidget = () => {
             messageId: 'welcome'
           });
         } else if (newMessages[0].messageId === 'welcome') {
-          // Update welcome message if language changed
           newMessages[0] = {
             text: translations.chat.ready,
             sender: 'support',
@@ -138,7 +145,6 @@ const ChatWidget = () => {
         return newMessages;
       });
 
-      // Update auto-reply message if it exists
       setMessages(prevMessages => {
         return prevMessages.map(msg => {
           if (msg.isAutoReply) {
@@ -222,7 +228,7 @@ const ChatWidget = () => {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 right-4 bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700 transition-colors"
+        className="fixed bottom-4 right-4 bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700 transition-colors z-50 md:bottom-8 md:right-8"
         aria-label="Open chat"
       >
         <MessageIcon />
@@ -230,31 +236,37 @@ const ChatWidget = () => {
     );
   }
 
+  const chatWindowClasses = isMobile
+    ? "fixed inset-0 bg-white z-50 flex flex-col"
+    : "fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 z-50";
+
   return (
-    <div className="fixed bottom-4 right-4 w-96 bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200">
+    <div className={chatWindowClasses}>
       <div className="bg-blue-600 text-white p-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white relative"> 
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-white relative"> 
             <img 
               src="michi.jpg" 
               alt="Support Agent" 
               className="w-full h-full object-cover" 
             />
             <div 
-              className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-white"
+              className="absolute bottom-0 right-0 h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-green-500 border-2 border-white"
               style={{ transform: 'translate(25%, 25%)' }}
             />
           </div>
           <span className="font-semibold">Michael</span>
         </div>
         <div className="space-x-2">
-          <button
-            onClick={() => setIsOpen(false)}
-            className="hover:bg-blue-700 p-1 rounded"
-            aria-label="Minimize chat"
-          >
-            <MinimizeIcon />
-          </button>
+          {!isMobile && (
+            <button
+              onClick={() => setIsOpen(false)}
+              className="hover:bg-blue-700 p-1 rounded"
+              aria-label="Minimize chat"
+            >
+              <MinimizeIcon />
+            </button>
+          )}
           <button
             onClick={() => setIsOpen(false)}
             className="hover:bg-blue-700 p-1 rounded"
@@ -265,7 +277,7 @@ const ChatWidget = () => {
         </div>
       </div>
 
-      <div className="h-96 overflow-y-auto p-4 space-y-4">
+      <div className={`${isMobile ? 'flex-1' : 'h-96'} overflow-y-auto p-4 space-y-4 min-h-0`}>
         {messages.map((message) => (
           <div
             key={message.messageId}
