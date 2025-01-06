@@ -11,7 +11,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:justify-between items-center">
           <p>&copy; {new Date().getFullYear()} {translations.footer.rights}</p>
           <div className="mt-2 md:mt-0 flex items-center gap-4">
-            <Link to="/impressum" className="text-gray-300 hover:text-white transition-colors">
+            <Link 
+              to="/impressum" 
+              className="text-gray-300 hover:text-white transition-colors"
+            >
               {translations.footer.imprint}
             </Link>
           </div>

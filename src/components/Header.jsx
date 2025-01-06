@@ -1,17 +1,39 @@
-// src/components/Header.jsx
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   const { translations } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const menuItems = [
     { name: translations.nav.about, href: 'über-uns' },
     { name: translations.nav.services, href: 'leistungen' },
     { name: translations.nav.contact, href: 'kontakt' }
   ];
+
+  const handleNavigation = (href) => {
+    if (location.pathname === '/impressum') {
+      navigate('/');
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // On homepage, just scroll
+      const element = document.getElementById(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <motion.header 
@@ -26,6 +48,12 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
             href="/"
             className="block h-10 md:h-12"
             whileHover={{ scale: 1.02 }}
+            onClick={(e) => {
+              if (location.pathname === '/impressum') {
+                e.preventDefault();
+                navigate('/');
+              }
+            }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" className="h-full w-auto">
               <rect x="0" y="0" width="40" height="40" fill="#1a237e"/>
@@ -50,15 +78,15 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {menuItems.map((item) => (
-              <motion.a
+              <motion.button
                 key={item.name}
-                href={`#${item.href}`}
+                onClick={() => handleNavigation(item.href)}
                 className="text-gray-700 hover:text-[#2D1B69] transition-colors text-sm lg:text-base"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {item.name}
-              </motion.a>
+              </motion.button>
             ))}
             <LanguageSwitcher />
           </div>
@@ -88,14 +116,13 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
             >
               <div className="flex flex-col space-y-3">
                 {menuItems.map((item) => (
-                  <a
+                  <button
                     key={item.name}
-                    href={`#${item.href}`}
-                    className="block py-2 text-gray-700 hover:text-[#2D1B69] hover:bg-gray-50 rounded px-3 text-sm"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => handleNavigation(item.href)}
+                    className="block py-2 text-gray-700 hover:text-[#2D1B69] hover:bg-gray-50 rounded px-3 text-sm text-left"
                   >
                     {item.name}
-                  </a>
+                  </button>
                 ))}
               </div>
             </motion.div>
