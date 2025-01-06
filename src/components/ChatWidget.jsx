@@ -50,7 +50,7 @@ const ChatInput = React.memo(({ onSend, placeholder, isMobile }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={`${isMobile ? 'fixed bottom-0 left-0 right-0' : 'relative'} border-t p-2 sm:p-4 flex gap-2 bg-white`}>
+    <form onSubmit={handleSubmit} className={`${isMobile ? 'absolute bottom-0 left-0 right-0' : 'relative'} border-t p-2 sm:p-4 flex gap-2 bg-white z-10`}>
       <input
         ref={inputRef}
         type="text"
@@ -60,6 +60,22 @@ const ChatInput = React.memo(({ onSend, placeholder, isMobile }) => {
           if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             handleSubmit(e);
+          }
+        }}
+        onFocus={() => {
+          if (isMobile) {
+            // Prevent scrolling when input is focused
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
+          }
+        }}
+        onBlur={() => {
+          if (isMobile) {
+            // Restore scrolling when input loses focus
+            const scrollY = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
           }
         }}
         placeholder={placeholder}
@@ -163,24 +179,27 @@ const ChatWidget = () => {
   }, [translations, language, isOpen]);
 
   useEffect(() => {
-    // Prevent viewport shifting on mobile
-    if (isMobile) {
-      // Prevent scrolling of the background
+    if (isMobile && isOpen) {
+      // Add meta viewport tag to prevent zooming and scrolling
+      const meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, height=' + window.innerHeight;
+      document.getElementsByTagName('head')[0].appendChild(meta);
+      
+      // Prevent body scrolling
       document.body.style.overflow = 'hidden';
-      // Prevent viewport height changes from keyboard
-      const metaViewport = document.querySelector('meta[name=viewport]');
-      if (metaViewport) {
-        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover');
-      }
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = `${window.innerHeight}px`;
+      
+      return () => {
+        document.getElementsByTagName('head')[0].removeChild(meta);
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.height = '';
+      };
     }
-
-    return () => {
-      document.body.style.overflow = '';
-      const metaViewport = document.querySelector('meta[name=viewport]');
-      if (metaViewport) {
-        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1');
-      }
-    };
   }, [isMobile, isOpen]);
 
   const handleSendMessage = (text) => {
@@ -257,7 +276,7 @@ const ChatWidget = () => {
   }
 
   const chatWindowClasses = isMobile
-    ? "fixed inset-x-0 bottom-0 bg-white z-50 h-[85dvh] rounded-t-xl shadow-xl overflow-hidden"
+    ? "fixed inset-x-0 bottom-0 bg-white z-50 h-[85dvh] rounded-t-xl shadow-xl overflow-hidden absolute"
     : "fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 z-50";
 
   return (
@@ -297,7 +316,7 @@ const ChatWidget = () => {
         </div>
       </div>
 
-      <div className={`${isMobile ? 'h-[calc(85dvh-120px)]' : 'h-96'} overflow-y-auto p-4 space-y-4`}>
+      <div className={`${isMobile ? 'absolute inset-0 bottom-16' : 'h-96'} overflow-y-auto p-4 space-y-4`}>
         {messages.map((message) => (
           <div
             key={message.messageId}
