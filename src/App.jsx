@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,14 +11,29 @@ import ChatWidget from './components/ChatWidget';
 import { LanguageProvider } from './context/LanguageContext';
 
 // Homepage component
-const Homepage = ({ isMenuOpen, setIsMenuOpen }) => (
-  <>
-    <Hero />
-    <Services />
-    <About />
-    <Contact />
-  </>
-);
+const Homepage = ({ isMenuOpen, setIsMenuOpen }) => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      // Clean up the state
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
+
+  return (
+    <>
+      <Hero />
+      <Services />
+      <About />
+      <Contact />
+    </>
+  );
+};
 
 // Custom Header wrapper to handle navigation
 const HeaderWithNavigation = ({ isMenuOpen, setIsMenuOpen }) => {
@@ -26,18 +41,16 @@ const HeaderWithNavigation = ({ isMenuOpen, setIsMenuOpen }) => {
   const location = useLocation();
 
   const handleNavigation = (sectionId) => {
-    // If on impressum, navigate to home first
-    if (location.pathname === '/impressum') {
-      navigate('/');
-    }
-    
-    // Scroll to section (will work after navigation completes)
-    setTimeout(() => {
+    // Only scroll if we're on the homepage
+    if (location.pathname === '/') {
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 100);
+    } else {
+      // If not on homepage, navigate to homepage with the section as a target
+      navigate('/', { state: { scrollTo: sectionId } });
+    }
 
     setIsMenuOpen(false);
   };
@@ -63,6 +76,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Homepage isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
               <Route path="/impressum" element={<Impressum />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
           <Footer />
