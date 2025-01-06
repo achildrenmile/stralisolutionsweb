@@ -32,9 +32,36 @@ const MinimizeIcon = () => (
 const ChatInput = React.memo(({ onSend, placeholder }) => {
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef(null);
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
 
   useEffect(() => {
     inputRef.current?.focus();
+    
+    // Handle iOS keyboard events
+    const handleFocus = () => {
+      setIsKeyboardVisible(true);
+      // Delay to ensure DOM is ready
+      setTimeout(() => {
+        inputRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    };
+    
+    const handleBlur = () => {
+      setIsKeyboardVisible(false);
+    };
+
+    const input = inputRef.current;
+    if (input) {
+      input.addEventListener('focus', handleFocus);
+      input.addEventListener('blur', handleBlur);
+    }
+
+    return () => {
+      if (input) {
+        input.removeEventListener('focus', handleFocus);
+        input.removeEventListener('blur', handleBlur);
+      }
+    };
   }, []);
 
   const handleSubmit = (e) => {
@@ -47,7 +74,7 @@ const ChatInput = React.memo(({ onSend, placeholder }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="border-t p-2 sm:p-4 flex gap-2">
+    <form onSubmit={handleSubmit} className="border-t p-2 sm:p-4 flex gap-2 sticky bottom-0 bg-white">
       <input
         ref={inputRef}
         type="text"
@@ -237,12 +264,12 @@ const ChatWidget = () => {
   }
 
   const chatWindowClasses = isMobile
-    ? "fixed inset-0 bg-white z-50 flex flex-col"
+    ? "fixed inset-x-0 bottom-0 bg-white z-50 flex flex-col h-[85vh] rounded-t-xl shadow-xl"
     : "fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 z-50";
 
   return (
     <div className={chatWindowClasses}>
-      <div className="bg-blue-600 text-white p-4 flex items-center justify-between">
+      <div className="bg-blue-600 text-white p-4 flex items-center justify-between rounded-t-xl">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-white relative"> 
             <img 
@@ -277,7 +304,7 @@ const ChatWidget = () => {
         </div>
       </div>
 
-      <div className={`${isMobile ? 'flex-1' : 'h-96'} overflow-y-auto p-4 space-y-4 min-h-0`}>
+      <div className={`${isMobile ? 'flex-1' : 'h-96'} overflow-y-auto p-4 space-y-4 pb-16`}>
         {messages.map((message) => (
           <div
             key={message.messageId}
