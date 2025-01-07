@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "serve": "vite build&&node server.js"
+    "serve": "vite build&&node server.js",
+    "postbuild": "react-snap"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -21,8 +22,10 @@
     "nodemailer": "^6.9.16",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
     "react-intersection-observer": "^9.14.1",
-    "react-router-dom": "^7.1.1"
+    "react-router-dom": "^7.1.1",
+    "react-snap": "^1.23.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
@@ -38,5 +41,30 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "vite": "^6.0.5"
+  },
+  "reactSnap": {
+    "include": [
+      "/",
+      "/impressum"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "inlineCss": true,
+    "source": "dist",
+    "destination": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    },
+    "puppeteerIgnoreHTTPSErrors": true,
+    "fixWebpackChunksIssue": false,
+    "removeBlobs": true,
+    "concurrency": 4,
+    "viewport": {
+      "width": 480,
+      "height": 850
+    }
   }
 }

@@ -9,6 +9,59 @@ import Footer from './components/Footer';
 import Impressum from './components/Impressum';
 import ChatWidget from './components/ChatWidget';
 import { LanguageProvider } from './context/LanguageContext';
+import { Helmet } from 'react-helmet-async';
+
+// Base SEO configuration
+const defaultSEO = {
+  titleTemplate: '%s | Strali Solutions',
+  defaultTitle: 'Strali Solutions',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://strali.solutions/',
+    site_name: 'Your Company Name',
+  },
+  twitter: {
+    handle: '@stralisolutions',
+    site: '@stralisolutions',
+    cardType: 'summary_large_image',
+  },
+};
+
+// SEO Component with Schema.org structured data
+const SEO = ({ 
+  title, 
+  description, 
+  canonical, 
+  openGraph = {}, 
+  structuredData = null 
+}) => (
+  <Helmet>
+    {/* Basic metadata */}
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    
+    {/* OpenGraph / Facebook */}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {openGraph.image && <meta property="og:image" content={openGraph.image} />}
+    
+    {/* Twitter */}
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {openGraph.image && <meta name="twitter:image" content={openGraph.image} />}
+    
+    {/* Structured Data */}
+    {structuredData && (
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+    )}
+  </Helmet>
+);
+
 
 // Homepage component
 const Homepage = ({ isMenuOpen, setIsMenuOpen }) => {
