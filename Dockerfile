@@ -1,5 +1,3 @@
-# Dockerfile
-
 # Build stage for React app
 FROM node:22.12-alpine as build
 
@@ -15,8 +13,8 @@ RUN npm ci
 # Copy the source code
 COPY . .
 
-# Build the React app using Vite
-RUN npm run build
+# Build the React app using Vite (without react-snap)
+RUN npm run build:no-snap
 
 # Production stage for Node.js server
 FROM node:22.12-alpine
