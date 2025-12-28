@@ -130,6 +130,45 @@ Corporate website for Strali Solutions e.U., an IT consulting company based in C
 - **IT Assessment page:** Redirect note below booking buttons
 - Full DE/EN translations in `LanguageContext.jsx`
 
+### SEO Implementation (Dec 2025)
+- **index.html:**
+  - Language set to `de`
+  - Open Graph tags (Facebook/LinkedIn)
+  - Twitter Card tags
+  - Geo tags for local SEO
+  - Keywords meta tag
+- **Structured Data (JSON-LD):**
+  - `LocalBusiness` schema with full company details
+  - `ProfessionalService` schema for services
+  - `Offer` schema for free IT Assessment
+- **Page-specific SEO:**
+  - Homepage: Full SEO with business schema
+  - Impressum: noindex, DE/EN titles/descriptions
+  - IT Assessment: DE/EN titles/descriptions, Offer schema
+- **Files:**
+  - `public/og-image.png` - Social sharing image (placeholder, 512x512)
+  - Note: Create proper 1200x630px OG image for best results
+
+### Hero Scroll Indicator (Dec 2025)
+- Made down arrow clickable (was decorative only)
+- Smooth scrolls to Services section (`#leistungen`)
+- Added hover effect and cursor pointer
+- Added aria-label for accessibility
+
+### Sitemap & Robots (Dec 2025)
+- **sitemap.xml:** Added `/assessment`, updated dates
+- **robots.txt:** Fixed sitemap URL to `https://strali.solutions/sitemap.xml`
+
+### 404 Page (Dec 2025)
+- **Component:** `src/components/NotFound.jsx`
+- Features:
+  - Animated "404" with gradient text
+  - DE/EN language support
+  - "Go Back" button (browser history)
+  - "Go Home" button (link to homepage)
+  - SEO: noindex, nofollow
+- Route: `<Route path="*" element={<NotFound />} />`
+
 ## Commands
 ```bash
 # Local development
