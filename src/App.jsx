@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Impressum from './components/Impressum';
 import ITAssessment from './components/ITAssessment';
+import NotFound from './components/NotFound';
 import ChatWidget from './components/ChatWidget';
 import CookieConsent from './components/CookieConsent';
 import { LanguageProvider } from './context/LanguageContext';
@@ -194,7 +195,7 @@ const App = () => {
               <Route path="/" element={<Homepage isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
               <Route path="/impressum" element={<Impressum />} />
               <Route path="/assessment" element={<ITAssessment />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
