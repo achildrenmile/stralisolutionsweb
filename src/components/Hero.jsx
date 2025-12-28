@@ -61,11 +61,18 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-[var(--text-muted)]"
+      <motion.button
+        onClick={() => {
+          const servicesSection = document.getElementById('leistungen');
+          if (servicesSection) {
+            servicesSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-[var(--text-muted)] hover:text-white transition-colors cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
+        aria-label="Scroll to services"
       >
         <motion.svg
           width="24"
@@ -79,7 +86,7 @@ const Hero = () => {
         >
           <path d="M12 5v14M5 12l7 7 7-7"/>
         </motion.svg>
-      </motion.div>
+      </motion.button>
     </motion.section>
   );
 };
