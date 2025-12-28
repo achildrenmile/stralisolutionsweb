@@ -18,7 +18,6 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   const handleNavigation = (href) => {
     if (location.pathname === '/impressum') {
       navigate('/');
-      // Wait for navigation to complete before scrolling
       setTimeout(() => {
         const element = document.getElementById(href);
         if (element) {
@@ -26,7 +25,6 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
         }
       }, 100);
     } else {
-      // On homepage, just scroll
       const element = document.getElementById(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -36,8 +34,8 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   };
 
   return (
-    <motion.header 
-      className="bg-white shadow-md fixed w-full top-0 z-50"
+    <motion.header
+      className="nav-glass fixed w-full top-0 z-50"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -56,33 +54,33 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
             }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" className="h-full w-auto">
-              <rect x="0" y="0" width="40" height="40" fill="#1a237e"/>
-              <text x="11" y="31" 
-                    fontFamily="Arial, sans-serif" 
-                    fontSize="30" 
-                    fontWeight="bold" 
+              <rect x="0" y="0" width="40" height="40" rx="6" fill="#1a237e"/>
+              <text x="11" y="31"
+                    fontFamily="Arial, sans-serif"
+                    fontSize="30"
+                    fontWeight="bold"
                     fill="white">S</text>
-              <text x="45" y="26" 
-                    fontFamily="Arial, sans-serif" 
-                    fontSize="24" 
-                    fontWeight="bold" 
-                    fill="#1a237e">trali</text>
-              <text x="45" y="39" 
-                    fontFamily="Arial, sans-serif" 
-                    fontSize="12" 
-                    letterSpacing="0.5" 
-                    fill="#1a237e">solutions</text>
+              <text x="45" y="26"
+                    fontFamily="Arial, sans-serif"
+                    fontSize="24"
+                    fontWeight="bold"
+                    fill="#f8fafc">trali</text>
+              <text x="45" y="39"
+                    fontFamily="Arial, sans-serif"
+                    fontSize="12"
+                    letterSpacing="0.5"
+                    fill="#94a3b8">solutions</text>
             </svg>
           </motion.a>
-          
+
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
               <motion.button
                 key={item.name}
                 onClick={() => handleNavigation(item.href)}
-                className="text-gray-700 hover:text-[#2D1B69] transition-colors text-sm lg:text-base"
-                whileHover={{ scale: 1.1 }}
+                className="text-[var(--text-muted)] hover:text-white transition-colors text-sm lg:text-base"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {item.name}
@@ -93,7 +91,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="md:hidden text-white focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -108,7 +106,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="md:hidden absolute left-0 right-0 bg-white px-4 pt-2 pb-4 shadow-lg"
+              className="md:hidden absolute left-0 right-0 nav-glass px-4 pt-2 pb-4"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
@@ -119,11 +117,14 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
                   <button
                     key={item.name}
                     onClick={() => handleNavigation(item.href)}
-                    className="block py-2 text-gray-700 hover:text-[#2D1B69] hover:bg-gray-50 rounded px-3 text-sm text-left"
+                    className="block py-2 text-[var(--text-muted)] hover:text-white hover:bg-[var(--bg-card)] rounded px-3 text-sm text-left transition-colors"
                   >
                     {item.name}
                   </button>
                 ))}
+                <div className="pt-2">
+                  <LanguageSwitcher />
+                </div>
               </div>
             </motion.div>
           )}

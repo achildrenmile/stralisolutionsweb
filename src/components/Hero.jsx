@@ -6,37 +6,66 @@ const Hero = () => {
 
   return (
     <motion.section
-      className="bg-gradient-to-r from-blue-600 to-blue-800 text-white pt-32 pb-20 px-4 mt-16"
+      className="min-h-screen flex items-center justify-center pt-32 pb-20 px-4 mt-16 relative bg-gradient-dark"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       <div className="container mx-auto max-w-4xl text-center">
         <motion.h1
-          className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
-          initial={{ y: 20 }}
-          animate={{ y: 0 }}
+          className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          {translations.hero.welcome}
+          {translations.hero.welcome.split('Strali Solutions')[0]}
+          <span className="gradient-text">Strali Solutions</span>
+          {translations.hero.welcome.split('Strali Solutions')[1] || ''}
         </motion.h1>
         <motion.p
-          className="text-lg md:text-xl mb-8 text-gray-100"
-          initial={{ y: 20 }}
-          animate={{ y: 0 }}
+          className="text-xl md:text-2xl mb-8 text-[var(--accent-light)] font-medium"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
           {translations.hero.tagline}
         </motion.p>
         <motion.a
           href="#kontakt"
-          className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors text-sm md:text-base"
+          className="inline-flex items-center gap-2 btn-primary px-8 py-4 rounded-xl font-semibold text-sm md:text-base"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           {translations.hero.contactButton}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
         </motion.a>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-[var(--text-muted)]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+      >
+        <motion.svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </motion.svg>
+      </motion.div>
     </motion.section>
   );
 };

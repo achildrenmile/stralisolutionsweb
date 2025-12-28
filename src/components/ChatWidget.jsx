@@ -60,11 +60,11 @@ const ChatInput = React.memo(({ onSend, placeholder }) => {
           }
         }}
         placeholder={placeholder}
-        className="flex-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
+        className="flex-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[var(--primary)] text-base text-gray-900 bg-white"
       />
       <button
         type="submit"
-        className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition-colors"
+        className="bg-[var(--primary)] text-white p-2 rounded hover:bg-[var(--primary-light)] transition-colors"
         aria-label="Send message"
       >
         <SendIcon />
@@ -90,12 +90,12 @@ const EmailForm = React.memo(({ onSubmit, message, sendEmailText }) => {
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
+        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[var(--primary)] text-base text-gray-900 bg-white"
         required
       />
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors text-base"
+        className="w-full bg-[var(--primary)] text-white py-2 rounded hover:bg-[var(--primary-light)] transition-colors text-base"
       >
         {sendEmailText}
       </button>
@@ -228,7 +228,8 @@ const ChatWidget = () => {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 right-4 bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700 transition-colors z-50 md:bottom-8 md:right-8"
+        className="fixed bottom-4 right-4 bg-[var(--primary)] text-white rounded-full p-4 shadow-lg hover:bg-[var(--primary-light)] transition-colors z-50 md:bottom-8 md:right-8"
+        style={{ boxShadow: '0 4px 20px rgba(26, 35, 126, 0.4)' }}
         aria-label="Open chat"
       >
         <MessageIcon />
@@ -242,7 +243,7 @@ const ChatWidget = () => {
 
   return (
     <div className={chatWindowClasses}>
-      <div className="bg-blue-600 text-white p-4 flex items-center justify-between">
+      <div className="bg-[var(--primary)] text-white p-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-white relative"> 
             <img 
@@ -261,7 +262,7 @@ const ChatWidget = () => {
           {!isMobile && (
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-blue-700 p-1 rounded"
+              className="hover:bg-[var(--primary-light)] p-1 rounded"
               aria-label="Minimize chat"
             >
               <MinimizeIcon />
@@ -269,7 +270,7 @@ const ChatWidget = () => {
           )}
           <button
             onClick={() => setIsOpen(false)}
-            className="hover:bg-blue-700 p-1 rounded"
+            className="hover:bg-[var(--primary-light)] p-1 rounded"
             aria-label="Close chat"
           >
             <CloseIcon />
@@ -286,7 +287,7 @@ const ChatWidget = () => {
             {message.sender === 'support' && (
               <div className="w-8 h-8 rounded-full overflow-hidden mr-2 flex-shrink-0">
                 {message.isAutoReply ? (
-                  <div className="w-full h-full bg-blue-600 flex items-center justify-center">
+                  <div className="w-full h-full bg-[var(--primary)] flex items-center justify-center">
                     <svg 
                       viewBox="0 0 32 32"
                       className="w-6 h-6"
@@ -319,7 +320,7 @@ const ChatWidget = () => {
             <div
               className={`max-w-[75%] p-3 rounded-lg ${
                 message.sender === 'user'
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-[var(--primary)] text-white'
                   : 'bg-gray-100 text-gray-800'
               }`}
             >

@@ -43,8 +43,8 @@ export const translations = {
           icon: '💡'
         },
         {
-          title: 'Productivity-Lösungen: Effizient zusammenarbeiten',
-          description: 'Mit Tools wie Microsoft Teams, SharePoint, OneDrive, Planner und Copilot optimieren wir Ihre Kommunikation und Arbeitsabläufe. Wir unterstützen Sie bei der Analyse, Integration und Schulung, damit Ihr Team produktiv und nahtlos zusammenarbeitet – ob im Büro oder remote.',
+          title: 'Microsoft 365 & Copilot: Produktivität neu definiert',
+          description: 'Nutzen Sie das volle Potenzial von Microsoft 365: Teams für Kommunikation, SharePoint und OneDrive für Dokumentenmanagement, Planner für Aufgabenverwaltung und Power Platform für Automatisierung. Mit Microsoft Copilot bringen Sie KI-gestützte Assistenz direkt in Ihre tägliche Arbeit – von intelligenter Dokumentenerstellung bis zur automatisierten Datenanalyse. Wir begleiten Sie bei Analyse, Integration und Schulung.',
           icon: '🚀'
         },
         {
@@ -131,8 +131,8 @@ export const translations = {
           icon: '💡'
         },
         {
-          title: 'Productivity Solutions: Efficient Collaboration',
-          description: 'With tools like Microsoft Teams, SharePoint, OneDrive, Planner, and Copilot, we optimize your communication and workflows. We support you with analysis, integration, and training so your team can collaborate productively and seamlessly – whether in the office or remotely.',
+          title: 'Microsoft 365 & Copilot: Productivity Redefined',
+          description: 'Unlock the full potential of Microsoft 365: Teams for communication, SharePoint and OneDrive for document management, Planner for task management, and Power Platform for automation. With Microsoft Copilot, bring AI-powered assistance directly into your daily work – from intelligent document creation to automated data analysis. We guide you through analysis, integration, and training.',
           icon: '🚀'
         },
         {
