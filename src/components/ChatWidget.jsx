@@ -245,16 +245,15 @@ const ChatWidget = () => {
     <div className={chatWindowClasses}>
       <div className="bg-[var(--primary)] text-white p-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-white relative"> 
-            <img 
-              src="michi.jpg" 
-              alt="Support Agent" 
-              className="w-full h-full object-cover" 
-            />
-            <div 
-              className="absolute bottom-0 right-0 h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-green-500 border-2 border-white"
-              style={{ transform: 'translate(25%, 25%)' }}
-            />
+          <div className="relative">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-white">
+              <img
+                src="michi.jpg"
+                alt="Support Agent"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <span className="absolute bottom-0 right-0 h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full bg-green-500 border-2 border-white" />
           </div>
           <span className="font-semibold">Michael</span>
         </div>
