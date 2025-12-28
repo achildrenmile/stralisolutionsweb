@@ -1,9 +1,26 @@
 import { useLanguage } from '../context/LanguageContext';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Clock, Gift, MapPin, User, Check } from 'lucide-react';
 
+// Structured data for the free IT Assessment offer
+const assessmentSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Offer',
+  name: 'Kostenloses IT-Assessment',
+  description: 'Kostenlose IT-Beratung und Analyse Ihrer IT-Infrastruktur',
+  price: '0',
+  priceCurrency: 'EUR',
+  availability: 'https://schema.org/InStock',
+  seller: {
+    '@type': 'LocalBusiness',
+    name: 'Strali Solutions e.U.',
+    url: 'https://strali.solutions'
+  }
+};
+
 const ITAssessment = () => {
-  const { translations } = useLanguage();
+  const { translations, language } = useLanguage();
   const t = translations.assessment;
 
   const benefits = t.benefits || [];
@@ -11,8 +28,27 @@ const ITAssessment = () => {
 
   const steps = t.steps || [];
 
+  const isGerman = language === 'de';
+
   return (
-    <div className="min-h-screen bg-gradient-dark pt-24 pb-16">
+    <>
+      <Helmet>
+        <title>{isGerman ? 'Kostenloses IT-Assessment | Strali Solutions' : 'Free IT Assessment | Strali Solutions'}</title>
+        <meta
+          name="description"
+          content={isGerman
+            ? 'Buchen Sie Ihr kostenloses IT-Assessment. Analyse Ihrer IT-Infrastruktur, individuelle Empfehlungen und persönliche Beratung - unverbindlich und kostenlos.'
+            : 'Book your free IT assessment. Analysis of your IT infrastructure, personalized recommendations and expert consultation - no obligation, completely free.'}
+        />
+        <link rel="canonical" href="https://strali.solutions/assessment" />
+        <meta property="og:title" content={isGerman ? 'Kostenloses IT-Assessment | Strali Solutions' : 'Free IT Assessment | Strali Solutions'} />
+        <meta property="og:url" content="https://strali.solutions/assessment" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">
+          {JSON.stringify(assessmentSchema)}
+        </script>
+      </Helmet>
+      <div className="min-h-screen bg-gradient-dark pt-24 pb-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div
@@ -153,6 +189,7 @@ const ITAssessment = () => {
         </motion.div>
       </div>
     </div>
+    </>
   );
 };
 

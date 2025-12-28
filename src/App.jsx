@@ -14,47 +14,100 @@ import { LanguageProvider } from './context/LanguageContext';
 import { Helmet } from 'react-helmet-async';
 
 // Base SEO configuration
-const defaultSEO = {
-  titleTemplate: '%s | Strali Solutions',
-  defaultTitle: 'Strali Solutions',
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://strali.solutions/',
-    site_name: 'Your Company Name',
+const siteConfig = {
+  siteName: 'Strali Solutions',
+  siteUrl: 'https://strali.solutions',
+  defaultImage: 'https://strali.solutions/android-chrome-512x512.png',
+  ogImage: 'https://strali.solutions/og-image.png',
+};
+
+// LocalBusiness structured data for SEO
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://strali.solutions/#business',
+  name: 'Strali Solutions e.U.',
+  description: 'IT Consulting, Digitalisierung und Software Engineering in Kärnten, Österreich',
+  url: 'https://strali.solutions',
+  logo: 'https://strali.solutions/android-chrome-512x512.png',
+  image: 'https://strali.solutions/android-chrome-512x512.png',
+  telephone: '+43 676 96 58 016',
+  email: 'office@strali.solutions',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Nötsch 219',
+    addressLocality: 'Nötsch im Gailtal',
+    postalCode: '9611',
+    addressCountry: 'AT'
   },
-  twitter: {
-    handle: '@stralisolutions',
-    site: '@stralisolutions',
-    cardType: 'summary_large_image',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 46.5911,
+    longitude: 13.6283
   },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00'
+  },
+  priceRange: '€€',
+  areaServed: {
+    '@type': 'Country',
+    name: 'Austria'
+  },
+  founder: {
+    '@type': 'Person',
+    name: 'Ing. Michael Linder'
+  },
+  foundingDate: '2017',
+  sameAs: []
+};
+
+// Service structured data
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Strali Solutions e.U.',
+  serviceType: ['IT Consulting', 'Software Development', 'Digitalization', 'Microsoft 365 Consulting'],
+  provider: {
+    '@id': 'https://strali.solutions/#business'
+  }
 };
 
 // SEO Component with Schema.org structured data
-const SEO = ({ 
-  title, 
-  description, 
-  canonical, 
-  openGraph = {}, 
-  structuredData = null 
+const SEO = ({
+  title,
+  description,
+  canonical,
+  image = siteConfig.ogImage,
+  type = 'website',
+  locale = 'de_AT',
+  structuredData = null
 }) => (
   <Helmet>
     {/* Basic metadata */}
+    <html lang={locale.split('_')[0]} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    
+
     {/* OpenGraph / Facebook */}
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={siteConfig.siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {openGraph.image && <meta property="og:image" content={openGraph.image} />}
-    
-    {/* Twitter */}
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:locale:alternate" content={locale === 'de_AT' ? 'en_US' : 'de_AT'} />
+
+    {/* Twitter / X */}
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {openGraph.image && <meta name="twitter:image" content={openGraph.image} />}
-    
+    <meta name="twitter:image" content={image} />
+
     {/* Structured Data */}
     {structuredData && (
       <script type="application/ld+json">
@@ -65,10 +118,13 @@ const SEO = ({
 );
 
 
+// Combined schema for homepage
+const homepageSchema = [businessSchema, serviceSchema];
+
 // Homepage component
 const Homepage = ({ isMenuOpen, setIsMenuOpen }) => {
   const location = useLocation();
-  
+
   useEffect(() => {
     if (location.state?.scrollTo) {
       const element = document.getElementById(location.state.scrollTo);
@@ -82,6 +138,12 @@ const Homepage = ({ isMenuOpen, setIsMenuOpen }) => {
 
   return (
     <>
+      <SEO
+        title="Strali Solutions | IT Consulting & Digitalisierung in Kärnten"
+        description="Ihr Partner für IT Consulting, Microsoft 365, Digitalisierung und Software Engineering in Kärnten, Österreich. Schnell. Direkt. Unkompliziert."
+        canonical="https://strali.solutions/"
+        structuredData={homepageSchema}
+      />
       <Hero />
       <Services />
       <About />

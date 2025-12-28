@@ -1,13 +1,30 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../context/LanguageContext';
 import { Check } from 'lucide-react';
 
 const Impressum = () => {
-  const { translations } = useLanguage();
+  const { translations, language } = useLanguage();
   const t = translations.imprint;
 
+  const isGerman = language === 'de';
+
   return (
-    <div className="pt-24 px-4 pb-12 min-h-screen">
+    <>
+      <Helmet>
+        <title>{isGerman ? 'Impressum | Strali Solutions' : 'Legal Notice | Strali Solutions'}</title>
+        <meta
+          name="description"
+          content={isGerman
+            ? 'Impressum und rechtliche Informationen von Strali Solutions e.U. - IT Consulting in Kärnten, Österreich.'
+            : 'Legal notice and company information for Strali Solutions e.U. - IT Consulting in Carinthia, Austria.'}
+        />
+        <link rel="canonical" href="https://strali.solutions/impressum" />
+        <meta property="og:title" content={isGerman ? 'Impressum | Strali Solutions' : 'Legal Notice | Strali Solutions'} />
+        <meta property="og:url" content="https://strali.solutions/impressum" />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
+      <div className="pt-24 px-4 pb-12 min-h-screen">
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-3xl font-bold mb-8 text-white">{t.title}</h1>
 
@@ -196,6 +213,7 @@ const Impressum = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
