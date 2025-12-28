@@ -136,6 +136,23 @@ export const translations = {
       expertValue: 'Michael Linder, MSc',
       ctaTitle: 'Bereit für den nächsten Schritt?',
       ctaSubtitle: 'Vereinbaren Sie jetzt Ihr kostenloses IT-Assessment und entdecken Sie das Potenzial Ihrer IT.'
+    },
+    cookies: {
+      title: 'Cookie-Einstellungen',
+      description: 'Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Sie können wählen, welche Cookies Sie zulassen möchten.',
+      showDetails: 'Details anzeigen',
+      hideDetails: 'Details ausblenden',
+      acceptAll: 'Alle akzeptieren',
+      essentialOnly: 'Nur notwendige',
+      privacyLink: 'Mehr Informationen in unserem Impressum',
+      essential: {
+        title: 'Notwendige Cookies',
+        description: 'Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.'
+      },
+      analytics: {
+        title: 'Analyse-Cookies',
+        description: 'Helfen uns zu verstehen, wie Besucher mit der Website interagieren.'
+      }
     }
   },
   en: {
@@ -256,6 +273,23 @@ export const translations = {
       expertValue: 'Michael Linder, MSc',
       ctaTitle: 'Ready for the Next Step?',
       ctaSubtitle: 'Schedule your free IT assessment now and discover your IT potential.'
+    },
+    cookies: {
+      title: 'Cookie Settings',
+      description: 'We use cookies to provide you with the best possible experience on our website. You can choose which cookies you want to allow.',
+      showDetails: 'Show details',
+      hideDetails: 'Hide details',
+      acceptAll: 'Accept all',
+      essentialOnly: 'Essential only',
+      privacyLink: 'More information in our Imprint',
+      essential: {
+        title: 'Essential Cookies',
+        description: 'These cookies are required for basic website functionality and cannot be disabled.'
+      },
+      analytics: {
+        title: 'Analytics Cookies',
+        description: 'Help us understand how visitors interact with the website.'
+      }
     }
   }
 };

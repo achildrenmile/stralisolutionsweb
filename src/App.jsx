@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Impressum from './components/Impressum';
 import ITAssessment from './components/ITAssessment';
 import ChatWidget from './components/ChatWidget';
+import CookieConsent from './components/CookieConsent';
 import { LanguageProvider } from './context/LanguageContext';
 import { Helmet } from 'react-helmet-async';
 
@@ -136,6 +137,7 @@ const App = () => {
           </main>
           <Footer />
           <ChatWidget />
+          <CookieConsent />
         </div>
       </Router>
     </LanguageProvider>

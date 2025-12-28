@@ -78,6 +78,23 @@ Corporate website for Strali Solutions e.U., an IT consulting company based in C
 - **Translations:** Full DE/EN support in `LanguageContext.jsx`
 - **Note:** Microsoft Bookings doesn't allow iframe embedding (X-Frame-Options), so we use external link
 
+### Cookie Consent Banner (Dec 2025)
+- **Component:** `src/components/CookieConsent.jsx`
+- **Features:**
+  - DSGVO/GDPR compliant cookie consent
+  - Animated slide-up banner (Framer Motion)
+  - "Accept all" and "Essential only" options
+  - Expandable details showing cookie types
+  - Saves preference to localStorage
+  - Solid dark background (#12121a) with gradient overlay
+  - z-index: 60 (above ChatWidget)
+  - Full DE/EN translations
+- **Cookie Types:**
+  - Essential (always enabled)
+  - Analytics (optional)
+- **Storage:** `localStorage.cookie-consent` with JSON object containing preferences and timestamp
+- **Reset:** Delete `cookie-consent` from localStorage to show banner again
+
 ## Commands
 ```bash
 # Local development
