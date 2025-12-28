@@ -22,12 +22,14 @@ export const translations = {
     nav: {
       about: 'Über uns',
       services: 'Leistungen',
-      contact: 'Kontakt'
+      contact: 'Kontakt',
+      assessment: 'IT-Assessment'
     },
     hero: {
       welcome: 'Willkommen bei Strali Solutions',
       tagline: 'Schnell. Direkt. Unkompliziert.',
-      contactButton: 'Kontakt aufnehmen'
+      contactButton: 'Kontakt aufnehmen',
+      assessmentButton: 'Kostenloses IT-Assessment'
     },
     about: {
       title: 'Über uns',
@@ -104,18 +106,50 @@ export const translations = {
         vatId: 'UID-Nummer: ATU72580414',
         dvrNumber: 'DVR-Nummer: 4018687'
       }
+    },
+    assessment: {
+      title: 'Kostenloses IT-Assessment',
+      subtitle: 'Buchen Sie ein unverbindliches Erstgespräch und erfahren Sie, wie wir Ihre IT optimieren können.',
+      bookNow: 'Jetzt Termin buchen',
+      whatYouGet: 'Das erwartet Sie',
+      benefits: [
+        'Analyse Ihrer aktuellen IT-Infrastruktur',
+        'Identifikation von Optimierungspotenzialen',
+        'Individuelle Handlungsempfehlungen',
+        'Kostenlose Erstberatung ohne Verpflichtungen',
+        'Persönliches Gespräch mit IT-Experten'
+      ],
+      howItWorks: 'So funktioniert es',
+      steps: [
+        'Wählen Sie einen passenden Termin im Kalender',
+        'Wir bestätigen Ihren Termin per E-Mail',
+        'Zum vereinbarten Zeitpunkt führen wir das Gespräch (online oder vor Ort)',
+        'Sie erhalten konkrete Empfehlungen für Ihre IT'
+      ],
+      duration: 'Dauer',
+      durationValue: 'ca. 30 Minuten',
+      price: 'Kosten',
+      priceValue: 'Kostenlos',
+      location: 'Ort',
+      locationValue: 'Online oder vor Ort',
+      expert: 'Ihr Ansprechpartner',
+      expertValue: 'Michael Linder, MSc',
+      ctaTitle: 'Bereit für den nächsten Schritt?',
+      ctaSubtitle: 'Vereinbaren Sie jetzt Ihr kostenloses IT-Assessment und entdecken Sie das Potenzial Ihrer IT.'
     }
   },
   en: {
     nav: {
       about: 'About',
       services: 'Services',
-      contact: 'Contact'
+      contact: 'Contact',
+      assessment: 'IT Assessment'
     },
     hero: {
       welcome: 'Welcome to Strali Solutions',
       tagline: 'Fast. Direct. Uncomplicated.',
-      contactButton: 'Get in Touch'
+      contactButton: 'Get in Touch',
+      assessmentButton: 'Free IT Assessment'
     },
     about: {
       title: 'About Us',
@@ -192,6 +226,36 @@ export const translations = {
         vatId: 'VAT ID: ATU72580414',
         dvrNumber: 'DVR Number: 4018687'
       }
+    },
+    assessment: {
+      title: 'Free IT Assessment',
+      subtitle: 'Book a no-obligation consultation and discover how we can optimize your IT.',
+      bookNow: 'Book Appointment',
+      whatYouGet: 'What You Get',
+      benefits: [
+        'Analysis of your current IT infrastructure',
+        'Identification of optimization potential',
+        'Personalized recommendations',
+        'Free initial consultation with no obligations',
+        'Personal meeting with IT experts'
+      ],
+      howItWorks: 'How It Works',
+      steps: [
+        'Choose a suitable time slot in the calendar',
+        'We confirm your appointment via email',
+        'At the scheduled time, we conduct the meeting (online or on-site)',
+        'You receive concrete recommendations for your IT'
+      ],
+      duration: 'Duration',
+      durationValue: 'approx. 30 minutes',
+      price: 'Cost',
+      priceValue: 'Free',
+      location: 'Location',
+      locationValue: 'Online or on-site',
+      expert: 'Your Contact',
+      expertValue: 'Michael Linder, MSc',
+      ctaTitle: 'Ready for the Next Step?',
+      ctaSubtitle: 'Schedule your free IT assessment now and discover your IT potential.'
     }
   }
 };

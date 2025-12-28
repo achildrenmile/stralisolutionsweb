@@ -59,6 +59,25 @@ Corporate website for Strali Solutions e.U., an IT consulting company based in C
 - `src/components/` - All React components
 - `/home/oe8yml/deploy-strali.sh` - Auto-deploy script
 
+### IT Assessment Booking Page (Dec 2025)
+- **New Page:** `/assessment` - Free IT Assessment booking landing page
+- **Component:** `src/components/ITAssessment.jsx`
+- **Features:**
+  - Landing page with CTA button (opens Microsoft Bookings in new tab)
+  - "What You Get" benefits list with checkmarks
+  - "How It Works" 4-step process
+  - Info cards: Duration (30 min), Cost (Free), Location (Online/On-site), Expert (Michael Linder)
+  - Bottom CTA section
+  - Dark theme styling with glassmorphism cards
+  - Framer Motion animations
+- **Navigation:**
+  - Primary CTA button in Header (desktop & mobile)
+  - Primary CTA in Hero section ("Kostenloses IT-Assessment" / "Free IT Assessment")
+  - Secondary "Contact" button in Hero
+- **Booking URL:** `https://outlook.office.com/book/ITAssessment1@strali.solutions/` (opens in new tab)
+- **Translations:** Full DE/EN support in `LanguageContext.jsx`
+- **Note:** Microsoft Bookings doesn't allow iframe embedding (X-Frame-Options), so we use external link
+
 ## Commands
 ```bash
 # Local development

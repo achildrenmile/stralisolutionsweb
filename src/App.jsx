@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Impressum from './components/Impressum';
+import ITAssessment from './components/ITAssessment';
 import ChatWidget from './components/ChatWidget';
 import { LanguageProvider } from './context/LanguageContext';
 import { Helmet } from 'react-helmet-async';
@@ -129,6 +130,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Homepage isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
               <Route path="/impressum" element={<Impressum />} />
+              <Route path="/assessment" element={<ITAssessment />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>

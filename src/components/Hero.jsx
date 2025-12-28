@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const Hero = () => {
   const { translations } = useLanguage();
+  const navigate = useNavigate();
 
   return (
     <motion.section
@@ -30,20 +32,32 @@ const Hero = () => {
         >
           {translations.hero.tagline}
         </motion.p>
-        <motion.a
-          href="#kontakt"
-          className="inline-flex items-center gap-2 btn-primary px-8 py-4 rounded-xl font-semibold text-sm md:text-base"
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
         >
-          {translations.hero.contactButton}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </motion.a>
+          <motion.button
+            onClick={() => navigate('/assessment')}
+            className="inline-flex items-center gap-2 btn-primary px-8 py-4 rounded-xl font-semibold text-sm md:text-base"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {translations.hero.assessmentButton}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </motion.button>
+          <motion.a
+            href="#kontakt"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm md:text-base border border-[var(--border)] text-[var(--text-muted)] hover:text-white hover:border-[var(--primary)] transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {translations.hero.contactButton}
+          </motion.a>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}

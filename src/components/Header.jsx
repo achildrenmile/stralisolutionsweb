@@ -15,6 +15,11 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
     { name: translations.nav.contact, href: 'kontakt' }
   ];
 
+  const handleAssessmentClick = () => {
+    navigate('/assessment');
+    setIsMenuOpen(false);
+  };
+
   const handleNavigation = (href) => {
     if (location.pathname === '/impressum') {
       navigate('/');
@@ -86,6 +91,14 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
                 {item.name}
               </motion.button>
             ))}
+            <motion.button
+              onClick={handleAssessmentClick}
+              className="btn-primary px-4 py-2 rounded-lg text-sm lg:text-base font-medium"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {translations.nav.assessment}
+            </motion.button>
             <LanguageSwitcher />
           </div>
 
@@ -122,6 +135,12 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
                     {item.name}
                   </button>
                 ))}
+                <button
+                  onClick={handleAssessmentClick}
+                  className="btn-primary py-2 px-3 rounded-lg text-sm text-center font-medium"
+                >
+                  {translations.nav.assessment}
+                </button>
                 <div className="pt-2">
                   <LanguageSwitcher />
                 </div>
