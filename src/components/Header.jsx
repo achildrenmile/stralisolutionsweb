@@ -21,15 +21,11 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   };
 
   const handleNavigation = (href) => {
-    if (location.pathname === '/impressum') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(href);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+    if (location.pathname !== '/') {
+      // Navigate to homepage first, then scroll to section
+      navigate('/', { state: { scrollTo: href } });
     } else {
+      // Already on homepage, just scroll
       const element = document.getElementById(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -52,7 +48,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
             className="block h-10 md:h-12"
             whileHover={{ scale: 1.02 }}
             onClick={(e) => {
-              if (location.pathname === '/impressum') {
+              if (location.pathname !== '/') {
                 e.preventDefault();
                 navigate('/');
               }
