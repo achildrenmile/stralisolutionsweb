@@ -94,17 +94,98 @@ export const translations = {
     imprint: {
       title: 'Impressum',
       companyInfo: {
-        title: 'Informationspflicht laut §5 E-Commerce Gesetz',
+        title: 'Informationspflicht laut §5 E-Commerce Gesetz, §14 UGB',
         name: 'Strali Solutions e.U.',
-        owner: 'Inhaber: Ing. Michael Linder',
-        address: 'Nötsch 219, 9611 Nötsch im Gailtal'
+        owner: 'Inhaber',
+        ownerName: 'Ing. Michael Linder',
+        address: 'Nötsch 219',
+        postalCode: '9611 Nötsch im Gailtal',
+        country: 'Österreich'
+      },
+      contact: {
+        title: 'Kontakt',
+        phone: 'Telefon',
+        email: 'E-Mail'
       },
       details: {
         title: 'Unternehmensdetails',
-        registration: 'Firmenbuchnummer: 474736t',
-        court: 'Firmenbuchgericht: Landesgericht Klagenfurt',
-        vatId: 'UID-Nummer: ATU72580414',
-        dvrNumber: 'DVR-Nummer: 4018687'
+        registration: 'Firmenbuchnummer',
+        court: 'Firmenbuchgericht',
+        courtValue: 'Landesgericht Klagenfurt',
+        vatId: 'UID-Nummer',
+        businessPurpose: 'Unternehmensgegenstand',
+        businessPurposeValue: 'IT-Dienstleistungen, IT-Beratung, Softwareentwicklung'
+      },
+      trade: {
+        title: 'Gewerbeberechtigung',
+        license: 'Gewerbeberechtigung',
+        licenseValue: 'Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik',
+        authority: 'Aufsichtsbehörde/Gewerbebehörde',
+        authorityValue: 'Bezirkshauptmannschaft Villach-Land',
+        regulation: 'Berufsrecht',
+        regulationValue: 'Gewerbeordnung',
+        regulationLink: 'www.ris.bka.gv.at'
+      },
+      membership: {
+        title: 'Kammerzugehörigkeit',
+        member: 'Mitglied der Wirtschaftskammer Kärnten',
+        profession: 'Fachgruppe UBIT (Unternehmensberatung, Buchhaltung und Informationstechnologie)'
+      },
+      odr: {
+        title: 'Online-Streitbeilegung',
+        text: 'Verbraucher haben die Möglichkeit, Beschwerden an die Online-Streitbeilegungsplattform der EU zu richten:',
+        note: 'Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.'
+      },
+      booking: {
+        title: 'Buchungsservice (Microsoft Bookings)',
+        text: 'Für die Terminbuchung nutzen wir Microsoft Bookings, einen Dienst der Microsoft Corporation.',
+        dataCollected: 'Erhobene Daten',
+        dataCollectedList: [
+          'Name und Kontaktdaten (E-Mail, optional Telefonnummer)',
+          'Gewählter Termin und Zeitpunkt',
+          'Optionale Nachricht/Anmerkungen'
+        ],
+        processor: 'Auftragsverarbeiter',
+        processorText: 'Microsoft Corporation, One Microsoft Way, Redmond, WA 98052, USA. Microsoft verarbeitet die Daten in unserem Auftrag gemäß Art. 28 DSGVO.',
+        transfer: 'Datenübermittlung',
+        transferText: 'Die Daten werden auf Servern von Microsoft verarbeitet. Microsoft ist unter dem EU-U.S. Data Privacy Framework zertifiziert, was ein angemessenes Datenschutzniveau gewährleistet.',
+        legal: 'Rechtsgrundlage',
+        legalText: 'Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO) bzw. aufgrund Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).',
+        retention: 'Speicherdauer',
+        retentionText: 'Ihre Buchungsdaten werden nach Durchführung des Termins bzw. bei Nichterscheinen gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.',
+        terms: 'Bedingungen',
+        termsList: [
+          'Das kostenlose IT-Assessment ist vollständig kostenlos und unverbindlich',
+          'Bei Verhinderung bitten wir um rechtzeitige Absage'
+        ],
+        microsoftPrivacy: 'Microsoft Datenschutzerklärung',
+        microsoftPrivacyLink: 'https://privacy.microsoft.com/de-de/privacystatement'
+      },
+      privacy: {
+        title: 'Datenschutzerklärung',
+        intro: 'Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen.',
+        dataCollection: 'Datenerfassung',
+        dataCollectionText: 'Die Nutzung unserer Webseite ist grundsätzlich ohne Angabe personenbezogener Daten möglich. Soweit personenbezogene Daten erhoben werden, erfolgt dies auf freiwilliger Basis.',
+        cookies: 'Cookies',
+        cookiesText: 'Unsere Webseite verwendet Cookies. Bei Cookies handelt es sich um Textdateien, die im Internetbrowser bzw. vom Internetbrowser auf dem Computersystem des Nutzers gespeichert werden. Sie können Ihre Cookie-Einstellungen jederzeit über unseren Cookie-Banner anpassen.',
+        rights: 'Ihre Rechte',
+        rightsText: 'Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit.',
+        contact: 'Bei Fragen zum Datenschutz kontaktieren Sie uns unter:'
+      },
+      disclaimer: {
+        title: 'Haftungsausschluss',
+        content: {
+          title: '1. Inhalt des Onlineangebotes',
+          text: 'Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen.'
+        },
+        links: {
+          title: '2. Verweise und Links',
+          text: 'Bei direkten oder indirekten Verweisen auf fremde Webseiten ("Hyperlinks"), die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern.'
+        },
+        copyright: {
+          title: '3. Urheber- und Kennzeichenrecht',
+          text: 'Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten. Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer.'
+        }
       }
     },
     assessment: {
@@ -135,7 +216,8 @@ export const translations = {
       expert: 'Ihr Ansprechpartner',
       expertValue: 'Michael Linder',
       ctaTitle: 'Bereit für den nächsten Schritt?',
-      ctaSubtitle: 'Vereinbaren Sie jetzt Ihr kostenloses IT-Assessment und entdecken Sie das Potenzial Ihrer IT.'
+      ctaSubtitle: 'Vereinbaren Sie jetzt Ihr kostenloses IT-Assessment und entdecken Sie das Potenzial Ihrer IT.',
+      redirectNote: 'Sie werden zu Microsoft Bookings weitergeleitet'
     },
     cookies: {
       title: 'Cookie-Einstellungen',
@@ -229,19 +311,100 @@ export const translations = {
       imprint: 'Imprint'
     },
     imprint: {
-      title: 'Imprint',
+      title: 'Legal Notice',
       companyInfo: {
-        title: 'Information according to §5 E-Commerce Law',
+        title: 'Information according to §5 Austrian E-Commerce Act, §14 UGB',
         name: 'Strali Solutions e.U.',
-        owner: 'Owner: Ing. Michael Linder',
-        address: 'Nötsch 219, 9611 Nötsch im Gailtal'
+        owner: 'Owner',
+        ownerName: 'Ing. Michael Linder',
+        address: 'Nötsch 219',
+        postalCode: '9611 Nötsch im Gailtal',
+        country: 'Austria'
+      },
+      contact: {
+        title: 'Contact',
+        phone: 'Phone',
+        email: 'Email'
       },
       details: {
         title: 'Company Details',
-        registration: 'Company Registration Number: 474736t',
-        court: 'Commercial Register Court: Regional Court Klagenfurt',
-        vatId: 'VAT ID: ATU72580414',
-        dvrNumber: 'DVR Number: 4018687'
+        registration: 'Company Registration Number',
+        court: 'Commercial Register Court',
+        courtValue: 'Regional Court Klagenfurt',
+        vatId: 'VAT ID',
+        businessPurpose: 'Business Purpose',
+        businessPurposeValue: 'IT Services, IT Consulting, Software Development'
+      },
+      trade: {
+        title: 'Trade License',
+        license: 'Trade License',
+        licenseValue: 'Services in automatic data processing and information technology',
+        authority: 'Supervisory Authority',
+        authorityValue: 'District Authority Villach-Land',
+        regulation: 'Professional Regulations',
+        regulationValue: 'Austrian Trade Regulation Act (Gewerbeordnung)',
+        regulationLink: 'www.ris.bka.gv.at'
+      },
+      membership: {
+        title: 'Chamber Membership',
+        member: 'Member of the Austrian Economic Chamber Carinthia',
+        profession: 'Professional Group UBIT (Business Consulting, Accounting and Information Technology)'
+      },
+      odr: {
+        title: 'Online Dispute Resolution',
+        text: 'Consumers have the option to submit complaints to the EU online dispute resolution platform:',
+        note: 'We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.'
+      },
+      booking: {
+        title: 'Booking Service (Microsoft Bookings)',
+        text: 'We use Microsoft Bookings, a service provided by Microsoft Corporation, for appointment scheduling.',
+        dataCollected: 'Data Collected',
+        dataCollectedList: [
+          'Name and contact details (email, optionally phone number)',
+          'Selected appointment date and time',
+          'Optional message/notes'
+        ],
+        processor: 'Data Processor',
+        processorText: 'Microsoft Corporation, One Microsoft Way, Redmond, WA 98052, USA. Microsoft processes data on our behalf in accordance with Art. 28 GDPR.',
+        transfer: 'Data Transfer',
+        transferText: 'Data is processed on Microsoft servers. Microsoft is certified under the EU-U.S. Data Privacy Framework, ensuring an adequate level of data protection.',
+        legal: 'Legal Basis',
+        legalText: 'Processing is carried out for the performance of pre-contractual measures (Art. 6(1)(b) GDPR) or based on your consent (Art. 6(1)(a) GDPR).',
+        retention: 'Data Retention',
+        retentionText: 'Your booking data will be deleted after the appointment is conducted or in case of no-show, unless legal retention obligations apply.',
+        terms: 'Terms',
+        termsList: [
+          'The free IT assessment is completely free and non-binding',
+          'Please cancel in advance if you are unable to attend'
+        ],
+        microsoftPrivacy: 'Microsoft Privacy Statement',
+        microsoftPrivacyLink: 'https://privacy.microsoft.com/en-us/privacystatement'
+      },
+      privacy: {
+        title: 'Privacy Policy',
+        intro: 'The protection of your personal data is of particular concern to us.',
+        dataCollection: 'Data Collection',
+        dataCollectionText: 'The use of our website is generally possible without providing personal data. Insofar as personal data is collected, this is done on a voluntary basis.',
+        cookies: 'Cookies',
+        cookiesText: 'Our website uses cookies. Cookies are text files that are stored in the internet browser or by the internet browser on the user\'s computer system. You can adjust your cookie settings at any time via our cookie banner.',
+        rights: 'Your Rights',
+        rightsText: 'You have the right to information, correction, deletion and restriction of the processing of your personal data at any time, as well as the right to data portability.',
+        contact: 'For questions about data protection, please contact us at:'
+      },
+      disclaimer: {
+        title: 'Disclaimer',
+        content: {
+          title: '1. Content of the Online Offer',
+          text: 'The author assumes no liability for the timeliness, correctness, completeness or quality of the information provided. Liability claims against the author relating to material or immaterial damage caused by the use or non-use of the information provided or by the use of incorrect and incomplete information are fundamentally excluded.'
+        },
+        links: {
+          title: '2. References and Links',
+          text: 'In the case of direct or indirect references to external websites ("hyperlinks") that lie outside the author\'s area of responsibility, a liability obligation would only come into force if the author had knowledge of the content and it would be technically possible and reasonable for them to prevent use in the case of illegal content.'
+        },
+        copyright: {
+          title: '3. Copyright and Trademark Law',
+          text: 'The author endeavors to observe the copyrights of the images, graphics, sound documents, video sequences and texts used in all publications. All brand names and trademarks mentioned within the website and possibly protected by third parties are subject without restriction to the provisions of the applicable trademark law and the ownership rights of the respective registered owners.'
+        }
       }
     },
     assessment: {
@@ -272,7 +435,8 @@ export const translations = {
       expert: 'Your Contact',
       expertValue: 'Michael Linder',
       ctaTitle: 'Ready for the Next Step?',
-      ctaSubtitle: 'Schedule your free IT assessment now and discover your IT potential.'
+      ctaSubtitle: 'Schedule your free IT assessment now and discover your IT potential.',
+      redirectNote: 'You will be redirected to Microsoft Bookings'
     },
     cookies: {
       title: 'Cookie Settings',

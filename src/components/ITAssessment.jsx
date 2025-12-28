@@ -44,6 +44,7 @@ const ITAssessment = () => {
               <line x1="10" y1="14" x2="21" y2="3"/>
             </svg>
           </motion.a>
+          <p className="text-gray-500 text-sm mt-3">{t.redirectNote}</p>
         </motion.div>
 
         {/* Benefits & Info Grid */}
@@ -147,6 +148,7 @@ const ITAssessment = () => {
                 <line x1="10" y1="14" x2="21" y2="3"/>
               </svg>
             </motion.a>
+            <p className="text-gray-500 text-sm mt-3">{t.redirectNote}</p>
           </div>
         </motion.div>
       </div>

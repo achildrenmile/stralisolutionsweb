@@ -112,6 +112,24 @@ Corporate website for Strali Solutions e.U., an IT consulting company based in C
   - Checkmarks: `Check`
 - Icon styling: `--accent` color, 40px (services) / 32px (assessment cards)
 
+### Impressum/Legal Notice Update (Dec 2025)
+- Full Austrian law compliance (§5 ECG, §14 UGB, DSGVO/GDPR)
+- **Sections:**
+  - Company info with full address and country
+  - Contact details (phone, email)
+  - Company details (Firmenbuchnummer, court, VAT ID, business purpose)
+  - Trade license (Gewerbeberechtigung, supervisory authority BH Villach-Land)
+  - Chamber membership (WKO Kärnten, Fachgruppe UBIT)
+  - Online dispute resolution (EU ODR platform)
+  - **Microsoft Bookings disclosure** (DSGVO-compliant):
+    - Data collected, data processor, data transfer (EU-US DPF)
+    - Legal basis (Art. 6 GDPR), retention period
+    - Link to Microsoft Privacy Statement
+  - Privacy policy (data collection, cookies, user rights)
+  - Disclaimer (content, links, copyright)
+- **IT Assessment page:** Redirect note below booking buttons
+- Full DE/EN translations in `LanguageContext.jsx`
+
 ## Commands
 ```bash
 # Local development
