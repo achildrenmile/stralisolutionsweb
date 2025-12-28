@@ -75,7 +75,7 @@ export const translations = {
       message: 'Nachricht',
       send: 'Nachricht senden',
       copied: 'Email-Adresse wurde in die Zwischenablage kopiert!',
-      address: 'Nötsch 55, A-9611 Nötsch im Gailtal'
+      address: 'Nötsch 219, A-9611 Nötsch im Gailtal'
     },
     chat: {
       ready: 'Bereit um das Beste aus Ihrer IT herauszuholen?',
@@ -95,7 +95,7 @@ export const translations = {
         title: 'Informationspflicht laut §5 E-Commerce Gesetz',
         name: 'Strali Solutions e.U.',
         owner: 'Inhaber: Ing. Michael Linder, MSc',
-        address: 'Nötsch 55, 9611 Nötsch im Gailtal'
+        address: 'Nötsch 219, 9611 Nötsch im Gailtal'
       },
       details: {
         title: 'Unternehmensdetails',
@@ -163,7 +163,7 @@ export const translations = {
       message: 'Message',
       send: 'Send Message',
       copied: 'Email address copied to clipboard!',
-      address: 'Nötsch 55, A-9611 Nötsch im Gailtal'
+      address: 'Nötsch 219, A-9611 Nötsch im Gailtal'
     },
     chat: {
       ready: 'Ready to get the best out of your IT?',
@@ -183,7 +183,7 @@ export const translations = {
         title: 'Information according to §5 E-Commerce Law',
         name: 'Strali Solutions e.U.',
         owner: 'Owner: Ing. Michael Linder, MSc',
-        address: 'Nötsch 55, 9611 Nötsch im Gailtal'
+        address: 'Nötsch 219, 9611 Nötsch im Gailtal'
       },
       details: {
         title: 'Company Details',

@@ -49,7 +49,7 @@ const Contact = () => {
             <div className="mb-8 space-y-4">
               <div className="flex items-center space-x-3 text-[var(--text-muted)]">
                 <MapPin className="w-5 h-5 text-[var(--primary-light)]" />
-                <span>Nötsch 55, A-9611 Nötsch im Gailtal</span>
+                <span>Nötsch 219, A-9611 Nötsch im Gailtal</span>
               </div>
 
               <div className="flex items-center space-x-3 text-[var(--text-muted)]">

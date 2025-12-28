@@ -17,7 +17,7 @@ const Impressum = () => {
             <div className="space-y-2 text-[var(--text-muted)]">
               <p><strong className="text-white">Strali Solutions e.U.</strong></p>
               <p>{translations.imprint.companyInfo.owner}</p>
-              <p>Nötsch 55, 9611 Nötsch im Gailtal</p>
+              <p>Nötsch 219, 9611 Nötsch im Gailtal</p>
             </div>
           </section>
 
