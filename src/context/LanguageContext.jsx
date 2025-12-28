@@ -42,32 +42,32 @@ export const translations = {
         {
           title: 'IT Consulting: Ihr Weg zur optimalen IT',
           description: 'Ein objektiver Blick auf Ihre Unternehmens-IT deckt verborgene Optimierungspotenziale auf. Wir unterstützen Sie mit maßgeschneiderten Lösungen und modernen Projektmanagementansätzen, um Ihre IT-Infrastruktur zu verbessern und effizient umzusetzen – für eine zukunftssichere und leistungsstarke IT.',
-          icon: '💡'
+          icon: 'Lightbulb'
         },
         {
           title: 'Microsoft 365 & Copilot: Produktivität neu definiert',
           description: 'Nutzen Sie das volle Potenzial von Microsoft 365: Teams für Kommunikation, SharePoint und OneDrive für Dokumentenmanagement, Planner für Aufgabenverwaltung und Power Platform für Automatisierung. Mit Microsoft Copilot bringen Sie KI-gestützte Assistenz direkt in Ihre tägliche Arbeit – von intelligenter Dokumentenerstellung bis zur automatisierten Datenanalyse. Wir begleiten Sie bei Analyse, Integration und Schulung.',
-          icon: '🚀'
+          icon: 'Cloud'
         },
         {
           title: 'Digitalisierung: Wir helfen Ihnen mit KI und Prozessdigitalisierung',
           description: 'Wir helfen Ihnen, die Potenziale von Künstlicher Intelligenz (KI) und Prozessdigitalisierung optimal zu nutzen. KI ermöglicht intelligente Automatisierung, prädiktive Analysen und personalisierte Lösungen, während Cloud-Technologien eine nahtlose Zusammenarbeit und effiziente Abläufe sicherstellen. Gemeinsam schaffen wir zukunftssichere Prozesse, die Ihre Effizienz steigern und Ihre Innovationskraft fördern.',
-          icon: '📈'
+          icon: 'TrendingUp'
         },
         {
           title: 'Software Engineering',
           description: 'Moderne Softwareentwicklung setzt auf KI-gestützte Ansätze, effiziente Prozesse, automatisierte Tests und DevOps-Methoden. Wir entwickeln intelligente, skalierbare Lösungen, die Qualität und Innovation vereinen – für zukunftssicheren Erfolg.',
-          icon: '⚙️'
+          icon: 'Code'
         },
         {
           title: 'Software- und Systemarchitektur: Stabil und zukunftssicher',
           description: 'Eine durchdachte Software- und Systemarchitektur ist entscheidend für den Erfolg. Neben der Erhebung funktionaler und nicht-funktionaler Anforderungen stellen wir sicher, dass Architekturaspekte wie Skalierbarkeit, Sicherheit und Performance konsequent eingehalten werden – für nachhaltige Lösungen.',
-          icon: '🏗️'
+          icon: 'Blocks'
         },
         {
           title: 'Projektmanagement: Effizient, strategisch und menschlich',
           description: 'Teamkonflikte gehören zu den häufigsten Risiken für Projekte und Zeitpläne. Wir unterstützen Sie dabei, Ihre Projekte und Ressourcen optimal zu nutzen – nicht nur auf strategischer Ebene, sondern auch durch die Identifikation und Lösung zwischenmenschlicher Herausforderungen. Mit klarer Planung, agilen Methoden und einem Fokus auf Zusammenarbeit schaffen wir ein Umfeld, das Vertrauen und Effizienz fördert. So gewährleisten wir, dass Ihre Projekte termingerecht, hochwertig und nachhaltig umgesetzt werden – für Lösungen, die Menschen und Ziele verbinden.',
-          icon: '🤝'
+          icon: 'Users'
         }
       ]
     },
@@ -96,7 +96,7 @@ export const translations = {
       companyInfo: {
         title: 'Informationspflicht laut §5 E-Commerce Gesetz',
         name: 'Strali Solutions e.U.',
-        owner: 'Inhaber: Ing. Michael Linder, MSc',
+        owner: 'Inhaber: Ing. Michael Linder',
         address: 'Nötsch 219, 9611 Nötsch im Gailtal'
       },
       details: {
@@ -133,7 +133,7 @@ export const translations = {
       location: 'Ort',
       locationValue: 'Online oder vor Ort',
       expert: 'Ihr Ansprechpartner',
-      expertValue: 'Michael Linder, MSc',
+      expertValue: 'Michael Linder',
       ctaTitle: 'Bereit für den nächsten Schritt?',
       ctaSubtitle: 'Vereinbaren Sie jetzt Ihr kostenloses IT-Assessment und entdecken Sie das Potenzial Ihrer IT.'
     },
@@ -179,32 +179,32 @@ export const translations = {
         {
           title: 'IT Consulting: Your Path to Optimal IT',
           description: 'An objective look at your corporate IT reveals hidden optimization potential. We support you with tailored solutions and modern project management approaches to improve and efficiently implement your IT infrastructure – for future-proof and powerful IT.',
-          icon: '💡'
+          icon: 'Lightbulb'
         },
         {
           title: 'Microsoft 365 & Copilot: Productivity Redefined',
           description: 'Unlock the full potential of Microsoft 365: Teams for communication, SharePoint and OneDrive for document management, Planner for task management, and Power Platform for automation. With Microsoft Copilot, bring AI-powered assistance directly into your daily work – from intelligent document creation to automated data analysis. We guide you through analysis, integration, and training.',
-          icon: '🚀'
+          icon: 'Cloud'
         },
         {
           title: 'Digitalization: We Help You with AI and Process Digitalization',
           description: 'We help you optimally leverage the potential of Artificial Intelligence (AI) and process digitalization. AI enables intelligent automation, predictive analytics, and personalized solutions, while cloud technologies ensure seamless collaboration and efficient workflows. Together, we create future-proof processes that increase your efficiency and promote innovation.',
-          icon: '📈'
+          icon: 'TrendingUp'
         },
         {
           title: 'Software Engineering',
           description: 'Modern software development relies on AI-supported approaches, efficient processes, automated testing, and DevOps methods. We develop intelligent, scalable solutions that combine quality and innovation – for future-proof success.',
-          icon: '⚙️'
+          icon: 'Code'
         },
         {
           title: 'Software and System Architecture: Stable and Future-Proof',
           description: 'A well-thought-out software and system architecture is crucial for success. In addition to gathering functional and non-functional requirements, we ensure that architectural aspects such as scalability, security, and performance are consistently maintained – for sustainable solutions.',
-          icon: '🏗️'
+          icon: 'Blocks'
         },
         {
           title: 'Project Management: Efficient, Strategic, and Human',
           description: 'Team conflicts are among the most common risks for projects and schedules. We support you in optimally utilizing your projects and resources – not only at a strategic level but also through the identification and resolution of interpersonal challenges. With clear planning, agile methods, and a focus on collaboration, we create an environment that promotes trust and efficiency. This ensures that your projects are implemented on time, with high quality and sustainability – for solutions that connect people and goals.',
-          icon: '🤝'
+          icon: 'Users'
         }
       ]
     },
@@ -233,7 +233,7 @@ export const translations = {
       companyInfo: {
         title: 'Information according to §5 E-Commerce Law',
         name: 'Strali Solutions e.U.',
-        owner: 'Owner: Ing. Michael Linder, MSc',
+        owner: 'Owner: Ing. Michael Linder',
         address: 'Nötsch 219, 9611 Nötsch im Gailtal'
       },
       details: {
@@ -270,7 +270,7 @@ export const translations = {
       location: 'Location',
       locationValue: 'Online or on-site',
       expert: 'Your Contact',
-      expertValue: 'Michael Linder, MSc',
+      expertValue: 'Michael Linder',
       ctaTitle: 'Ready for the Next Step?',
       ctaSubtitle: 'Schedule your free IT assessment now and discover your IT potential.'
     },

@@ -101,7 +101,7 @@ For questions or support regarding this website, contact:
 ## Legal
 
 - Company: Strali Solutions e.U.
-- Owner: Ing. Michael Linder, MSc
+- Owner: Ing. Michael Linder
 - Address: Nötsch 55, 9611 Nötsch im Gailtal, Austria
 - Commercial Register: 474736t
 - Court of Registration: Landesgericht Klagenfurt

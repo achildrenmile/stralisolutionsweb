@@ -1,6 +1,16 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '../context/LanguageContext';
+import { Lightbulb, Cloud, TrendingUp, Code, Blocks, Users } from 'lucide-react';
+
+const iconMap = {
+  Lightbulb,
+  Cloud,
+  TrendingUp,
+  Code,
+  Blocks,
+  Users
+};
 
 const Services = () => {
   const { translations } = useLanguage();
@@ -50,8 +60,11 @@ const Services = () => {
                 }
               }}
             >
-              <div className="text-4xl mb-4" role="img" aria-label={service.title}>
-                {service.icon}
+              <div className="mb-4 text-[var(--accent)]">
+                {iconMap[service.icon] && (() => {
+                  const IconComponent = iconMap[service.icon];
+                  return <IconComponent size={40} strokeWidth={1.5} />;
+                })()}
               </div>
               <h3 className="text-xl md:text-2xl font-semibold mb-4 text-white">
                 {service.title}

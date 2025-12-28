@@ -3,7 +3,7 @@
 ## Project Overview
 Corporate website for Strali Solutions e.U., an IT consulting company based in Carinthia, Austria.
 
-- **Owner:** Ing. Michael Linder, MSc
+- **Owner:** Ing. Michael Linder
 - **Location:** Nötsch 219, 9611 Nötsch im Gailtal
 - **Website:** https://strali.solutions
 - **Repository:** https://github.com/achildrenmile/stralisolutionsweb
@@ -94,6 +94,23 @@ Corporate website for Strali Solutions e.U., an IT consulting company based in C
   - Analytics (optional)
 - **Storage:** `localStorage.cookie-consent` with JSON object containing preferences and timestamp
 - **Reset:** Delete `cookie-consent` from localStorage to show banner again
+
+### Lucide Icons Update (Dec 2025)
+- Replaced emojis with professional Lucide React icons across the site
+- **Services.jsx** icons:
+  - IT Consulting: `Lightbulb`
+  - Microsoft 365 & Copilot: `Cloud`
+  - Digitalization: `TrendingUp`
+  - Software Engineering: `Code`
+  - System Architecture: `Blocks`
+  - Project Management: `Users`
+- **ITAssessment.jsx** icons:
+  - Duration: `Clock`
+  - Price: `Gift`
+  - Location: `MapPin`
+  - Expert: `User`
+  - Checkmarks: `Check`
+- Icon styling: `--accent` color, 40px (services) / 32px (assessment cards)
 
 ## Commands
 ```bash

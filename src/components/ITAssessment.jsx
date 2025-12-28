@@ -1,5 +1,6 @@
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
+import { Clock, Gift, MapPin, User, Check } from 'lucide-react';
 
 const ITAssessment = () => {
   const { translations } = useLanguage();
@@ -60,7 +61,7 @@ const ITAssessment = () => {
               <ul className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="text-green-400 mt-1 text-lg">✓</span>
+                    <Check className="text-green-400 mt-1 flex-shrink-0" size={20} strokeWidth={2.5} />
                     <span className="text-gray-300">{benefit}</span>
                   </li>
                 ))}
@@ -100,22 +101,22 @@ const ITAssessment = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
         >
           <div className="card-dark rounded-xl p-4 text-center">
-            <span className="text-3xl mb-2 block">🎯</span>
+            <Clock className="text-[var(--accent)] mx-auto mb-2" size={32} strokeWidth={1.5} />
             <p className="text-white font-semibold">{t.duration}</p>
             <p className="text-gray-400 text-sm">{t.durationValue}</p>
           </div>
           <div className="card-dark rounded-xl p-4 text-center">
-            <span className="text-3xl mb-2 block">💰</span>
+            <Gift className="text-[var(--accent)] mx-auto mb-2" size={32} strokeWidth={1.5} />
             <p className="text-white font-semibold">{t.price}</p>
             <p className="text-gray-400 text-sm">{t.priceValue}</p>
           </div>
           <div className="card-dark rounded-xl p-4 text-center">
-            <span className="text-3xl mb-2 block">📍</span>
+            <MapPin className="text-[var(--accent)] mx-auto mb-2" size={32} strokeWidth={1.5} />
             <p className="text-white font-semibold">{t.location}</p>
             <p className="text-gray-400 text-sm">{t.locationValue}</p>
           </div>
           <div className="card-dark rounded-xl p-4 text-center">
-            <span className="text-3xl mb-2 block">👤</span>
+            <User className="text-[var(--accent)] mx-auto mb-2" size={32} strokeWidth={1.5} />
             <p className="text-white font-semibold">{t.expert}</p>
             <p className="text-gray-400 text-sm">{t.expertValue}</p>
           </div>
