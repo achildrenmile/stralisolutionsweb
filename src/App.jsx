@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Impressum from './components/Impressum';
 import ITAssessment from './components/ITAssessment';
+import SelectedPublicWork from './components/SelectedPublicWork';
 import NotFound from './components/NotFound';
 import ChatWidget from './components/ChatWidget';
 import CookieConsent from './components/CookieConsent';
@@ -148,6 +149,7 @@ const Homepage = ({ isMenuOpen, setIsMenuOpen }) => {
       <Hero />
       <Services />
       <About />
+      <SelectedPublicWork />
       <Contact />
     </>
   );

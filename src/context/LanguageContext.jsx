@@ -219,6 +219,14 @@ export const translations = {
       ctaSubtitle: 'Vereinbaren Sie jetzt Ihr kostenloses IT-Assessment und entdecken Sie das Potenzial Ihrer IT.',
       redirectNote: 'Sie werden zu Microsoft Bookings weitergeleitet'
     },
+    publicWork: {
+      title: 'Ausgewählte Referenzen',
+      ndaTitle: 'Vertraulichkeit',
+      ndaText: 'Ein Großteil meiner Projekte unterliegt Geheimhaltungsvereinbarungen (NDA). Aus Respekt gegenüber meinen Kunden und deren Geschäftsgeheimnissen kann ich diese Arbeiten hier nicht im Detail präsentieren.',
+      linkedinTitle: 'Berufliches Profil',
+      linkedinText: 'Auf meinem LinkedIn-Profil finden Sie weitere Informationen zu meiner beruflichen Laufbahn, Qualifikationen und Empfehlungen von Geschäftspartnern.',
+      linkedinButton: 'LinkedIn Profil ansehen'
+    },
     cookies: {
       title: 'Cookie-Einstellungen',
       description: 'Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Sie können wählen, welche Cookies Sie zulassen möchten.',
@@ -437,6 +445,14 @@ export const translations = {
       ctaTitle: 'Ready for the Next Step?',
       ctaSubtitle: 'Schedule your free IT assessment now and discover your IT potential.',
       redirectNote: 'You will be redirected to Microsoft Bookings'
+    },
+    publicWork: {
+      title: 'Selected Public Work',
+      ndaTitle: 'Confidentiality',
+      ndaText: 'The majority of my projects are subject to non-disclosure agreements (NDA). Out of respect for my clients and their business interests, I cannot present these works in detail here.',
+      linkedinTitle: 'Professional Profile',
+      linkedinText: 'On my LinkedIn profile you will find further information about my professional background, qualifications and recommendations from business partners.',
+      linkedinButton: 'View LinkedIn Profile'
     },
     cookies: {
       title: 'Cookie Settings',
