@@ -28,6 +28,7 @@ export const translations = {
     hero: {
       welcome: 'Willkommen bei Strali Solutions',
       tagline: 'Schnell. Direkt. Unkompliziert.',
+      subline: 'Wir bringen Klarheit in komplexe IT-Entscheidungen – durch Assessment, Struktur und die richtigen Werkzeuge.',
       contactButton: 'Kontakt aufnehmen',
       assessmentButton: 'Kostenloses IT-Assessment'
     },
@@ -264,6 +265,7 @@ export const translations = {
     hero: {
       welcome: 'Welcome to Strali Solutions',
       tagline: 'Fast. Direct. Uncomplicated.',
+      subline: 'Bringing clarity to complex IT decisions — through assessment, structure, and tooling.',
       contactButton: 'Get in Touch',
       assessmentButton: 'Free IT Assessment'
     },

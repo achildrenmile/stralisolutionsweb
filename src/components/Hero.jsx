@@ -25,12 +25,20 @@ const Hero = () => {
           {translations.hero.welcome.split('Strali Solutions')[1] || ''}
         </motion.h1>
         <motion.p
-          className="text-xl md:text-2xl mb-8 text-[var(--accent-light)] font-medium"
+          className="text-xl md:text-2xl mb-4 text-[var(--accent-light)] font-medium"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
           {translations.hero.tagline}
+        </motion.p>
+        <motion.p
+          className="text-base md:text-lg mb-8 text-[var(--text-muted)] max-w-2xl mx-auto"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          {translations.hero.subline}
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
