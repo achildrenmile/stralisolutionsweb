@@ -223,8 +223,8 @@ export const translations = {
       title: 'Ausgewählte Referenzen',
       ndaTitle: 'Vertraulichkeit',
       ndaText: 'Ein Großteil meiner Projekte unterliegt Geheimhaltungsvereinbarungen (NDA). Aus Respekt gegenüber meinen Kunden und deren Geschäftsgeheimnissen kann ich diese Arbeiten hier nicht im Detail präsentieren.',
-      linkedinTitle: 'Berufliches Profil',
-      linkedinText: 'Auf meinem LinkedIn-Profil finden Sie weitere Informationen zu meiner beruflichen Laufbahn, Qualifikationen und Empfehlungen von Geschäftspartnern.',
+      linkedinTitle: 'Beruflicher Hintergrund (LinkedIn)',
+      linkedinText: 'Das LinkedIn-Profil dient als öffentliche Referenz für den beruflichen Hintergrund hinter strali.solutions. Aufgrund von NDA-Verpflichtungen können detaillierte Beschreibungen von Kundenprojekten nicht öffentlich geteilt werden. Das Profil gibt einen Überblick über Erfahrungen in Software-Architektur, IT-Consulting, technischer Führung und Enterprise-Umgebungen.',
       linkedinButton: 'LinkedIn Profil ansehen'
     },
     cookies: {
@@ -450,8 +450,8 @@ export const translations = {
       title: 'Selected Public Work',
       ndaTitle: 'Confidentiality',
       ndaText: 'The majority of my projects are subject to non-disclosure agreements (NDA). Out of respect for my clients and their business interests, I cannot present these works in detail here.',
-      linkedinTitle: 'Professional Profile',
-      linkedinText: 'On my LinkedIn profile you will find further information about my professional background, qualifications and recommendations from business partners.',
+      linkedinTitle: 'Professional Background (LinkedIn)',
+      linkedinText: 'The LinkedIn profile serves as a public reference for the professional background behind strali.solutions. Due to NDA obligations, detailed descriptions of client engagements and projects cannot be shared publicly. The profile outlines experience in software architecture, IT consulting, technical leadership, and enterprise environments.',
       linkedinButton: 'View LinkedIn Profile'
     },
     cookies: {
