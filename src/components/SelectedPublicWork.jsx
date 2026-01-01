@@ -84,6 +84,14 @@ const SelectedPublicWork = () => {
                 <p className="text-[var(--text-muted)] leading-relaxed mb-4">
                   {translations.publicWork.projectHighlights}
                 </p>
+                <div className="bg-[var(--bg-card)] border border-[var(--accent)]/30 rounded-lg p-4 mb-4">
+                  <p className="text-[var(--accent)] font-medium mb-1">
+                    {translations.publicWork.projectDemoInfo}
+                  </p>
+                  <p className="text-sm text-[var(--text-muted)]">
+                    {translations.publicWork.projectDemoNotice}
+                  </p>
+                </div>
                 <p className="text-sm text-[var(--text-muted)] italic mb-4">
                   {translations.publicWork.projectDisclaimer}
                 </p>
