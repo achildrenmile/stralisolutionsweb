@@ -47,7 +47,7 @@ const Services = () => {
           }}
         >
           {translations.services.items.map((service, index) => (
-            <motion.div
+            <motion.article
               key={index}
               className="card-dark rounded-2xl p-8 flex flex-col h-full"
               variants={{
@@ -73,7 +73,7 @@ const Services = () => {
               <p className="text-[var(--text-muted)] text-base md:text-lg flex-grow leading-relaxed">
                 {service.description}
               </p>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
 

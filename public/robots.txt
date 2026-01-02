@@ -2,4 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
+# Sitemap
 Sitemap: https://strali.solutions/sitemap.xml
+
+# AI/LLM information file
+# See https://strali.solutions/llms.txt for structured company information

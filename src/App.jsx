@@ -79,6 +79,97 @@ const serviceSchema = {
   }
 };
 
+// WebSite schema for search engines
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://strali.solutions/#website',
+  name: 'Strali Solutions',
+  url: 'https://strali.solutions',
+  publisher: {
+    '@id': 'https://strali.solutions/#business'
+  },
+  inLanguage: ['de-AT', 'en'],
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://strali.solutions/?q={search_term_string}',
+    'query-input': 'required name=search_term_string'
+  }
+};
+
+// Organization schema with enhanced details
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://strali.solutions/#organization',
+  name: 'Strali Solutions e.U.',
+  legalName: 'Strali Solutions e.U.',
+  url: 'https://strali.solutions',
+  logo: 'https://strali.solutions/android-chrome-512x512.png',
+  foundingDate: '2017',
+  founder: {
+    '@type': 'Person',
+    name: 'Ing. Michael Linder, MSc.',
+    jobTitle: 'Founder & IT Consultant'
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Nötsch 219',
+    addressLocality: 'Nötsch im Gailtal',
+    postalCode: '9611',
+    addressCountry: 'AT'
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+43-676-9658016',
+    email: 'office@strali.solutions',
+    contactType: 'customer service',
+    availableLanguage: ['German', 'English']
+  },
+  knowsAbout: [
+    'IT Consulting',
+    'Microsoft 365',
+    'Microsoft Copilot',
+    'Software Architecture',
+    'Digital Transformation',
+    'Project Management',
+    'Security by Design',
+    'AI Security'
+  ]
+};
+
+// FAQ schema for common questions
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Was ist ein IT-Assessment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ein IT-Assessment ist eine kostenlose, unverbindliche Analyse Ihrer aktuellen IT-Infrastruktur. Wir identifizieren Optimierungspotenziale und geben individuelle Handlungsempfehlungen für Ihr Unternehmen.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Welche Dienstleistungen bietet Strali Solutions an?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Wir bieten IT Consulting, Microsoft 365 & Copilot Beratung, Digitalisierung, Security-by-Design, Software Engineering & Architektur sowie Projektmanagement für Unternehmen in Österreich.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Wo befindet sich Strali Solutions?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Strali Solutions e.U. hat seinen Sitz in Nötsch im Gailtal, Kärnten, Österreich. Wir betreuen Kunden in ganz Österreich, sowohl vor Ort als auch remote.'
+      }
+    }
+  ]
+};
+
 // SEO Component with Schema.org structured data
 const SEO = ({
   title,
@@ -96,6 +187,11 @@ const SEO = ({
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
+    {/* Language alternates (hreflang) */}
+    <link rel="alternate" hrefLang="de" href={canonical} />
+    <link rel="alternate" hrefLang="en" href={canonical} />
+    <link rel="alternate" hrefLang="x-default" href={canonical} />
+
     {/* OpenGraph / Facebook */}
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content={siteConfig.siteName} />
@@ -103,6 +199,8 @@ const SEO = ({
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content={locale} />
     <meta property="og:locale:alternate" content={locale === 'de_AT' ? 'en_US' : 'de_AT'} />
 
@@ -111,6 +209,10 @@ const SEO = ({
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
+
+    {/* Additional SEO meta tags */}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
 
     {/* Structured Data */}
     {structuredData && (
@@ -123,7 +225,7 @@ const SEO = ({
 
 
 // Combined schema for homepage
-const homepageSchema = [businessSchema, serviceSchema];
+const homepageSchema = [businessSchema, serviceSchema, websiteSchema, organizationSchema, faqSchema];
 
 // Homepage component
 const Homepage = ({ isMenuOpen, setIsMenuOpen }) => {
