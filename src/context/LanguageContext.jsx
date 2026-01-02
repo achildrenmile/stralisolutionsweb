@@ -223,7 +223,7 @@ export const translations = {
     publicWork: {
       title: 'Ausgewählte Referenzen',
       ndaTitle: 'Vertraulichkeit',
-      ndaText: 'Ein Großteil meiner Projekte unterliegt Geheimhaltungsvereinbarungen (NDA). Aus Respekt gegenüber meinen Kunden und deren Geschäftsgeheimnissen kann ich diese Arbeiten hier nicht im Detail präsentieren.',
+      ndaText: 'Ein Großteil der Projekte unterliegt Geheimhaltungsvereinbarungen (NDA). Aus Respekt gegenüber den Kunden und deren Geschäftsgeheimnissen können diese Arbeiten hier nicht im Detail präsentiert werden.',
       projectTitle: 'Referenzprojekt: Arbeitszeiterfassung',
       projectProblem: 'Kleine und mittlere Unternehmen in Österreich benötigen eine rechtskonforme Zeiterfassung gemäß Arbeitszeitgesetz (AZG), finden aber oft nur komplexe oder teure Lösungen.',
       projectSolution: 'Eine schlanke, auf österreichisches Recht ausgerichtete Webanwendung zur Arbeitszeiterfassung – entwickelt als Open-Source-Referenzimplementierung.',
@@ -460,7 +460,7 @@ export const translations = {
     publicWork: {
       title: 'Selected Public Work',
       ndaTitle: 'Confidentiality',
-      ndaText: 'The majority of my projects are subject to non-disclosure agreements (NDA). Out of respect for my clients and their business interests, I cannot present these works in detail here.',
+      ndaText: 'The majority of the projects are subject to non-disclosure agreements (NDA). Out of respect for the clients and their business interests, these works cannot be presented in detail here.',
       projectTitle: 'Reference Project: Time Tracking',
       projectProblem: 'Small and medium-sized businesses in Austria need legally compliant time tracking according to the Working Hours Act (AZG), but often only find complex or expensive solutions.',
       projectSolution: 'A lean, Austrian-law-oriented web application for time tracking – developed as an open-source reference implementation.',
