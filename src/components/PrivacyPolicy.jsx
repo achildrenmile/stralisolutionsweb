@@ -70,6 +70,35 @@ const PrivacyPolicy = () => {
               <p className="text-[var(--text-muted)]">{t.cookies.text}</p>
             </section>
 
+            {/* Web Analytics (Umami) */}
+            <section>
+              <h2 className="text-xl font-semibold mb-4 text-[var(--accent-light)]">
+                {t.analytics.title}
+              </h2>
+              <div className="space-y-4 text-[var(--text-muted)]">
+                <p>{t.analytics.text}</p>
+
+                <ul className="space-y-2 ml-1">
+                  {t.analytics.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <Check className="text-green-400 mt-1 flex-shrink-0" size={16} strokeWidth={2.5} />
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div>
+                  <h4 className="text-base font-semibold text-white mb-1">{t.analytics.purpose}</h4>
+                  <p className="text-sm">{t.analytics.purposeText}</p>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-semibold text-white mb-1">{t.analytics.legal}</h4>
+                  <p className="text-sm">{t.analytics.legalText}</p>
+                </div>
+              </div>
+            </section>
+
             {/* Microsoft Bookings */}
             <section>
               <h2 className="text-xl font-semibold mb-4 text-[var(--accent-light)]">

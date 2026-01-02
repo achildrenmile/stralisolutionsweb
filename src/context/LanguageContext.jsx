@@ -112,6 +112,20 @@ export const translations = {
         title: 'Cookies',
         text: 'Unsere Webseite verwendet Cookies. Bei Cookies handelt es sich um Textdateien, die im Internetbrowser bzw. vom Internetbrowser auf dem Computersystem des Nutzers gespeichert werden. Sie können Ihre Cookie-Einstellungen jederzeit über unseren Cookie-Banner anpassen. Notwendige Cookies sind für die Grundfunktionen der Website erforderlich. Analyse-Cookies helfen uns zu verstehen, wie Besucher mit der Website interagieren.'
       },
+      analytics: {
+        title: 'Webanalyse (Umami)',
+        text: 'Diese Website verwendet Umami, eine datenschutzfreundliche, selbst gehostete Webanalyse-Lösung.',
+        features: [
+          'Umami verwendet keine Cookies',
+          'Es werden keine personenbezogenen Daten gespeichert',
+          'Die IP-Adresse wird nicht erfasst oder gespeichert',
+          'Die Analyse wird erst nach ausdrücklicher Zustimmung über den Cookie-Banner aktiviert'
+        ],
+        purpose: 'Zweck der Analyse',
+        purposeText: 'Wir verwenden die anonymisierten Nutzungsstatistiken ausschließlich zur Verbesserung unserer Website und unserer Dienstleistungen. Die Daten werden auf unseren eigenen Servern in der EU verarbeitet.',
+        legal: 'Rechtsgrundlage',
+        legalText: 'Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie Ihre Cookie-Einstellungen ändern.'
+      },
       booking: {
         title: 'Terminbuchung (Microsoft Bookings)',
         text: 'Für die Terminbuchung nutzen wir Microsoft Bookings, einen Dienst der Microsoft Corporation.',
@@ -404,6 +418,20 @@ export const translations = {
       cookies: {
         title: 'Cookies',
         text: 'Our website uses cookies. Cookies are text files that are stored in the internet browser or by the internet browser on the user\'s computer system. You can adjust your cookie settings at any time via our cookie banner. Essential cookies are required for basic website functionality. Analytics cookies help us understand how visitors interact with the website.'
+      },
+      analytics: {
+        title: 'Web Analytics (Umami)',
+        text: 'This website uses Umami, a privacy-friendly, self-hosted web analytics solution.',
+        features: [
+          'Umami does not use cookies',
+          'No personal data is stored',
+          'IP addresses are not collected or stored',
+          'Analytics tracking is only activated after explicit consent via the cookie banner'
+        ],
+        purpose: 'Purpose of Analytics',
+        purposeText: 'We use anonymized usage statistics solely to improve our website and services. Data is processed on our own servers in the EU.',
+        legal: 'Legal Basis',
+        legalText: 'Processing is based on your consent (Art. 6(1)(a) GDPR). You can withdraw your consent at any time by changing your cookie settings.'
       },
       booking: {
         title: 'Appointment Booking (Microsoft Bookings)',
