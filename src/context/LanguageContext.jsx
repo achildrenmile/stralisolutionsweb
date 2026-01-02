@@ -149,7 +149,7 @@ export const translations = {
         title: 'Informationspflicht laut §5 E-Commerce Gesetz, §14 UGB',
         name: 'Strali Solutions e.U.',
         owner: 'Inhaber',
-        ownerName: 'Ing. Michael Linder',
+        ownerName: 'Ing. Michael Linder, MSc.',
         address: 'Nötsch 219',
         postalCode: '9611 Nötsch im Gailtal',
         country: 'Österreich'
@@ -439,7 +439,7 @@ export const translations = {
         title: 'Information according to §5 Austrian E-Commerce Act, §14 UGB',
         name: 'Strali Solutions e.U.',
         owner: 'Owner',
-        ownerName: 'Ing. Michael Linder',
+        ownerName: 'Ing. Michael Linder, MSc.',
         address: 'Nötsch 219',
         postalCode: '9611 Nötsch im Gailtal',
         country: 'Austria'
