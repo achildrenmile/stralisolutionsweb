@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <motion.section
-      className="min-h-[75vh] md:min-h-[85vh] flex items-center justify-center pt-8 md:pt-24 pb-12 md:pb-16 px-4 mt-0 md:mt-16 relative bg-gradient-dark"
+      className="flex items-center justify-center py-12 md:py-20 px-4 mt-16 md:mt-20 relative bg-gradient-dark"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
