@@ -56,6 +56,11 @@ export const translations = {
           icon: 'TrendingUp'
         },
         {
+          title: 'Security-by-Design & AI Security Advisory',
+          description: 'Wir unterstützen Unternehmen dabei, AI- und Digital-Lösungen von Anfang an sicher zu gestalten. Dabei bringen wir langjährige Engineering-Erfahrung sowie Praxiswissen aus Security-Reviews und Penetrationstests ein – ohne selbst als Pentest-Anbieter aufzutreten. Unser Fokus: Architektur-Reviews aus Security-Sicht, Vorbereitung und Begleitung externer Pentests sowie die Übersetzung von Security-Findings in umsetzbare Engineering-Maßnahmen.',
+          icon: 'Shield'
+        },
+        {
           title: 'Software Engineering',
           description: 'Moderne Softwareentwicklung setzt auf KI-gestützte Ansätze, effiziente Prozesse, automatisierte Tests und DevOps-Methoden. Wir entwickeln intelligente, skalierbare Lösungen, die Qualität und Innovation vereinen – für zukunftssicheren Erfolg.',
           icon: 'Code'
@@ -291,6 +296,11 @@ export const translations = {
           title: 'Digitalization: We Help You with AI and Process Digitalization',
           description: 'We help you optimally leverage the potential of Artificial Intelligence (AI) and process digitalization. AI enables intelligent automation, predictive analytics, and personalized solutions, while cloud technologies ensure seamless collaboration and efficient workflows. Together, we create future-proof processes that increase your efficiency and promote innovation.',
           icon: 'TrendingUp'
+        },
+        {
+          title: 'Security-by-Design & AI Security Advisory',
+          description: 'We help organizations build AI and digital solutions that are secure from the start. We bring extensive engineering experience and hands-on knowledge from security reviews and penetration tests – without acting as a pentest provider ourselves. Our focus: architecture reviews from a security perspective, preparation and support for external pentests, and translating security findings into actionable engineering measures.',
+          icon: 'Shield'
         },
         {
           title: 'Software Engineering',

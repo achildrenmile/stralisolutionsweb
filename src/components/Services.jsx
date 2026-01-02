@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '../context/LanguageContext';
-import { Lightbulb, Cloud, TrendingUp, Code, Blocks, Users } from 'lucide-react';
+import { Lightbulb, Cloud, TrendingUp, Code, Blocks, Users, Shield } from 'lucide-react';
 
 const iconMap = {
   Lightbulb,
@@ -9,7 +9,8 @@ const iconMap = {
   TrendingUp,
   Code,
   Blocks,
-  Users
+  Users,
+  Shield
 };
 
 const Services = () => {
