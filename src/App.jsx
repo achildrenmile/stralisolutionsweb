@@ -13,6 +13,7 @@ import SelectedPublicWork from './components/SelectedPublicWork';
 import NotFound from './components/NotFound';
 import ChatWidget from './components/ChatWidget';
 import CookieConsent from './components/CookieConsent';
+import BackToTop from './components/BackToTop';
 import { LanguageProvider } from './context/LanguageContext';
 import { Helmet } from 'react-helmet-async';
 
@@ -204,6 +205,7 @@ const App = () => {
           </main>
           <Footer />
           <ChatWidget />
+          <BackToTop />
           <CookieConsent />
         </div>
       </Router>

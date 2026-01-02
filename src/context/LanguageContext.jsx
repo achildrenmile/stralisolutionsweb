@@ -290,6 +290,9 @@ export const translations = {
       linkedinText: 'Das LinkedIn-Profil dient als öffentliche Referenz für den beruflichen Hintergrund hinter strali.solutions. Aufgrund von NDA-Verpflichtungen können detaillierte Beschreibungen von Kundenprojekten nicht öffentlich geteilt werden. Das Profil gibt einen Überblick über Erfahrungen in Software-Architektur, IT-Consulting, technischer Führung und Enterprise-Umgebungen.',
       linkedinButton: 'LinkedIn Profil ansehen'
     },
+    backToTop: {
+      ariaLabel: 'Nach oben scrollen'
+    },
     cookies: {
       title: 'Cookie-Einstellungen',
       description: 'Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Sie können wählen, welche Cookies Sie zulassen möchten.',
@@ -579,6 +582,9 @@ export const translations = {
       linkedinTitle: 'Professional Background (LinkedIn)',
       linkedinText: 'The LinkedIn profile serves as a public reference for the professional background behind strali.solutions. Due to NDA obligations, detailed descriptions of client engagements and projects cannot be shared publicly. The profile outlines experience in software architecture, IT consulting, technical leadership, and enterprise environments.',
       linkedinButton: 'View LinkedIn Profile'
+    },
+    backToTop: {
+      ariaLabel: 'Scroll to top'
     },
     cookies: {
       title: 'Cookie Settings',
