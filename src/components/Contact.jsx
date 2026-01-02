@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Copy, Phone, Mail, MapPin } from 'lucide-react';
+import { Copy, Phone, Mail, MapPin, Calendar } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { BOOKING_URLS } from '../config/bookings';
 
 const Contact = () => {
   const { translations } = useLanguage();
@@ -94,6 +95,39 @@ const Contact = () => {
               </motion.div>
             )}
 
+            {/* Booking CTA */}
+            <div className="mb-8 p-6 bg-[var(--bg-card)] border border-[var(--accent)]/30 rounded-xl">
+              <div className="flex items-start gap-4">
+                <div className="text-[var(--accent)] flex-shrink-0 mt-1">
+                  <Calendar size={28} strokeWidth={1.5} />
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {translations.contact.bookingTitle}
+                  </h3>
+                  <p className="text-sm text-[var(--text-muted)] mb-4">
+                    {translations.contact.bookingDescription}
+                  </p>
+                  <a
+                    href={BOOKING_URLS.initialAssessment}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 btn-primary px-6 py-3 rounded-xl font-semibold text-sm"
+                  >
+                    <Calendar size={18} />
+                    {translations.contact.bookingButton}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="flex-grow h-px bg-[var(--border)]"></div>
+              <span className="text-sm text-[var(--text-muted)]">{translations.contact.orContactForm}</span>
+              <div className="flex-grow h-px bg-[var(--border)]"></div>
+            </div>
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-[var(--text-muted)] mb-2">
@@ -131,6 +165,9 @@ const Contact = () => {
               >
                 {translations.contact.send}
               </motion.button>
+              <p className="text-xs text-[var(--text-muted)] text-center mt-3">
+                {translations.contact.mailClientNote}
+              </p>
             </form>
           </div>
         </motion.div>

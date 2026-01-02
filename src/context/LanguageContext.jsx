@@ -78,7 +78,12 @@ export const translations = {
       message: 'Nachricht',
       send: 'Nachricht senden',
       copied: 'Email-Adresse wurde in die Zwischenablage kopiert!',
-      address: 'Nötsch 219, A-9611 Nötsch im Gailtal'
+      address: 'Nötsch 219, A-9611 Nötsch im Gailtal',
+      bookingTitle: 'Erstgespräch buchen',
+      bookingDescription: 'Vereinbaren Sie ein kostenloses Erstgespräch, um Ihre Anforderungen zu besprechen.',
+      bookingButton: 'Termin buchen',
+      orContactForm: 'Oder schreiben Sie uns direkt',
+      mailClientNote: 'Öffnet Ihr E-Mail-Programm'
     },
     chat: {
       ready: 'Bereit um das Beste aus Ihrer IT herauszuholen?',
@@ -317,7 +322,12 @@ export const translations = {
       message: 'Message',
       send: 'Send Message',
       copied: 'Email address copied to clipboard!',
-      address: 'Nötsch 219, A-9611 Nötsch im Gailtal'
+      address: 'Nötsch 219, A-9611 Nötsch im Gailtal',
+      bookingTitle: 'Book an Initial Call',
+      bookingDescription: 'Schedule a free initial call to discuss your requirements.',
+      bookingButton: 'Book Appointment',
+      orContactForm: 'Or write to us directly',
+      mailClientNote: 'Opens your email client'
     },
     chat: {
       ready: 'Ready to get the best out of your IT?',
