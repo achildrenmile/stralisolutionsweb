@@ -68,6 +68,12 @@ const PrivacyPolicy = () => {
                 {t.cookies.title}
               </h2>
               <p className="text-[var(--text-muted)]">{t.cookies.text}</p>
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('openCookieSettings'))}
+                className="mt-4 px-4 py-2 rounded-lg text-sm font-medium border border-[var(--accent)] text-[var(--accent-light)] hover:bg-[var(--accent)] hover:text-white transition-colors"
+              >
+                {isGerman ? 'Cookie-Einstellungen anpassen' : 'Manage Cookie Settings'}
+              </button>
             </section>
 
             {/* Web Analytics (Umami) */}
