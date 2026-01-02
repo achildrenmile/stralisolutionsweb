@@ -96,7 +96,8 @@ export const translations = {
     footer: {
       rights: 'Alle Rechte vorbehalten.',
       imprint: 'Impressum',
-      privacy: 'Datenschutz'
+      privacy: 'Datenschutz',
+      cookieSettings: 'Cookie-Einstellungen'
     },
     privacy: {
       title: 'Datenschutzerklärung',
@@ -314,6 +315,9 @@ export const translations = {
       hideDetails: 'Details ausblenden',
       acceptAll: 'Alle akzeptieren',
       essentialOnly: 'Nur notwendige',
+      saveSettings: 'Einstellungen speichern',
+      cancel: 'Abbrechen',
+      alwaysActive: 'Immer aktiv',
       privacyLink: 'Mehr Informationen in unserem Impressum',
       essential: {
         title: 'Notwendige Cookies',
@@ -403,7 +407,8 @@ export const translations = {
     footer: {
       rights: 'All rights reserved.',
       imprint: 'Imprint',
-      privacy: 'Privacy Policy'
+      privacy: 'Privacy Policy',
+      cookieSettings: 'Cookie Settings'
     },
     privacy: {
       title: 'Privacy Policy',
@@ -621,6 +626,9 @@ export const translations = {
       hideDetails: 'Hide details',
       acceptAll: 'Accept all',
       essentialOnly: 'Essential only',
+      saveSettings: 'Save Settings',
+      cancel: 'Cancel',
+      alwaysActive: 'Always active',
       privacyLink: 'More information in our Imprint',
       essential: {
         title: 'Essential Cookies',

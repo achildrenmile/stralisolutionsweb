@@ -34,6 +34,13 @@ const Footer = () => {
             >
               {translations.footer.privacy}
             </Link>
+            <span className="text-[var(--border)]">|</span>
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('openCookieSettings'))}
+              className="text-[var(--text-muted)] hover:text-white transition-colors"
+            >
+              {translations.footer.cookieSettings}
+            </button>
           </div>
         </div>
       </div>

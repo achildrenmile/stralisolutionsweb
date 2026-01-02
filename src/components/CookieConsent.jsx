@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { loadUmami } from '../utils/analytics';
+import { loadUmami, disableUmami, hasAnalyticsConsent } from '../utils/analytics';
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const [isManaging, setIsManaging] = useState(false);
   const { translations } = useLanguage();
   const t = translations.cookies;
 
@@ -19,6 +21,19 @@ const CookieConsent = () => {
     }
   }, []);
 
+  // Listen for custom event to open cookie settings
+  useEffect(() => {
+    const handleOpenSettings = () => {
+      setAnalyticsEnabled(hasAnalyticsConsent());
+      setIsManaging(true);
+      setShowDetails(true);
+      setShowBanner(true);
+    };
+
+    window.addEventListener('openCookieSettings', handleOpenSettings);
+    return () => window.removeEventListener('openCookieSettings', handleOpenSettings);
+  }, []);
+
   const handleAcceptAll = () => {
     localStorage.setItem('cookie-consent', JSON.stringify({
       essential: true,
@@ -27,6 +42,7 @@ const CookieConsent = () => {
       timestamp: new Date().toISOString()
     }));
     setShowBanner(false);
+    setIsManaging(false);
     // Load analytics after consent
     loadUmami();
   };
@@ -39,6 +55,28 @@ const CookieConsent = () => {
       timestamp: new Date().toISOString()
     }));
     setShowBanner(false);
+    setIsManaging(false);
+    // Disable analytics if it was enabled
+    disableUmami();
+  };
+
+  const handleSaveSettings = () => {
+    localStorage.setItem('cookie-consent', JSON.stringify({
+      essential: true,
+      analytics: analyticsEnabled,
+      marketing: false,
+      timestamp: new Date().toISOString()
+    }));
+
+    // Apply analytics changes immediately
+    if (analyticsEnabled) {
+      loadUmami();
+    } else {
+      disableUmami();
+    }
+
+    setShowBanner(false);
+    setIsManaging(false);
   };
 
   return (
@@ -97,14 +135,30 @@ const CookieConsent = () => {
                         <div className="mt-4 space-y-3 text-sm">
                           <div className="flex items-start gap-3 p-3 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)' }}>
                             <span className="text-green-400">✓</span>
-                            <div>
+                            <div className="flex-1">
                               <p className="text-white font-medium">{t.essential.title}</p>
                               <p className="text-gray-400 text-xs">{t.essential.description}</p>
                             </div>
+                            <span className="text-gray-500 text-xs">{t.alwaysActive || 'Always active'}</span>
                           </div>
                           <div className="flex items-start gap-3 p-3 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)' }}>
-                            <span className="text-gray-400">○</span>
-                            <div>
+                            {isManaging ? (
+                              <button
+                                onClick={() => setAnalyticsEnabled(!analyticsEnabled)}
+                                className={`w-10 h-6 rounded-full transition-colors flex-shrink-0 ${
+                                  analyticsEnabled ? 'bg-[var(--accent)]' : 'bg-gray-600'
+                                }`}
+                              >
+                                <div
+                                  className={`w-4 h-4 rounded-full bg-white transform transition-transform mt-1 ${
+                                    analyticsEnabled ? 'translate-x-5' : 'translate-x-1'
+                                  }`}
+                                />
+                              </button>
+                            ) : (
+                              <span className="text-gray-400">○</span>
+                            )}
+                            <div className="flex-1">
                               <p className="text-white font-medium">{t.analytics.title}</p>
                               <p className="text-gray-400 text-xs">{t.analytics.description}</p>
                             </div>
@@ -117,22 +171,45 @@ const CookieConsent = () => {
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto">
-                  <motion.button
-                    onClick={handleAcceptAll}
-                    className="btn-primary px-6 py-3 rounded-lg font-medium text-sm whitespace-nowrap"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {t.acceptAll}
-                  </motion.button>
-                  <motion.button
-                    onClick={handleAcceptEssential}
-                    className="px-6 py-3 rounded-lg font-medium text-sm border border-[var(--border)] text-gray-400 hover:text-white hover:border-gray-500 transition-colors whitespace-nowrap"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {t.essentialOnly}
-                  </motion.button>
+                  {isManaging ? (
+                    <>
+                      <motion.button
+                        onClick={handleSaveSettings}
+                        className="btn-primary px-6 py-3 rounded-lg font-medium text-sm whitespace-nowrap"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        {t.saveSettings || 'Save Settings'}
+                      </motion.button>
+                      <motion.button
+                        onClick={() => { setShowBanner(false); setIsManaging(false); }}
+                        className="px-6 py-3 rounded-lg font-medium text-sm border border-[var(--border)] text-gray-400 hover:text-white hover:border-gray-500 transition-colors whitespace-nowrap"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        {t.cancel || 'Cancel'}
+                      </motion.button>
+                    </>
+                  ) : (
+                    <>
+                      <motion.button
+                        onClick={handleAcceptAll}
+                        className="btn-primary px-6 py-3 rounded-lg font-medium text-sm whitespace-nowrap"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        {t.acceptAll}
+                      </motion.button>
+                      <motion.button
+                        onClick={handleAcceptEssential}
+                        className="px-6 py-3 rounded-lg font-medium text-sm border border-[var(--border)] text-gray-400 hover:text-white hover:border-gray-500 transition-colors whitespace-nowrap"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        {t.essentialOnly}
+                      </motion.button>
+                    </>
+                  )}
                 </div>
               </div>
 

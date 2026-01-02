@@ -70,3 +70,23 @@ export const initAnalytics = () => {
     loadUmami();
   }
 };
+
+/**
+ * Disable Umami analytics
+ * Removes the script and clears tracking state
+ */
+export const disableUmami = () => {
+  // Remove the Umami script from DOM
+  const script = document.querySelector(`script[src="${UMAMI_URL}"]`);
+  if (script) {
+    script.remove();
+  }
+
+  // Clear the global umami object to stop any tracking
+  if (window.umami) {
+    delete window.umami;
+  }
+
+  // Reset loaded state
+  umamiLoaded = false;
+};
