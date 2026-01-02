@@ -8,14 +8,14 @@ const Hero = () => {
 
   return (
     <motion.section
-      className="min-h-screen flex items-center justify-center pt-32 pb-20 px-4 mt-16 relative bg-gradient-dark"
+      className="min-h-screen flex items-center justify-center pt-20 md:pt-32 pb-16 md:pb-20 px-4 mt-16 relative bg-gradient-dark"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div className="container mx-auto max-w-4xl text-center">
+      <div className="container mx-auto max-w-4xl text-center px-2 sm:px-4">
         <motion.h1
-          className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white"
+          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-white"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -25,7 +25,7 @@ const Hero = () => {
           {translations.hero.welcome.split('Strali Solutions')[1] || ''}
         </motion.h1>
         <motion.p
-          className="text-xl md:text-2xl mb-4 text-[var(--accent-light)] font-medium"
+          className="text-lg sm:text-xl md:text-2xl mb-3 md:mb-4 text-[var(--accent-light)] font-medium"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -33,7 +33,7 @@ const Hero = () => {
           {translations.hero.tagline}
         </motion.p>
         <motion.p
-          className="text-base md:text-lg mb-8 text-[var(--text-muted)] max-w-2xl mx-auto"
+          className="text-sm sm:text-base md:text-lg mb-6 md:mb-8 text-[var(--text-muted)] max-w-2xl mx-auto px-2"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -41,14 +41,14 @@ const Hero = () => {
           {translations.hero.subline}
         </motion.p>
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
           <motion.button
             onClick={() => navigate('/assessment')}
-            className="inline-flex items-center gap-2 btn-primary px-8 py-4 rounded-xl font-semibold text-sm md:text-base"
+            className="inline-flex items-center justify-center gap-2 btn-primary w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm md:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -59,7 +59,7 @@ const Hero = () => {
           </motion.button>
           <motion.a
             href="#kontakt"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm md:text-base border border-[var(--border)] text-[var(--text-muted)] hover:text-white hover:border-[var(--primary)] transition-all"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm md:text-base border border-[var(--border)] text-[var(--text-muted)] hover:text-white hover:border-[var(--primary)] transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
