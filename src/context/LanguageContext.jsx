@@ -61,14 +61,9 @@ export const translations = {
           icon: 'Shield'
         },
         {
-          title: 'Software Engineering',
-          description: 'Moderne Softwareentwicklung setzt auf KI-gestützte Ansätze, effiziente Prozesse, automatisierte Tests und DevOps-Methoden. Wir entwickeln intelligente, skalierbare Lösungen, die Qualität und Innovation vereinen – für zukunftssicheren Erfolg.',
+          title: 'Software Engineering & Architektur',
+          description: 'Moderne Softwareentwicklung erfordert mehr als sauberen Code. Wir verbinden KI-gestützte Entwicklung, effiziente Prozesse, automatisierte Tests, DevOps-Methoden und robuste Software- und Systemarchitektur. Von funktionalen und nicht-funktionalen Anforderungen bis hin zu Skalierbarkeit, Sicherheit und Performance – wir entwickeln Lösungen, die stabil, sicher und zukunftsfähig sind.',
           icon: 'Code'
-        },
-        {
-          title: 'Software- und Systemarchitektur: Stabil und zukunftssicher',
-          description: 'Eine durchdachte Software- und Systemarchitektur ist entscheidend für den Erfolg. Neben der Erhebung funktionaler und nicht-funktionaler Anforderungen stellen wir sicher, dass Architekturaspekte wie Skalierbarkeit, Sicherheit und Performance konsequent eingehalten werden – für nachhaltige Lösungen.',
-          icon: 'Blocks'
         },
         {
           title: 'Projektmanagement: Effizient, strategisch und menschlich',
@@ -303,14 +298,9 @@ export const translations = {
           icon: 'Shield'
         },
         {
-          title: 'Software Engineering',
-          description: 'Modern software development relies on AI-supported approaches, efficient processes, automated testing, and DevOps methods. We develop intelligent, scalable solutions that combine quality and innovation – for future-proof success.',
+          title: 'Software Engineering & Architecture',
+          description: 'Modern software development requires more than clean code. We combine AI-supported development, efficient processes, automated testing, DevOps practices, and robust software and system architecture. From functional and non-functional requirements to scalability, security, and performance – we build solutions that are stable, secure, and future-proof.',
           icon: 'Code'
-        },
-        {
-          title: 'Software and System Architecture: Stable and Future-Proof',
-          description: 'A well-thought-out software and system architecture is crucial for success. In addition to gathering functional and non-functional requirements, we ensure that architectural aspects such as scalability, security, and performance are consistently maintained – for sustainable solutions.',
-          icon: 'Blocks'
         },
         {
           title: 'Project Management: Efficient, Strategic, and Human',
