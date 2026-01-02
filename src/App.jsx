@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Impressum from './components/Impressum';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import ITAssessment from './components/ITAssessment';
 import SelectedPublicWork from './components/SelectedPublicWork';
 import NotFound from './components/NotFound';
@@ -196,6 +197,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Homepage isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
               <Route path="/impressum" element={<Impressum />} />
+              <Route path="/datenschutz" element={<PrivacyPolicy />} />
               <Route path="/assessment" element={<ITAssessment />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

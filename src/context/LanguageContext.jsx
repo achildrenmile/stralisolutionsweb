@@ -95,7 +95,53 @@ export const translations = {
     },
     footer: {
       rights: 'Alle Rechte vorbehalten.',
-      imprint: 'Impressum'
+      imprint: 'Impressum',
+      privacy: 'Datenschutz'
+    },
+    privacy: {
+      title: 'Datenschutzerklärung',
+      intro: 'Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf dieser Website.',
+      responsible: {
+        title: 'Verantwortlicher'
+      },
+      dataCollection: {
+        title: 'Datenerfassung auf dieser Website',
+        text: 'Die Nutzung unserer Webseite ist grundsätzlich ohne Angabe personenbezogener Daten möglich. Soweit personenbezogene Daten erhoben werden, erfolgt dies auf freiwilliger Basis. Beim Besuch dieser Website werden durch den Browser automatisch Informationen an den Server übermittelt (z.B. Browsertyp, Betriebssystem, Uhrzeit des Zugriffs). Diese Daten werden nicht mit anderen Datenquellen zusammengeführt.'
+      },
+      cookies: {
+        title: 'Cookies',
+        text: 'Unsere Webseite verwendet Cookies. Bei Cookies handelt es sich um Textdateien, die im Internetbrowser bzw. vom Internetbrowser auf dem Computersystem des Nutzers gespeichert werden. Sie können Ihre Cookie-Einstellungen jederzeit über unseren Cookie-Banner anpassen. Notwendige Cookies sind für die Grundfunktionen der Website erforderlich. Analyse-Cookies helfen uns zu verstehen, wie Besucher mit der Website interagieren.'
+      },
+      booking: {
+        title: 'Terminbuchung (Microsoft Bookings)',
+        text: 'Für die Terminbuchung nutzen wir Microsoft Bookings, einen Dienst der Microsoft Corporation.',
+        dataCollected: 'Erhobene Daten',
+        dataCollectedList: [
+          'Name und Kontaktdaten (E-Mail, optional Telefonnummer)',
+          'Gewählter Termin und Zeitpunkt',
+          'Optionale Nachricht/Anmerkungen'
+        ],
+        processor: 'Auftragsverarbeiter',
+        processorText: 'Microsoft Corporation, One Microsoft Way, Redmond, WA 98052, USA. Microsoft verarbeitet die Daten in unserem Auftrag gemäß Art. 28 DSGVO.',
+        transfer: 'Datenübermittlung',
+        transferText: 'Die Daten werden auf Servern von Microsoft verarbeitet. Microsoft ist unter dem EU-U.S. Data Privacy Framework zertifiziert, was ein angemessenes Datenschutzniveau gewährleistet.',
+        legal: 'Rechtsgrundlage',
+        legalText: 'Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO) bzw. aufgrund Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).',
+        retention: 'Speicherdauer',
+        retentionText: 'Ihre Buchungsdaten werden nach Durchführung des Termins bzw. bei Nichterscheinen gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.',
+        terms: 'Bedingungen',
+        termsList: [
+          'Das kostenlose IT-Assessment ist vollständig kostenlos und unverbindlich',
+          'Bei Verhinderung bitten wir um rechtzeitige Absage'
+        ],
+        microsoftPrivacy: 'Microsoft Datenschutzerklärung',
+        microsoftPrivacyLink: 'https://privacy.microsoft.com/de-de/privacystatement'
+      },
+      rights: {
+        title: 'Ihre Rechte',
+        text: 'Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit. Bei Fragen zur Verarbeitung Ihrer Daten oder zur Ausübung Ihrer Rechte können Sie sich jederzeit an uns wenden.'
+      },
+      contact: 'Bei Fragen zum Datenschutz kontaktieren Sie uns unter:'
     },
     imprint: {
       title: 'Impressum',
@@ -339,7 +385,53 @@ export const translations = {
     },
     footer: {
       rights: 'All rights reserved.',
-      imprint: 'Imprint'
+      imprint: 'Imprint',
+      privacy: 'Privacy Policy'
+    },
+    privacy: {
+      title: 'Privacy Policy',
+      intro: 'The protection of your personal data is of particular concern to us. This privacy policy informs you about the processing of personal data on this website.',
+      responsible: {
+        title: 'Data Controller'
+      },
+      dataCollection: {
+        title: 'Data Collection on This Website',
+        text: 'The use of our website is generally possible without providing personal data. Insofar as personal data is collected, this is done on a voluntary basis. When you visit this website, information is automatically transmitted to the server by your browser (e.g., browser type, operating system, time of access). This data is not merged with other data sources.'
+      },
+      cookies: {
+        title: 'Cookies',
+        text: 'Our website uses cookies. Cookies are text files that are stored in the internet browser or by the internet browser on the user\'s computer system. You can adjust your cookie settings at any time via our cookie banner. Essential cookies are required for basic website functionality. Analytics cookies help us understand how visitors interact with the website.'
+      },
+      booking: {
+        title: 'Appointment Booking (Microsoft Bookings)',
+        text: 'We use Microsoft Bookings, a service provided by Microsoft Corporation, for appointment scheduling.',
+        dataCollected: 'Data Collected',
+        dataCollectedList: [
+          'Name and contact details (email, optionally phone number)',
+          'Selected appointment date and time',
+          'Optional message/notes'
+        ],
+        processor: 'Data Processor',
+        processorText: 'Microsoft Corporation, One Microsoft Way, Redmond, WA 98052, USA. Microsoft processes data on our behalf in accordance with Art. 28 GDPR.',
+        transfer: 'Data Transfer',
+        transferText: 'Data is processed on Microsoft servers. Microsoft is certified under the EU-U.S. Data Privacy Framework, ensuring an adequate level of data protection.',
+        legal: 'Legal Basis',
+        legalText: 'Processing is carried out for the performance of pre-contractual measures (Art. 6(1)(b) GDPR) or based on your consent (Art. 6(1)(a) GDPR).',
+        retention: 'Data Retention',
+        retentionText: 'Your booking data will be deleted after the appointment is conducted or in case of no-show, unless legal retention obligations apply.',
+        terms: 'Terms',
+        termsList: [
+          'The free IT assessment is completely free and non-binding',
+          'Please cancel in advance if you are unable to attend'
+        ],
+        microsoftPrivacy: 'Microsoft Privacy Statement',
+        microsoftPrivacyLink: 'https://privacy.microsoft.com/en-us/privacystatement'
+      },
+      rights: {
+        title: 'Your Rights',
+        text: 'You have the right to information, correction, deletion and restriction of the processing of your personal data at any time, as well as the right to data portability. If you have questions about the processing of your data or wish to exercise your rights, you can contact us at any time.'
+      },
+      contact: 'For questions about data protection, please contact us at:'
     },
     imprint: {
       title: 'Legal Notice',

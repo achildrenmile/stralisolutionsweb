@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Check } from 'lucide-react';
 
 const Impressum = () => {
   const { translations, language } = useLanguage();
@@ -101,91 +101,23 @@ const Impressum = () => {
             </div>
           </section>
 
-          {/* Booking Service Terms */}
-          <section>
-            <h3 className="text-lg font-semibold mb-4 text-[var(--accent-light)]">
-              {t.booking.title}
-            </h3>
-            <div className="space-y-4 text-[var(--text-muted)]">
-              <p>{t.booking.text}</p>
-
-              <div>
-                <h4 className="text-base font-semibold text-white mb-2">{t.booking.dataCollected}</h4>
-                <ul className="space-y-1 ml-1">
-                  {t.booking.dataCollectedList.map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-[var(--accent)]">•</span>
-                      <span className="text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-base font-semibold text-white mb-1">{t.booking.processor}</h4>
-                <p className="text-sm">{t.booking.processorText}</p>
-              </div>
-
-              <div>
-                <h4 className="text-base font-semibold text-white mb-1">{t.booking.transfer}</h4>
-                <p className="text-sm">{t.booking.transferText}</p>
-              </div>
-
-              <div>
-                <h4 className="text-base font-semibold text-white mb-1">{t.booking.legal}</h4>
-                <p className="text-sm">{t.booking.legalText}</p>
-              </div>
-
-              <div>
-                <h4 className="text-base font-semibold text-white mb-1">{t.booking.retention}</h4>
-                <p className="text-sm">{t.booking.retentionText}</p>
-              </div>
-
-              <div>
-                <h4 className="text-base font-semibold text-white mb-2">{t.booking.terms}</h4>
-                <ul className="space-y-2 ml-1">
-                  {t.booking.termsList.map((term, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <Check className="text-green-400 mt-1 flex-shrink-0" size={16} strokeWidth={2.5} />
-                      <span className="text-sm">{term}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <p className="text-sm">
-                <a href={t.booking.microsoftPrivacyLink} target="_blank" rel="noopener noreferrer" className="text-[var(--primary-light)] hover:underline">
-                  {t.booking.microsoftPrivacy} →
-                </a>
-              </p>
-            </div>
-          </section>
-
-          {/* Privacy Policy */}
+          {/* Privacy Policy Link */}
           <section>
             <h2 className="text-xl font-semibold mb-4 text-[var(--accent-light)]">
-              {t.privacy.title}
+              {translations.privacy.title}
             </h2>
-            <div className="space-y-4 text-[var(--text-muted)]">
-              <p>{t.privacy.intro}</p>
-
-              <div>
-                <h4 className="text-base font-semibold text-white mb-1">{t.privacy.dataCollection}</h4>
-                <p className="text-sm">{t.privacy.dataCollectionText}</p>
-              </div>
-
-              <div>
-                <h4 className="text-base font-semibold text-white mb-1">{t.privacy.cookies}</h4>
-                <p className="text-sm">{t.privacy.cookiesText}</p>
-              </div>
-
-              <div>
-                <h4 className="text-base font-semibold text-white mb-1">{t.privacy.rights}</h4>
-                <p className="text-sm">{t.privacy.rightsText}</p>
-              </div>
-
-              <p className="text-sm">{t.privacy.contact} <a href="mailto:office@strali.solutions" className="text-[var(--primary-light)] hover:underline">office@strali.solutions</a></p>
-            </div>
+            <p className="text-[var(--text-muted)] mb-4">
+              {isGerman
+                ? 'Informationen zur Verarbeitung Ihrer personenbezogenen Daten finden Sie in unserer Datenschutzerklärung.'
+                : 'Information about the processing of your personal data can be found in our Privacy Policy.'}
+            </p>
+            <Link
+              to="/datenschutz"
+              className="text-[var(--primary-light)] hover:underline"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              {translations.privacy.title} →
+            </Link>
           </section>
 
           {/* Disclaimer */}

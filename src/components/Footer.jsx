@@ -5,9 +5,9 @@ const Footer = () => {
   const { translations } = useLanguage();
   const navigate = useNavigate();
 
-  const handleImpressumClick = (e) => {
+  const handleNavClick = (path) => (e) => {
     e.preventDefault();
-    navigate('/impressum');
+    navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -21,10 +21,18 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             <Link
               to="/impressum"
-              onClick={handleImpressumClick}
+              onClick={handleNavClick('/impressum')}
               className="text-[var(--text-muted)] hover:text-white transition-colors"
             >
               {translations.footer.imprint}
+            </Link>
+            <span className="text-[var(--border)]">|</span>
+            <Link
+              to="/datenschutz"
+              onClick={handleNavClick('/datenschutz')}
+              className="text-[var(--text-muted)] hover:text-white transition-colors"
+            >
+              {translations.footer.privacy}
             </Link>
           </div>
         </div>
