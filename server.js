@@ -12,8 +12,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || 'https://strali.solutions',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
+app.use(express.json({ limit: '10kb' })); // Limit body size
 
 // Path to the JSON file where queries will be stored
 const queriesFilePath = path.join(__dirname, process.env.CUSTOMERQERIES ||'customer_queries.json');
@@ -53,12 +57,35 @@ const limiter = rateLimit({
   },
 });
 
+// Input sanitization helper
+const sanitizeInput = (str) => {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/[<>]/g, '') // Remove < and > to prevent HTML injection
+    .trim()
+    .slice(0, 1000); // Limit length
+};
+
+// Email validation regex
+const isValidEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
 app.post('/api/contact', limiter, async (req, res) => {
-  const { name = 'Unbekannt', email, message } = req.body; // Default name if not provided
+  // Sanitize inputs
+  const name = sanitizeInput(req.body.name) || 'Unbekannt';
+  const email = sanitizeInput(req.body.email);
+  const message = sanitizeInput(req.body.message);
 
   // Validate inputs
   if (!email || !message) {
     return res.status(400).json({ success: false, error: 'Email and message are required.' });
+  }
+
+  // Validate email format
+  if (!isValidEmail(email)) {
+    return res.status(400).json({ success: false, error: 'Invalid email format.' });
   }
 
   // Read existing queries from the JSON file
