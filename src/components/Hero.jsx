@@ -67,34 +67,6 @@ const Hero = () => {
           </motion.a>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.button
-        onClick={() => {
-          const servicesSection = document.getElementById('leistungen');
-          if (servicesSection) {
-            servicesSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-[var(--text-muted)] hover:text-white transition-colors cursor-pointer"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        aria-label="Scroll to services"
-      >
-        <motion.svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <path d="M12 5v14M5 12l7 7 7-7"/>
-        </motion.svg>
-      </motion.button>
     </motion.section>
   );
 };
