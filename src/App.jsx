@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { initAnalytics } from './utils/analytics';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -290,6 +291,11 @@ const HeaderWithNavigation = ({ isMenuOpen, setIsMenuOpen }) => {
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Initialize analytics if consent was previously given
+  useEffect(() => {
+    initAnalytics();
+  }, []);
 
   return (
     <LanguageProvider>

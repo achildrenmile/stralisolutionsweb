@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import { loadUmami } from '../utils/analytics';
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -26,6 +27,8 @@ const CookieConsent = () => {
       timestamp: new Date().toISOString()
     }));
     setShowBanner(false);
+    // Load analytics after consent
+    loadUmami();
   };
 
   const handleAcceptEssential = () => {
