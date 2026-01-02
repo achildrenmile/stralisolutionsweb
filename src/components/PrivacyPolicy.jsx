@@ -21,8 +21,15 @@ const PrivacyPolicy = () => {
             : 'Privacy Policy of Strali Solutions e.U. - Information about the processing of your personal data.'}
         />
         <link rel="canonical" href="https://strali.solutions/datenschutz" />
+        <link rel="alternate" hrefLang="de" href="https://strali.solutions/datenschutz" />
+        <link rel="alternate" hrefLang="en" href="https://strali.solutions/datenschutz" />
         <meta property="og:title" content={isGerman ? 'Datenschutzerklärung | Strali Solutions' : 'Privacy Policy | Strali Solutions'} />
+        <meta property="og:description" content={isGerman
+          ? 'Datenschutzerklärung von Strali Solutions e.U. - DSGVO-konforme Datenverarbeitung.'
+          : 'Privacy Policy of Strali Solutions e.U. - GDPR-compliant data processing.'} />
         <meta property="og:url" content="https://strali.solutions/datenschutz" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://strali.solutions/og-image.png" />
         <meta name="robots" content="noindex, follow" />
       </Helmet>
       <div className="pt-24 px-4 pb-12 min-h-screen">

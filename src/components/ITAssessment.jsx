@@ -41,9 +41,17 @@ const ITAssessment = () => {
             : 'Book your free IT assessment. Analysis of your IT infrastructure, personalized recommendations and expert consultation - no obligation, completely free.'}
         />
         <link rel="canonical" href="https://strali.solutions/assessment" />
+        <link rel="alternate" hrefLang="de" href="https://strali.solutions/assessment" />
+        <link rel="alternate" hrefLang="en" href="https://strali.solutions/assessment" />
+        <link rel="alternate" hrefLang="x-default" href="https://strali.solutions/assessment" />
         <meta property="og:title" content={isGerman ? 'Kostenloses IT-Assessment | Strali Solutions' : 'Free IT Assessment | Strali Solutions'} />
+        <meta property="og:description" content={isGerman
+          ? 'Kostenlose IT-Beratung und Analyse Ihrer IT-Infrastruktur - unverbindlich.'
+          : 'Free IT consultation and analysis of your IT infrastructure - no obligation.'} />
         <meta property="og:url" content="https://strali.solutions/assessment" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://strali.solutions/og-image.png" />
+        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify(assessmentSchema)}
         </script>

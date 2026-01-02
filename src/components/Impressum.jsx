@@ -20,8 +20,15 @@ const Impressum = () => {
             : 'Legal notice and company information for Strali Solutions e.U. - IT Consulting in Carinthia, Austria.'}
         />
         <link rel="canonical" href="https://strali.solutions/impressum" />
+        <link rel="alternate" hrefLang="de" href="https://strali.solutions/impressum" />
+        <link rel="alternate" hrefLang="en" href="https://strali.solutions/impressum" />
         <meta property="og:title" content={isGerman ? 'Impressum | Strali Solutions' : 'Legal Notice | Strali Solutions'} />
+        <meta property="og:description" content={isGerman
+          ? 'Impressum und rechtliche Informationen von Strali Solutions e.U.'
+          : 'Legal notice and company information for Strali Solutions e.U.'} />
         <meta property="og:url" content="https://strali.solutions/impressum" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://strali.solutions/og-image.png" />
         <meta name="robots" content="noindex, follow" />
       </Helmet>
       <div className="pt-24 px-4 pb-12 min-h-screen">
