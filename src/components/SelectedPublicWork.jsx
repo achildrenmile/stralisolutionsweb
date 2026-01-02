@@ -88,8 +88,11 @@ const SelectedPublicWork = () => {
                   <p className="text-[var(--accent)] font-medium mb-1">
                     {translations.publicWork.projectDemoInfo}
                   </p>
-                  <p className="text-sm text-[var(--text-muted)]">
+                  <p className="text-sm text-[var(--text-muted)] mb-2">
                     {translations.publicWork.projectDemoNotice}
+                  </p>
+                  <p className="text-sm text-[var(--text-muted)]">
+                    {translations.publicWork.projectFullDemoRequest}
                   </p>
                 </div>
                 <p className="text-sm text-[var(--text-muted)] italic mb-4">
@@ -106,10 +109,16 @@ const SelectedPublicWork = () => {
                     {translations.publicWork.projectDemoButton}
                   </a>
                   <a
+                    href="#kontakt"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-colors"
+                  >
+                    {translations.publicWork.projectFullDemoButton}
+                  </a>
+                  <a
                     href="https://github.com/achildrenmile/az"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border border-[var(--border)] text-[var(--text-muted)] hover:text-white hover:border-[var(--primary)] transition-colors"
                   >
                     <Github size={18} />
                     {translations.publicWork.projectGithubButton}
