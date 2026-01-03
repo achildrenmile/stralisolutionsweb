@@ -165,6 +165,34 @@ const PrivacyPolicy = () => {
               </div>
             </section>
 
+            {/* Cloudflare */}
+            <section>
+              <h2 className="text-xl font-semibold mb-4 text-[var(--accent-light)]">
+                {t.cloudflare.title}
+              </h2>
+              <div className="space-y-4 text-[var(--text-muted)]">
+                <p>{t.cloudflare.intro}</p>
+                <p>{t.cloudflare.processor}</p>
+                <p>{t.cloudflare.purpose}</p>
+                <p>{t.cloudflare.legal}</p>
+                <p>{t.cloudflare.transfer}</p>
+                <p>{t.cloudflare.dpa}</p>
+                <p>{t.cloudflare.moreInfo}</p>
+                <div className="space-y-1">
+                  <p>
+                    <a href={t.cloudflare.privacyLink} target="_blank" rel="noopener noreferrer" className="text-[var(--primary-light)] hover:underline">
+                      {t.cloudflare.privacyLink}
+                    </a>
+                  </p>
+                  <p>
+                    <a href={t.cloudflare.dpaLink} target="_blank" rel="noopener noreferrer" className="text-[var(--primary-light)] hover:underline">
+                      {t.cloudflare.dpaLink}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </section>
+
             {/* Your Rights */}
             <section>
               <h2 className="text-xl font-semibold mb-4 text-[var(--accent-light)]">

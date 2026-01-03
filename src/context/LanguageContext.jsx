@@ -152,6 +152,18 @@ export const translations = {
         microsoftPrivacy: 'Microsoft Datenschutzerklärung',
         microsoftPrivacyLink: 'https://privacy.microsoft.com/de-de/privacystatement'
       },
+      cloudflare: {
+        title: 'Datenschutzerklärung – Cloudflare',
+        intro: 'Diese Website nutzt den Dienst „Cloudflare Tunnel" der Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA.',
+        processor: 'Cloudflare fungiert als Auftragsverarbeiter im Sinne von Art. 28 DSGVO und verarbeitet personenbezogene Daten ausschließlich im Auftrag und nach Weisung des Websitebetreibers. Dabei werden insbesondere IP-Adressen, technische Verbindungsdaten, Metadaten von HTTP-Anfragen sowie Sicherheits- und Protokolldaten verarbeitet.',
+        purpose: 'Die Datenverarbeitung erfolgt zum Zweck der sicheren, stabilen und effizienten Bereitstellung dieser Website, insbesondere zur Abwehr von Angriffen, zur Missbrauchserkennung sowie zur Gewährleistung der Verfügbarkeit der Online-Dienste.',
+        legal: 'Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Sicherheit, Stabilität und Schutz vor Missbrauch).',
+        transfer: 'Cloudflare kann personenbezogene Daten auch in Drittländern (insbesondere den USA) verarbeiten. Zur Sicherstellung eines angemessenen Datenschutzniveaus hat Cloudflare geeignete Garantien gemäß Art. 46 DSGVO implementiert, insbesondere durch den Abschluss von EU-Standardvertragsklauseln (SCCs). Zusätzlich kann Cloudflare – sofern anwendbar – auf den EU-US Data Privacy Framework zurückgreifen.',
+        dpa: 'Mit Cloudflare besteht ein Data Processing Addendum (DPA) gemäß Art. 28 DSGVO, das die datenschutzkonforme Verarbeitung personenbezogener Daten vertraglich regelt.',
+        moreInfo: 'Weitere Informationen zur Datenverarbeitung durch Cloudflare finden Sie unter:',
+        privacyLink: 'https://www.cloudflare.com/privacypolicy/',
+        dpaLink: 'https://www.cloudflare.com/cloudflare-customer-dpa/'
+      },
       rights: {
         title: 'Ihre Rechte',
         text: 'Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit. Bei Fragen zur Verarbeitung Ihrer Daten oder zur Ausübung Ihrer Rechte können Sie sich jederzeit an uns wenden.'
@@ -462,6 +474,18 @@ export const translations = {
         ],
         microsoftPrivacy: 'Microsoft Privacy Statement',
         microsoftPrivacyLink: 'https://privacy.microsoft.com/en-us/privacystatement'
+      },
+      cloudflare: {
+        title: 'Privacy Policy – Cloudflare',
+        intro: 'This website uses "Cloudflare Tunnel", a service provided by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA.',
+        processor: 'Cloudflare acts as a data processor within the meaning of Article 28 GDPR and processes personal data solely on behalf of and in accordance with the instructions of the website operator. The processed data includes, in particular, IP addresses, technical connection data, HTTP request metadata, and security and log data.',
+        purpose: 'The processing is carried out for the purpose of ensuring the secure, stable, and efficient operation of this website, in particular for protection against attacks, abuse prevention, and maintaining service availability.',
+        legal: 'The legal basis for the processing is Article 6(1)(f) GDPR (legitimate interest in ensuring security, stability, and protection against misuse).',
+        transfer: 'Cloudflare may process personal data in third countries, in particular the United States. To ensure an adequate level of data protection, Cloudflare has implemented appropriate safeguards pursuant to Article 46 GDPR, including the use of EU Standard Contractual Clauses (SCCs). Where applicable, Cloudflare may also rely on the EU-US Data Privacy Framework.',
+        dpa: 'A Data Processing Addendum (DPA) in accordance with Article 28 GDPR has been concluded with Cloudflare, governing the processing of personal data in compliance with data protection law.',
+        moreInfo: 'Further information on data processing by Cloudflare can be found at:',
+        privacyLink: 'https://www.cloudflare.com/privacypolicy/',
+        dpaLink: 'https://www.cloudflare.com/cloudflare-customer-dpa/'
       },
       rights: {
         title: 'Your Rights',
