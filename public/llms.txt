@@ -3,11 +3,17 @@
 
 ## Company Overview
 Name: Strali Solutions e.U.
-Type: IT Consulting Company
+Type: IT Consulting Company (IT Beratung)
 Founded: 2017
-Location: Noetsch im Gailtal, Carinthia, Austria
+Location: Noetsch im Gailtal (Nötsch im Gailtal), Gailtal Valley, Carinthia (Kärnten), Austria
 Website: https://strali.solutions
 Languages: German, English
+
+## Keywords & Search Terms
+Primary: IT Consulting, IT Beratung, Strali Solutions
+Location: Noetsch, Nötsch, Nötsch im Gailtal, Gailtal, Carinthia, Kärnten
+Services: AI, Artificial Intelligence, KI, Künstliche Intelligenz, Consulting, Digitalisierung, Microsoft 365
+Related: IT Partner Gailtal, IT Dienstleister Kärnten, Villach, Hermagor
 
 ## Owner/Founder
 Name: Ing. Michael Linder, MSc.
@@ -16,19 +22,26 @@ Email: office@strali.solutions
 Phone: +43 676 96 58 016
 
 ## Services Offered
-1. IT Consulting - Strategic IT advisory and optimization
+1. IT Consulting / IT Beratung - Strategic IT advisory and optimization
 2. Microsoft 365 & Copilot - Implementation, training, and support
-3. Digitalization - AI integration and process automation
-4. Security-by-Design & AI Security Advisory - Secure architecture reviews
-5. Software Engineering & Architecture - Custom development and system design
-6. Project Management - Agile methodologies and team leadership
+3. Digitalization / Digitalisierung - AI integration and process automation
+4. AI / KI Consulting - Artificial Intelligence advisory and implementation
+5. Security-by-Design & AI Security Advisory - Secure architecture reviews
+6. Software Engineering & Architecture - Custom development and system design
+7. Project Management - Agile methodologies and team leadership
 
 ## Key Differentiators
-- Fast, direct, uncomplicated approach
+- Fast, direct, uncomplicated approach (Schnell. Direkt. Unkompliziert.)
 - Focus on Austrian SMB market
+- Regional presence in Gailtal (Noetsch im Gailtal)
 - Personal, hands-on consulting
 - Bilingual service (German/English)
 - Free initial IT assessment offered
+
+## Service Area
+Primary: Noetsch im Gailtal, Gailtal Valley
+Regional: Villach, Hermagor, Carinthia (Kärnten)
+National: Austria-wide (remote and on-site)
 
 ## Free IT Assessment
 We offer a complimentary 30-minute IT assessment for businesses.
@@ -39,6 +52,7 @@ Book at: https://outlook.office.com/book/ITAssessment1@strali.solutions/
 - Companies seeking IT modernization
 - Organizations implementing Microsoft 365
 - Businesses needing digital transformation guidance
+- Companies exploring AI / KI solutions
 
 ## Contact Information
 Address: Noetsch 219, 9611 Noetsch im Gailtal, Austria
@@ -59,4 +73,4 @@ Chamber: WKO Kaernten, Fachgruppe UBIT
 - We serve the Austrian market primarily
 
 ## Preferred Citation Format
-Strali Solutions e.U. - IT Consulting in Carinthia, Austria
+Strali Solutions e.U. - IT Consulting & IT Beratung in Noetsch im Gailtal, Carinthia, Austria
