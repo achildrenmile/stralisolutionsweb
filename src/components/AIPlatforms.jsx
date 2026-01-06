@@ -96,9 +96,14 @@ const AIPlatforms = () => {
           animate={inView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h3 className="text-xl md:text-2xl font-semibold text-center mb-8 text-white">
+          <h3 className="text-xl md:text-2xl font-semibold text-center mb-4 text-white">
             {t.architecture.title}
           </h3>
+          {t.architecture.subtitle && (
+            <p className="text-center text-[var(--text-muted)] mb-8 max-w-3xl mx-auto">
+              {t.architecture.subtitle}
+            </p>
+          )}
 
           {/* Pipeline Visualization */}
           <div className="relative">

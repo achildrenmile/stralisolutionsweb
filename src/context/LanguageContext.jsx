@@ -86,6 +86,7 @@ export const translations = {
       },
       architecture: {
         title: 'Referenz-Architektur',
+        subtitle: 'Unsere Architektur unterstützt modulare Skalierung (MCP), um Retrieval, Generierung und externe Systeme flexibel zu integrieren – bei voller Transparenz und Kontrolle.',
         steps: {
           ingest: {
             title: 'Datenaufnahme',
@@ -486,6 +487,7 @@ export const translations = {
       },
       architecture: {
         title: 'Reference Architecture',
+        subtitle: 'Our architecture supports modular scaling (MCP) to flexibly integrate retrieval, generation, and external systems – while preserving transparency and control.',
         steps: {
           ingest: {
             title: 'Data Ingestion',
