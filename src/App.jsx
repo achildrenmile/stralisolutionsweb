@@ -11,6 +11,7 @@ import Impressum from './components/Impressum';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ITAssessment from './components/ITAssessment';
 import SelectedPublicWork from './components/SelectedPublicWork';
+import AIPlatforms from './components/AIPlatforms';
 import NotFound from './components/NotFound';
 import ChatWidget from './components/ChatWidget';
 import CookieConsent from './components/CookieConsent';
@@ -349,6 +350,7 @@ const Homepage = ({ isMenuOpen, setIsMenuOpen }) => {
       />
       <Hero />
       <Services />
+      <AIPlatforms />
       <About />
       <SelectedPublicWork />
       <Contact />

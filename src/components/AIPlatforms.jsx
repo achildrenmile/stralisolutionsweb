@@ -1,0 +1,207 @@
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useLanguage } from '../context/LanguageContext';
+import { Database, Search, Brain, MessageSquare, Layers, Zap } from 'lucide-react';
+
+const AIPlatforms = () => {
+  const { translations } = useLanguage();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
+  if (!translations?.aiPlatforms) return null;
+
+  const t = translations.aiPlatforms;
+
+  const architectureSteps = [
+    { icon: Database, key: 'ingest' },
+    { icon: Layers, key: 'index' },
+    { icon: Search, key: 'retrieve' },
+    { icon: Brain, key: 'generate' },
+    { icon: MessageSquare, key: 'deliver' }
+  ];
+
+  const useCases = [
+    { icon: '📚', key: 'knowledge' },
+    { icon: '🔍', key: 'logs' },
+    { icon: '📄', key: 'docs' }
+  ];
+
+  return (
+    <section id="ai-platforms" className="py-20 px-4 bg-gradient-dark">
+      <div className="container mx-auto max-w-7xl">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white">
+            {t.title}
+          </h2>
+          <p className="text-lg md:text-xl text-[var(--text-muted)] max-w-3xl mx-auto">
+            {t.subtitle}
+          </p>
+        </motion.div>
+
+        {/* Problem/Solution */}
+        <motion.div
+          ref={ref}
+          className="grid md:grid-cols-2 gap-8 mb-16"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={{
+            visible: { transition: { staggerChildren: 0.1 } }
+          }}
+        >
+          <motion.div
+            className="card-dark rounded-2xl p-8"
+            variants={{
+              hidden: { y: 30, opacity: 0 },
+              visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
+            }}
+          >
+            <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-3">
+              <span className="text-red-400">?</span>
+              {t.problem.title}
+            </h3>
+            <p className="text-[var(--text-muted)] leading-relaxed">
+              {t.problem.description}
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="card-dark rounded-2xl p-8"
+            variants={{
+              hidden: { y: 30, opacity: 0 },
+              visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
+            }}
+          >
+            <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-3">
+              <Zap className="text-[var(--accent)]" size={24} />
+              {t.solution.title}
+            </h3>
+            <p className="text-[var(--text-muted)] leading-relaxed">
+              {t.solution.description}
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* Architecture Pipeline */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h3 className="text-xl md:text-2xl font-semibold text-center mb-8 text-white">
+            {t.architecture.title}
+          </h3>
+
+          {/* Pipeline Visualization */}
+          <div className="relative">
+            {/* Connection Line */}
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary)] via-[var(--accent)] to-[var(--primary)] transform -translate-y-1/2 z-0 mx-16" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-2 relative z-10">
+              {architectureSteps.map((step, index) => {
+                const IconComponent = step.icon;
+                const stepData = t.architecture.steps[step.key];
+                return (
+                  <motion.div
+                    key={step.key}
+                    className="card-dark rounded-xl p-4 text-center relative"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.4, delay: 0.1 * index }}
+                  >
+                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[var(--primary)] flex items-center justify-center">
+                      <IconComponent className="text-white" size={24} />
+                    </div>
+                    <h4 className="font-semibold text-white text-sm mb-1">{stepData.title}</h4>
+                    <p className="text-xs text-[var(--text-muted)]">{stepData.description}</p>
+
+                    {/* Arrow for mobile/tablet */}
+                    {index < architectureSteps.length - 1 && (
+                      <div className="lg:hidden absolute -bottom-3 left-1/2 transform -translate-x-1/2 text-[var(--accent)]">
+                        ↓
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Technology Stack */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h3 className="text-xl md:text-2xl font-semibold text-center mb-8 text-white">
+            {t.stack.title}
+          </h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {t.stack.technologies.map((tech, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 rounded-full bg-[var(--primary)]/20 border border-[var(--primary)]/30 text-white text-sm font-medium"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Use Cases */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <h3 className="text-xl md:text-2xl font-semibold text-center mb-8 text-white">
+            {t.useCases.title}
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {useCases.map((useCase, index) => {
+              const caseData = t.useCases.items[useCase.key];
+              return (
+                <motion.div
+                  key={useCase.key}
+                  className="card-dark rounded-xl p-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.4, delay: 0.6 + 0.1 * index }}
+                >
+                  <div className="text-3xl mb-3">{useCase.icon}</div>
+                  <h4 className="font-semibold text-white mb-2">{caseData.title}</h4>
+                  <p className="text-sm text-[var(--text-muted)]">{caseData.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Differentiator */}
+        <motion.div
+          className="mt-16 card-dark rounded-2xl p-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          <h3 className="text-xl font-semibold mb-4 text-white">{t.differentiator.title}</h3>
+          <p className="text-[var(--text-muted)] max-w-2xl mx-auto leading-relaxed">
+            {t.differentiator.description}
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default AIPlatforms;

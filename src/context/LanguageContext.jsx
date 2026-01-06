@@ -22,6 +22,7 @@ export const translations = {
     nav: {
       about: 'Über uns',
       services: 'Leistungen',
+      aiPlatforms: 'AI-Plattformen',
       contact: 'Kontakt',
       assessment: 'IT-Assessment'
     },
@@ -71,6 +72,68 @@ export const translations = {
           icon: 'Users'
         }
       ]
+    },
+    aiPlatforms: {
+      title: 'AI & Intelligente Plattformen',
+      subtitle: 'Next-Generation Datenplattformen mit RAG, Elasticsearch und LLM-Integration für echten Business-Mehrwert.',
+      problem: {
+        title: 'Die Herausforderung',
+        description: 'Unternehmen verfügen über wertvolles Wissen in Dokumenten, Logs und Datenbanken – aber herkömmliche Suchsysteme liefern ungenaue Ergebnisse. Mitarbeiter verbringen Stunden mit der Suche nach Informationen, die in Silos verborgen sind.'
+      },
+      solution: {
+        title: 'Unsere Lösung',
+        description: 'Wir bauen intelligente Plattformen auf Basis von RAG (Retrieval-Augmented Generation), die Elasticsearch für präzise hybride Suche mit LLMs für natürlichsprachliche Antworten kombinieren – zugänglich über OpenWebUI.'
+      },
+      architecture: {
+        title: 'Referenz-Architektur',
+        steps: {
+          ingest: {
+            title: 'Datenaufnahme',
+            description: 'ELK Stack, Logstash, APIs'
+          },
+          index: {
+            title: 'Indexierung',
+            description: 'Vektor + Keyword (Hybrid)'
+          },
+          retrieve: {
+            title: 'Retrieval',
+            description: 'Semantische Suche & Reranking'
+          },
+          generate: {
+            title: 'Generierung',
+            description: 'LLM mit Kontext (RAG)'
+          },
+          deliver: {
+            title: 'Auslieferung',
+            description: 'OpenWebUI Chat Interface'
+          }
+        }
+      },
+      stack: {
+        title: 'Technologie-Stack',
+        technologies: ['Elasticsearch', 'Logstash', 'Kibana', 'RAG', 'LLM', 'OpenWebUI', 'Ollama', 'Vector Search', 'Embeddings']
+      },
+      useCases: {
+        title: 'Anwendungsfälle',
+        items: {
+          knowledge: {
+            title: 'Wissens-Assistent',
+            description: 'Interne Dokumentation, Richtlinien und Prozesse per natürlicher Sprache durchsuchen und zusammenfassen.'
+          },
+          logs: {
+            title: 'Log-Intelligenz',
+            description: 'Automatische Fehleranalyse, Anomalie-Erkennung und Root-Cause-Analyse aus Systemlogs.'
+          },
+          docs: {
+            title: 'Dokumenten-Q&A',
+            description: 'Verträge analysieren, Compliance prüfen und Berichte automatisch zusammenfassen.'
+          }
+        }
+      },
+      differentiator: {
+        title: 'Was uns unterscheidet',
+        description: 'Wir liefern keine generischen "KI-Lösungen", sondern konkrete Architekturen mit nachvollziehbaren Komponenten: ELK für die Datenpipeline, hybride Suche für Präzision, lokale oder Cloud-LLMs nach Ihren Anforderungen, und OpenWebUI für intuitive Nutzung. Alles transparent, erweiterbar und auf Ihre Datenhoheit ausgelegt.'
+      }
     },
     contact: {
       title: 'Kontakt',
@@ -345,6 +408,7 @@ export const translations = {
     nav: {
       about: 'About',
       services: 'Services',
+      aiPlatforms: 'AI Platforms',
       contact: 'Contact',
       assessment: 'IT Assessment'
     },
@@ -394,6 +458,68 @@ export const translations = {
           icon: 'Users'
         }
       ]
+    },
+    aiPlatforms: {
+      title: 'AI & Intelligent Platforms',
+      subtitle: 'Next-generation data platforms with RAG, Elasticsearch, and LLM integration for real business value.',
+      problem: {
+        title: 'The Challenge',
+        description: 'Organizations have valuable knowledge in documents, logs, and databases – but traditional search systems deliver imprecise results. Employees spend hours searching for information buried in silos.'
+      },
+      solution: {
+        title: 'Our Solution',
+        description: 'We build intelligent platforms based on RAG (Retrieval-Augmented Generation), combining Elasticsearch for precise hybrid search with LLMs for natural language answers – accessible via OpenWebUI.'
+      },
+      architecture: {
+        title: 'Reference Architecture',
+        steps: {
+          ingest: {
+            title: 'Data Ingestion',
+            description: 'ELK Stack, Logstash, APIs'
+          },
+          index: {
+            title: 'Indexing',
+            description: 'Vector + Keyword (Hybrid)'
+          },
+          retrieve: {
+            title: 'Retrieval',
+            description: 'Semantic Search & Reranking'
+          },
+          generate: {
+            title: 'Generation',
+            description: 'LLM with Context (RAG)'
+          },
+          deliver: {
+            title: 'Delivery',
+            description: 'OpenWebUI Chat Interface'
+          }
+        }
+      },
+      stack: {
+        title: 'Technology Stack',
+        technologies: ['Elasticsearch', 'Logstash', 'Kibana', 'RAG', 'LLM', 'OpenWebUI', 'Ollama', 'Vector Search', 'Embeddings']
+      },
+      useCases: {
+        title: 'Use Cases',
+        items: {
+          knowledge: {
+            title: 'Knowledge Assistant',
+            description: 'Search and summarize internal documentation, policies, and processes using natural language.'
+          },
+          logs: {
+            title: 'Log Intelligence',
+            description: 'Automatic error analysis, anomaly detection, and root cause analysis from system logs.'
+          },
+          docs: {
+            title: 'Document Q&A',
+            description: 'Analyze contracts, check compliance, and automatically summarize reports.'
+          }
+        }
+      },
+      differentiator: {
+        title: 'What Sets Us Apart',
+        description: 'We don\'t deliver generic "AI solutions" – we provide concrete architectures with transparent components: ELK for the data pipeline, hybrid search for precision, local or cloud LLMs based on your requirements, and OpenWebUI for intuitive usage. Everything is transparent, extensible, and designed for your data sovereignty.'
+      }
     },
     contact: {
       title: 'Contact',

@@ -10,8 +10,9 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { name: translations.nav.about, href: 'über-uns' },
     { name: translations.nav.services, href: 'leistungen' },
+    { name: translations.nav.aiPlatforms, href: 'ai-platforms' },
+    { name: translations.nav.about, href: 'über-uns' },
     { name: translations.nav.contact, href: 'kontakt' }
   ];
 
