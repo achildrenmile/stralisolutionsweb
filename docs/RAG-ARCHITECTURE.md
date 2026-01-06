@@ -90,6 +90,23 @@ This document describes a reference architecture for building Retrieval-Augmente
 │  └────────────────────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────────────────┘
                                               │
+┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─▼─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐
+│                    MCP Tool Interface Layer (Optional)                       │
+│  ┌────────────────────────────────────────────────────────────────────┐    │
+│  │                    Model Context Protocol (MCP)                     │    │
+│  │  • Standardized tool interface for LLM capabilities                │    │
+│  │  • Governed access to retrieval services                           │    │
+│  │  • Audit logging for all tool invocations                          │    │
+│  │  • Enterprise-grade access control                                 │    │
+│  └────────────────────────────────────────────────────────────────────┘    │
+│  ┌────────────────────────────────────────────────────────────────────┐    │
+│  │                    MCP Servers (Adapters)                           │    │
+│  │  • Elasticsearch MCP: Search & retrieval operations                │    │
+│  │  • Document MCP: File access with permission checks                │    │
+│  │  • Calendar/Email MCP: Enterprise integrations                     │    │
+│  └────────────────────────────────────────────────────────────────────┘    │
+└ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─┬─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┘
+                                              │
 ┌─────────────────────────────────────────────▼───────────────────────────────┐
 │                         User Interface Layer                                 │
 │  ┌────────────────────────────────────────────────────────────────────┐    │
@@ -97,6 +114,7 @@ This document describes a reference architecture for building Retrieval-Augmente
 │  │  • Chat interface with conversation history                        │    │
 │  │  • Model selection & parameter tuning                              │    │
 │  │  • RAG pipeline integration                                        │    │
+│  │  • MCP tool orchestration (when enabled)                           │    │
 │  │  • User authentication & multi-tenancy                             │    │
 │  └────────────────────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -252,6 +270,39 @@ Question: {user_query}
 - **Authentication**: LDAP/OIDC integration for enterprise
 - **Multi-tenancy**: Separate namespaces per team/project
 
+### 8. MCP Tool Interface (Optional Extension)
+
+The Model Context Protocol (MCP) provides a standardized interface for LLMs to access tools and services in a governed, auditable manner. MCP is positioned as an **optional extension layer** that enhances the base RAG architecture without replacing it.
+
+**Key Characteristics:**
+- **Standardized Contract**: MCP defines a protocol, not an agent framework – LLMs request specific capabilities through well-defined interfaces
+- **Capabilities, Not Data**: MCP servers expose operations (search, retrieve, summarize) rather than raw database access
+- **Enterprise Safety**: All tool invocations are logged, rate-limited, and subject to RBAC policies
+- **Deterministic Retrieval**: The search-first RAG pattern remains primary; MCP extends but doesn't bypass it
+- **Future-Proof**: Modular design allows adding new MCP servers without architectural changes
+
+**MCP Server Examples:**
+
+| MCP Server | Capabilities | Access Control |
+|------------|--------------|----------------|
+| Elasticsearch MCP | `search`, `retrieve`, `aggregate` | Index-level permissions |
+| Document MCP | `read`, `list`, `summarize` | File/folder ACLs |
+| Calendar MCP | `query_events`, `check_availability` | User delegation |
+| Email MCP | `search_mail`, `get_thread` | Mailbox permissions |
+
+**What MCP is NOT:**
+- Not an autonomous agent framework
+- Not a replacement for RAG retrieval
+- Not direct database access for LLMs
+- Not vendor-specific (protocol is open)
+
+**Integration Pattern:**
+```
+User Query → LLM → MCP Tool Request → MCP Server → Governed Operation → Result → LLM → Response
+                         ↓
+                   Audit Log Entry
+```
+
 ## Use Cases
 
 ### Knowledge Assistant
@@ -292,3 +343,5 @@ Question: {user_query}
 - [Elasticsearch Vector Search](https://www.elastic.co/guide/en/elasticsearch/reference/current/dense-vector.html)
 - [OpenWebUI Documentation](https://docs.openwebui.com/)
 - [RAG Best Practices](https://www.anthropic.com/news/retrieval-augmented-generation)
+- [Model Context Protocol (MCP) Specification](https://modelcontextprotocol.io/)
+- [MCP Server Registry](https://github.com/modelcontextprotocol/servers)

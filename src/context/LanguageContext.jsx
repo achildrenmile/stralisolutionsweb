@@ -111,7 +111,7 @@ export const translations = {
       },
       stack: {
         title: 'Technologie-Stack',
-        technologies: ['Elasticsearch', 'Logstash', 'Kibana', 'RAG', 'LLM', 'OpenWebUI', 'Ollama', 'Vector Search', 'Embeddings']
+        technologies: ['Elasticsearch', 'Logstash', 'Kibana', 'RAG', 'LLM', 'OpenWebUI', 'Ollama', 'Vector Search', 'Embeddings', 'MCP']
       },
       useCases: {
         title: 'Anwendungsfälle',
@@ -133,6 +133,20 @@ export const translations = {
       differentiator: {
         title: 'Was uns unterscheidet',
         description: 'Wir liefern keine generischen "KI-Lösungen", sondern konkrete Architekturen mit nachvollziehbaren Komponenten: ELK für die Datenpipeline, hybride Suche für Präzision, lokale oder Cloud-LLMs nach Ihren Anforderungen, und OpenWebUI für intuitive Nutzung. Alles transparent, erweiterbar und auf Ihre Datenhoheit ausgelegt.'
+      },
+      mcp: {
+        title: 'MCP: Informationssilos aufbrechen',
+        badge: 'Zukunftssichere Erweiterung',
+        description: 'Wertvolles Unternehmenswissen liegt oft verstreut in E-Mails, Kalendern, SharePoint, CRM und Tickets. Das Model Context Protocol (MCP) verbindet diese Systeme sicher mit Ihrer KI-Plattform – Mitarbeiter erhalten Antworten aus allen relevanten Quellen, ohne zwischen Anwendungen wechseln zu müssen.',
+        points: [
+          'Silos aufbrechen: Eine Frage durchsucht E-Mail, Dokumente, Tickets und mehr gleichzeitig',
+          'Unternehmensdaten nutzbar machen: Bestehendes Wissen wird für die KI zugänglich – sicher und kontrolliert',
+          'Volle Nachvollziehbarkeit: Jede KI-Aktion wird revisionssicher protokolliert',
+          'Bestehende Berechtigungen gelten: Mitarbeiter sehen nur, was sie sehen dürfen',
+          'Offener Standard: Schrittweise Einführung ohne Vendor Lock-in'
+        ],
+        notTitle: 'Klare Grenzen:',
+        notDescription: 'Die KI handelt nicht selbstständig, sondern antwortet auf Anfragen. Sie greift nicht direkt auf Datenbanken zu, sondern nutzt definierte, kontrollierte Schnittstellen. Ihre Daten bleiben in Ihren Systemen.'
       }
     },
     contact: {
@@ -497,7 +511,7 @@ export const translations = {
       },
       stack: {
         title: 'Technology Stack',
-        technologies: ['Elasticsearch', 'Logstash', 'Kibana', 'RAG', 'LLM', 'OpenWebUI', 'Ollama', 'Vector Search', 'Embeddings']
+        technologies: ['Elasticsearch', 'Logstash', 'Kibana', 'RAG', 'LLM', 'OpenWebUI', 'Ollama', 'Vector Search', 'Embeddings', 'MCP']
       },
       useCases: {
         title: 'Use Cases',
@@ -519,6 +533,20 @@ export const translations = {
       differentiator: {
         title: 'What Sets Us Apart',
         description: 'We don\'t deliver generic "AI solutions" – we provide concrete architectures with transparent components: ELK for the data pipeline, hybrid search for precision, local or cloud LLMs based on your requirements, and OpenWebUI for intuitive usage. Everything is transparent, extensible, and designed for your data sovereignty.'
+      },
+      mcp: {
+        title: 'MCP: Breaking Down Information Silos',
+        badge: 'Future-Proof Extension',
+        description: 'Valuable company knowledge is often scattered across emails, calendars, SharePoint, CRM, and tickets. The Model Context Protocol (MCP) securely connects these systems to your AI platform – employees get answers from all relevant sources without switching between applications.',
+        points: [
+          'Break down silos: One question searches email, documents, tickets, and more simultaneously',
+          'Unlock enterprise data: Existing knowledge becomes accessible to AI – securely and controlled',
+          'Full traceability: Every AI action is logged for compliance and audit',
+          'Existing permissions apply: Users only access what they\'re authorized to see',
+          'Open standard: Gradual rollout without vendor lock-in'
+        ],
+        notTitle: 'Clear boundaries:',
+        notDescription: 'The AI responds to requests, it doesn\'t act autonomously. It uses controlled interfaces, not direct database access. Your data stays in your systems.'
       }
     },
     contact: {

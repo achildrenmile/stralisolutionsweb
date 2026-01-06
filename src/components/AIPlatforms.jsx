@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '../context/LanguageContext';
-import { Database, Search, Brain, MessageSquare, Layers, Zap } from 'lucide-react';
+import { Database, Search, Brain, MessageSquare, Layers, Zap, Plug, Shield, FileCheck, Clock } from 'lucide-react';
 
 const AIPlatforms = () => {
   const { translations } = useLanguage();
@@ -187,12 +187,58 @@ const AIPlatforms = () => {
           </div>
         </motion.div>
 
+        {/* MCP Extension (Optional) */}
+        {t.mcp && (
+          <motion.div
+            className="mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <div className="card-dark rounded-2xl p-8 border border-dashed border-[var(--accent)]/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-[var(--accent)]/20 flex items-center justify-center">
+                  <Plug className="text-[var(--accent)]" size={20} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-white">{t.mcp.title}</h3>
+                  <span className="text-xs text-[var(--accent)] font-medium">{t.mcp.badge}</span>
+                </div>
+              </div>
+
+              <p className="text-[var(--text-muted)] mb-6 leading-relaxed">
+                {t.mcp.description}
+              </p>
+
+              {/* MCP Key Points */}
+              <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                {t.mcp.points.map((point, index) => {
+                  const icons = [Shield, FileCheck, Clock, Plug];
+                  const IconComponent = icons[index % icons.length];
+                  return (
+                    <div key={index} className="flex items-start gap-3">
+                      <IconComponent className="text-[var(--accent)] mt-1 flex-shrink-0" size={16} />
+                      <span className="text-sm text-[var(--text-muted)]">{point}</span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* What MCP is NOT */}
+              <div className="bg-[var(--bg-dark)]/50 rounded-lg p-4">
+                <p className="text-xs text-[var(--text-muted)] font-medium mb-2">{t.mcp.notTitle}</p>
+                <p className="text-xs text-[var(--text-muted)]">{t.mcp.notDescription}</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {/* Differentiator */}
         <motion.div
           className="mt-16 card-dark rounded-2xl p-8 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
         >
           <h3 className="text-xl font-semibold mb-4 text-white">{t.differentiator.title}</h3>
           <p className="text-[var(--text-muted)] max-w-2xl mx-auto leading-relaxed">
