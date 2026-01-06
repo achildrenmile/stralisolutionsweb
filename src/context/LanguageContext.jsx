@@ -133,7 +133,7 @@ export const translations = {
       },
       differentiator: {
         title: 'Was uns unterscheidet',
-        description: 'Wir liefern keine generischen "KI-Lösungen", sondern konkrete Architekturen mit nachvollziehbaren Komponenten: ELK für die Datenpipeline, hybride Suche für Präzision, lokale oder Cloud-LLMs nach Ihren Anforderungen, und OpenWebUI für intuitive Nutzung. Alles transparent, erweiterbar und auf Ihre Datenhoheit ausgelegt.'
+        description: 'Wir liefern keine generischen "KI-Lösungen", sondern konkrete Architekturen mit nachvollziehbaren Komponenten: ELK für die Datenpipeline, hybride Suche für Präzision, lokale oder Cloud-LLMs nach Ihren Anforderungen, und OpenWebUI für intuitive Nutzung. Alles transparent, erweiterbar und auf Ihre Datenhoheit ausgelegt. Wir setzen auf modulares, zusammensetzbares Plattform-Design – Sie wählen nur, was Sie brauchen, und nichts, was Sie nicht brauchen.'
       },
       mcp: {
         title: 'MCP: Informationssilos aufbrechen',
@@ -534,7 +534,7 @@ export const translations = {
       },
       differentiator: {
         title: 'What Sets Us Apart',
-        description: 'We don\'t deliver generic "AI solutions" – we provide concrete architectures with transparent components: ELK for the data pipeline, hybrid search for precision, local or cloud LLMs based on your requirements, and OpenWebUI for intuitive usage. Everything is transparent, extensible, and designed for your data sovereignty.'
+        description: 'We don\'t deliver generic "AI solutions" – we provide concrete architectures with transparent components: ELK for the data pipeline, hybrid search for precision, local or cloud LLMs based on your requirements, and OpenWebUI for intuitive usage. Everything is transparent, extensible, and designed for your data sovereignty. We emphasize modular, composable platform design – so you choose only what you need, and nothing you don\'t.'
       },
       mcp: {
         title: 'MCP: Breaking Down Information Silos',
