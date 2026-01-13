@@ -41,23 +41,40 @@ Corporate website for Strali Solutions e.U., an IT consulting company based in C
   - Microsoft Copilot AI-powered assistance features
 - Translations updated in `src/context/LanguageContext.jsx`
 
-## CI/CD Pipeline
-- **Script:** `/home/oe8yml/deploy-strali.sh`
-- **Log:** `/home/oe8yml/strali-deploy.log`
-- **Schedule:** Daily at 6:00 PM via cron
-- **Target:** `/var/www/stralisolutionsweb/dist/`
-- **Process:** Fetches from GitHub → pulls if changes → npm install → vite build
+## Deployment
+
+### Production (Synology NAS)
+
+The site runs on a Synology NAS via Docker with Cloudflare Tunnel.
+
+```bash
+# Deploy to production
+./deploy-production.sh
+```
+
+**Requirements:**
+- Copy `.env.production.example` to `.env.production` and configure
+- SSH access to Synology configured
+
+**Infrastructure:**
+- **Host**: Synology NAS
+- **Container**: `strali-website` on port 8080
+- **Tunnel**: `cloudflared-strali` (Cloudflare Tunnel)
+- **URL**: https://strali.solutions
+
+**Related Services on same tunnel:**
+- https://analytics.strali.solutions (Umami analytics)
+- https://azdemo.strali.solutions (Arbeitszeit demo)
 
 ## Git Configuration
+- **Repository:** https://github.com/achildrenmile/stralisolutionsweb
 - **User:** achildrenmile
-- **Email:** michael@strali.solutions
-- **Credentials:** Stored in `~/.git-credentials`
 
 ## Key Files
 - `src/index.css` - Theme variables and custom classes
 - `src/context/LanguageContext.jsx` - All translations (DE/EN)
 - `src/components/` - All React components
-- `/home/oe8yml/deploy-strali.sh` - Auto-deploy script
+- `deploy-production.sh` - Production deployment script
 
 ### IT Assessment Booking Page (Dec 2025)
 - **New Page:** `/assessment` - Free IT Assessment booking landing page
@@ -177,12 +194,9 @@ npm run dev
 # Build
 npm run build
 
-# Manual deploy
-/home/oe8yml/deploy-strali.sh
+# Deploy to production (Synology)
+./deploy-production.sh
 
-# View deploy logs
-tail -f /home/oe8yml/strali-deploy.log
-
-# Edit cron schedule
-crontab -e
+# Check container logs on Synology
+ssh straliadmin@<SYNOLOGY_IP> '/usr/local/bin/docker logs strali-website'
 ```
