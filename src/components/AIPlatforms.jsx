@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '../context/LanguageContext';
-import { Database, Search, Brain, MessageSquare, Layers, Zap, Plug, Shield, FileCheck, Clock } from 'lucide-react';
+import { Database, Search, Brain, MessageSquare, Layers, Zap, Plug, Shield, FileCheck, Clock, BookOpen, Server, FileText } from 'lucide-react';
 
 const AIPlatforms = () => {
   const { translations } = useLanguage();
@@ -23,9 +23,9 @@ const AIPlatforms = () => {
   ];
 
   const useCases = [
-    { icon: '📚', key: 'knowledge' },
-    { icon: '🔍', key: 'logs' },
-    { icon: '📄', key: 'docs' }
+    { icon: BookOpen, key: 'knowledge' },
+    { icon: Server, key: 'logs' },
+    { icon: FileText, key: 'docs' }
   ];
 
   return (
@@ -175,6 +175,7 @@ const AIPlatforms = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {useCases.map((useCase, index) => {
               const caseData = t.useCases.items[useCase.key];
+              const IconComponent = useCase.icon;
               return (
                 <motion.div
                   key={useCase.key}
@@ -183,7 +184,9 @@ const AIPlatforms = () => {
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.4, delay: 0.6 + 0.1 * index }}
                 >
-                  <div className="text-3xl mb-3">{useCase.icon}</div>
+                  <div className="w-12 h-12 mb-4 rounded-lg bg-[var(--accent)]/20 flex items-center justify-center">
+                    <IconComponent className="text-[var(--accent)]" size={24} />
+                  </div>
                   <h4 className="font-semibold text-white mb-2">{caseData.title}</h4>
                   <p className="text-sm text-[var(--text-muted)]">{caseData.description}</p>
                 </motion.div>
