@@ -250,6 +250,33 @@ const AIPlatforms = () => {
             {t.differentiator.description}
           </p>
         </motion.div>
+
+        {/* Live Demo CTA */}
+        {t.liveDemo && (
+          <motion.div
+            className="mt-16 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+          >
+            <div className="card-dark rounded-2xl p-8 border-2 border-[var(--accent)]/50 bg-gradient-to-br from-[var(--primary)]/10 to-[var(--accent)]/10">
+              <h3 className="text-2xl font-bold mb-3 text-white">{t.liveDemo.title}</h3>
+              <p className="text-[var(--text-muted)] mb-6 max-w-xl mx-auto">
+                {t.liveDemo.description}
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-light)] text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+              >
+                {t.liveDemo.button}
+                <span className="text-xl">→</span>
+              </a>
+              <p className="mt-4 text-sm text-[var(--text-muted)]">
+                {t.liveDemo.note}
+              </p>
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );

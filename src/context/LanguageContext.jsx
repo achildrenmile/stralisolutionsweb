@@ -75,79 +75,85 @@ export const translations = {
     },
     aiPlatforms: {
       title: 'AI & Intelligente Plattformen',
-      subtitle: 'Next-Generation Datenplattformen mit RAG, Elasticsearch und LLM-Integration für echten Business-Mehrwert.',
+      subtitle: 'Produktionsreife RAG-Plattformen mit Elasticsearch und lokalen LLMs – live demonstrierbar, sofort einsatzbereit.',
       problem: {
-        title: 'Die Herausforderung',
-        description: 'Unternehmen verfügen über wertvolles Wissen in Dokumenten, Logs und Datenbanken – aber herkömmliche Suchsysteme liefern ungenaue Ergebnisse. Mitarbeiter verbringen Stunden mit der Suche nach Informationen, die in Silos verborgen sind.'
+        title: 'Das Problem',
+        description: 'Mitarbeiter verbringen bis zu 20% ihrer Arbeitszeit mit der Suche nach Informationen. Wissen liegt verstreut in Dokumenten, E-Mails und Systemen. Herkömmliche Suche findet nur exakte Wörter – nicht die Antwort auf die eigentliche Frage.'
       },
       solution: {
-        title: 'Unsere Lösung',
-        description: 'Wir bauen intelligente Plattformen auf Basis von RAG (Retrieval-Augmented Generation), die Elasticsearch für präzise hybride Suche mit LLMs für natürlichsprachliche Antworten kombinieren – zugänglich über OpenWebUI.'
+        title: 'Die Lösung',
+        description: 'Eine intelligente Plattform, die Ihre Fragen versteht und präzise Antworten aus Ihren Dokumenten liefert. Hybride Suche kombiniert Keyword-Matching mit semantischem Verständnis. Lokale LLMs formulieren die Antwort in natürlicher Sprache – ohne Cloud-Abhängigkeit.'
       },
       architecture: {
-        title: 'Referenz-Architektur',
-        subtitle: 'Unsere Architektur unterstützt modulare Skalierung (MCP), um Retrieval, Generierung und externe Systeme flexibel zu integrieren – bei voller Transparenz und Kontrolle.',
+        title: 'So funktioniert es',
+        subtitle: 'Fünf Schritte von der Frage zur Antwort – vollständig auf Ihrer Infrastruktur.',
         steps: {
           ingest: {
-            title: 'Datenaufnahme',
-            description: 'ELK Stack, Logstash, APIs'
+            title: '1. Datenaufnahme',
+            description: 'PDFs, Word, E-Mails, APIs'
           },
           index: {
-            title: 'Indexierung',
+            title: '2. Indexierung',
             description: 'Vektor + Keyword (Hybrid)'
           },
           retrieve: {
-            title: 'Retrieval',
-            description: 'Semantische Suche & Reranking'
+            title: '3. Suche',
+            description: 'Semantisch + Exakt'
           },
           generate: {
-            title: 'Generierung',
-            description: 'LLM mit Kontext (RAG)'
+            title: '4. Antwort',
+            description: 'LLM formuliert Ergebnis'
           },
           deliver: {
-            title: 'Auslieferung',
-            description: 'OpenWebUI Chat Interface'
+            title: '5. Interface',
+            description: 'Chat oder API'
           }
         }
       },
       stack: {
-        title: 'Technologie-Stack',
-        technologies: ['Elasticsearch', 'Logstash', 'Kibana', 'RAG', 'LLM', 'OpenWebUI', 'Ollama', 'Vector Search', 'Embeddings', 'MCP']
+        title: 'Bewährte Technologien',
+        technologies: ['Elasticsearch 9', 'Ollama', 'OpenWebUI', 'n8n', 'Docker', 'Cloudflare Tunnel']
       },
       useCases: {
-        title: 'Anwendungsfälle',
+        title: 'Konkrete Anwendungen',
         items: {
           knowledge: {
             title: 'Wissens-Assistent',
-            description: 'Interne Dokumentation, Richtlinien und Prozesse per natürlicher Sprache durchsuchen und zusammenfassen.'
+            description: '„Wie ist unser Urlaubsprozess?" – Sofortige Antwort aus HR-Dokumenten, Richtlinien und internem Wiki, statt stundenlanges Suchen in SharePoint.'
           },
           logs: {
-            title: 'Log-Intelligenz',
-            description: 'Automatische Fehleranalyse, Anomalie-Erkennung und Root-Cause-Analyse aus Systemlogs.'
+            title: 'IT-Support',
+            description: '„Warum ist Server X langsam?" – Automatische Analyse von Logs, Korrelation mit bekannten Problemen und konkrete Lösungsvorschläge in Sekunden.'
           },
           docs: {
-            title: 'Dokumenten-Q&A',
-            description: 'Verträge analysieren, Compliance prüfen und Berichte automatisch zusammenfassen.'
+            title: 'Vertrags-Analyse',
+            description: '„Welche Kündigungsfristen haben unsere Lieferantenverträge?" – Alle relevanten Klauseln aus hunderten PDFs extrahiert und zusammengefasst.'
           }
         }
       },
       differentiator: {
-        title: 'Was uns unterscheidet',
-        description: 'Wir liefern keine generischen "KI-Lösungen", sondern konkrete Architekturen mit nachvollziehbaren Komponenten: ELK für die Datenpipeline, hybride Suche für Präzision, lokale oder Cloud-LLMs nach Ihren Anforderungen, und OpenWebUI für intuitive Nutzung. Alles transparent, erweiterbar und auf Ihre Datenhoheit ausgelegt. Wir setzen auf modulares, zusammensetzbares Plattform-Design – Sie wählen nur, was Sie brauchen, und nichts, was Sie nicht brauchen.'
+        title: 'Warum wir',
+        description: 'Keine PowerPoint-Architektur, sondern eine laufende Plattform. Wir zeigen Ihnen live, wie RAG funktioniert – mit Ihren Beispieldokumenten. Alle Komponenten sind Open Source, auf Ihrer Hardware lauffähig, und Sie behalten volle Kontrolle über Ihre Daten. Keine versteckten API-Kosten, keine Cloud-Abhängigkeit.'
       },
       mcp: {
-        title: 'MCP: Informationssilos aufbrechen',
-        badge: 'Zukunftssichere Erweiterung',
-        description: 'Wertvolles Unternehmenswissen liegt oft verstreut in E-Mails, Kalendern, SharePoint, CRM und Tickets. Das Model Context Protocol (MCP) verbindet diese Systeme sicher mit Ihrer KI-Plattform – Mitarbeiter erhalten Antworten aus allen relevanten Quellen, ohne zwischen Anwendungen wechseln zu müssen.',
+        title: 'Erweiterung: Alle Systeme verbinden',
+        badge: 'Zukunftssicher',
+        description: 'Ihr Wissen liegt nicht nur in Dokumenten – sondern auch in E-Mails, Kalendern, Jira, Salesforce und SharePoint. Das Model Context Protocol (MCP) verbindet diese Quellen sicher mit der KI-Plattform. Eine Frage durchsucht alle Systeme gleichzeitig.',
         points: [
-          'Silos aufbrechen: Eine Frage durchsucht E-Mail, Dokumente, Tickets und mehr gleichzeitig',
-          'Unternehmensdaten nutzbar machen: Bestehendes Wissen wird für die KI zugänglich – sicher und kontrolliert',
-          'Volle Nachvollziehbarkeit: Jede KI-Aktion wird revisionssicher protokolliert',
-          'Bestehende Berechtigungen gelten: Mitarbeiter sehen nur, was sie sehen dürfen',
-          'Offener Standard: Schrittweise Einführung ohne Vendor Lock-in'
+          'Eine Frage, alle Quellen: E-Mail, Dokumente, Tickets, CRM parallel durchsuchen',
+          'Bestehende Berechtigungen: Mitarbeiter sehen nur, was sie sehen dürfen',
+          'Volle Nachvollziehbarkeit: Jede Anfrage wird protokolliert',
+          'Schrittweise Einführung: Erst Dokumente, dann weitere Quellen',
+          'Kein Vendor Lock-in: Offener Standard, jederzeit erweiterbar'
         ],
-        notTitle: 'Klare Grenzen:',
-        notDescription: 'Die KI handelt nicht selbstständig, sondern antwortet auf Anfragen. Sie greift nicht direkt auf Datenbanken zu, sondern nutzt definierte, kontrollierte Schnittstellen. Ihre Daten bleiben in Ihren Systemen.'
+        notTitle: 'Wichtig zu verstehen:',
+        notDescription: 'Die KI beantwortet Fragen – sie handelt nicht selbstständig. Alle Zugriffe laufen über kontrollierte Schnittstellen. Ihre Daten verlassen nicht Ihre Systeme.'
+      },
+      liveDemo: {
+        title: 'Sehen Sie es selbst',
+        description: 'Wir betreiben eine produktionsreife RAG-Plattform. Testen Sie die semantische Suche, laden Sie Dokumente hoch und sehen Sie, wie schnell Sie Antworten erhalten.',
+        button: 'Live-Demo anfragen',
+        note: 'Kostenlos und unverbindlich – wir zeigen Ihnen die Plattform mit Ihren Beispieldokumenten.'
       }
     },
     contact: {
@@ -560,79 +566,85 @@ export const translations = {
     },
     aiPlatforms: {
       title: 'AI & Intelligent Platforms',
-      subtitle: 'Next-generation data platforms with RAG, Elasticsearch, and LLM integration for real business value.',
+      subtitle: 'Production-ready RAG platforms with Elasticsearch and local LLMs – live demo available, ready to deploy.',
       problem: {
-        title: 'The Challenge',
-        description: 'Organizations have valuable knowledge in documents, logs, and databases – but traditional search systems deliver imprecise results. Employees spend hours searching for information buried in silos.'
+        title: 'The Problem',
+        description: 'Employees spend up to 20% of their work time searching for information. Knowledge is scattered across documents, emails, and systems. Traditional search only finds exact words – not the answer to the actual question.'
       },
       solution: {
-        title: 'Our Solution',
-        description: 'We build intelligent platforms based on RAG (Retrieval-Augmented Generation), combining Elasticsearch for precise hybrid search with LLMs for natural language answers – accessible via OpenWebUI.'
+        title: 'The Solution',
+        description: 'An intelligent platform that understands your questions and delivers precise answers from your documents. Hybrid search combines keyword matching with semantic understanding. Local LLMs formulate the answer in natural language – without cloud dependency.'
       },
       architecture: {
-        title: 'Reference Architecture',
-        subtitle: 'Our architecture supports modular scaling (MCP) to flexibly integrate retrieval, generation, and external systems – while preserving transparency and control.',
+        title: 'How It Works',
+        subtitle: 'Five steps from question to answer – entirely on your infrastructure.',
         steps: {
           ingest: {
-            title: 'Data Ingestion',
-            description: 'ELK Stack, Logstash, APIs'
+            title: '1. Ingestion',
+            description: 'PDFs, Word, Emails, APIs'
           },
           index: {
-            title: 'Indexing',
+            title: '2. Indexing',
             description: 'Vector + Keyword (Hybrid)'
           },
           retrieve: {
-            title: 'Retrieval',
-            description: 'Semantic Search & Reranking'
+            title: '3. Search',
+            description: 'Semantic + Exact'
           },
           generate: {
-            title: 'Generation',
-            description: 'LLM with Context (RAG)'
+            title: '4. Answer',
+            description: 'LLM formulates result'
           },
           deliver: {
-            title: 'Delivery',
-            description: 'OpenWebUI Chat Interface'
+            title: '5. Interface',
+            description: 'Chat or API'
           }
         }
       },
       stack: {
-        title: 'Technology Stack',
-        technologies: ['Elasticsearch', 'Logstash', 'Kibana', 'RAG', 'LLM', 'OpenWebUI', 'Ollama', 'Vector Search', 'Embeddings', 'MCP']
+        title: 'Proven Technologies',
+        technologies: ['Elasticsearch 9', 'Ollama', 'OpenWebUI', 'n8n', 'Docker', 'Cloudflare Tunnel']
       },
       useCases: {
-        title: 'Use Cases',
+        title: 'Real-World Applications',
         items: {
           knowledge: {
             title: 'Knowledge Assistant',
-            description: 'Search and summarize internal documentation, policies, and processes using natural language.'
+            description: '"What\'s our vacation policy?" – Instant answer from HR documents, policies, and internal wiki, instead of hours searching SharePoint.'
           },
           logs: {
-            title: 'Log Intelligence',
-            description: 'Automatic error analysis, anomaly detection, and root cause analysis from system logs.'
+            title: 'IT Support',
+            description: '"Why is Server X slow?" – Automatic log analysis, correlation with known issues, and concrete solution suggestions in seconds.'
           },
           docs: {
-            title: 'Document Q&A',
-            description: 'Analyze contracts, check compliance, and automatically summarize reports.'
+            title: 'Contract Analysis',
+            description: '"What are the termination clauses in our supplier contracts?" – All relevant clauses extracted and summarized from hundreds of PDFs.'
           }
         }
       },
       differentiator: {
-        title: 'What Sets Us Apart',
-        description: 'We don\'t deliver generic "AI solutions" – we provide concrete architectures with transparent components: ELK for the data pipeline, hybrid search for precision, local or cloud LLMs based on your requirements, and OpenWebUI for intuitive usage. Everything is transparent, extensible, and designed for your data sovereignty. We emphasize modular, composable platform design – so you choose only what you need, and nothing you don\'t.'
+        title: 'Why Us',
+        description: 'Not a PowerPoint architecture, but a running platform. We show you live how RAG works – with your sample documents. All components are open source, run on your hardware, and you maintain full control over your data. No hidden API costs, no cloud dependency.'
       },
       mcp: {
-        title: 'MCP: Breaking Down Information Silos',
-        badge: 'Future-Proof Extension',
-        description: 'Valuable company knowledge is often scattered across emails, calendars, SharePoint, CRM, and tickets. The Model Context Protocol (MCP) securely connects these systems to your AI platform – employees get answers from all relevant sources without switching between applications.',
+        title: 'Extension: Connect All Systems',
+        badge: 'Future-Proof',
+        description: 'Your knowledge isn\'t just in documents – it\'s also in emails, calendars, Jira, Salesforce, and SharePoint. The Model Context Protocol (MCP) securely connects these sources to the AI platform. One question searches all systems simultaneously.',
         points: [
-          'Break down silos: One question searches email, documents, tickets, and more simultaneously',
-          'Unlock enterprise data: Existing knowledge becomes accessible to AI – securely and controlled',
-          'Full traceability: Every AI action is logged for compliance and audit',
-          'Existing permissions apply: Users only access what they\'re authorized to see',
-          'Open standard: Gradual rollout without vendor lock-in'
+          'One question, all sources: Search emails, documents, tickets, CRM in parallel',
+          'Existing permissions apply: Users only see what they\'re authorized to see',
+          'Full traceability: Every request is logged',
+          'Gradual rollout: Start with documents, add more sources later',
+          'No vendor lock-in: Open standard, extensible anytime'
         ],
-        notTitle: 'Clear boundaries:',
-        notDescription: 'The AI responds to requests, it doesn\'t act autonomously. It uses controlled interfaces, not direct database access. Your data stays in your systems.'
+        notTitle: 'Important to understand:',
+        notDescription: 'The AI answers questions – it doesn\'t act autonomously. All access runs through controlled interfaces. Your data never leaves your systems.'
+      },
+      liveDemo: {
+        title: 'See It Yourself',
+        description: 'We operate a production-ready RAG platform. Test the semantic search, upload documents, and see how quickly you get answers.',
+        button: 'Request Live Demo',
+        note: 'Free and non-binding – we\'ll show you the platform with your sample documents.'
       }
     },
     contact: {
