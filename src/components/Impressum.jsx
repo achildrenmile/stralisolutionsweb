@@ -108,6 +108,46 @@ const Impressum = () => {
             </div>
           </section>
 
+          {/* AI Systems Disclosure */}
+          <section>
+            <h2 className="text-xl font-semibold mb-4 text-[var(--accent-light)]">
+              {t.ai.title}
+            </h2>
+            <p className="text-[var(--text-muted)] mb-4">{t.ai.intro}</p>
+
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-base font-semibold text-white mb-2">{t.ai.disclosure.title}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{t.ai.disclosure.text}</p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-semibold text-white mb-2">{t.ai.models.title}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{t.ai.models.text}</p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-semibold text-white mb-2">{t.ai.purpose.title}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{t.ai.purpose.text}</p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-semibold text-white mb-2">{t.ai.limitations.title}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{t.ai.limitations.text}</p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-semibold text-white mb-2">{t.ai.operator.title}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{t.ai.operator.text}</p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-semibold text-white mb-2">{t.ai.compliance.title}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{t.ai.compliance.text}</p>
+              </div>
+            </div>
+          </section>
+
           {/* Privacy Policy Link */}
           <section>
             <h2 className="text-xl font-semibold mb-4 text-[var(--accent-light)]">

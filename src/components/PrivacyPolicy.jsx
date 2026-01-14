@@ -165,6 +165,63 @@ const PrivacyPolicy = () => {
               </div>
             </section>
 
+            {/* AI Platform */}
+            <section>
+              <h2 className="text-xl font-semibold mb-4 text-[var(--accent-light)]">
+                {t.ai.title}
+              </h2>
+              <div className="space-y-4 text-[var(--text-muted)]">
+                <p>{t.ai.intro}</p>
+
+                <div className="p-4 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/30">
+                  <h4 className="text-base font-semibold text-white mb-1">{t.ai.disclosure.title}</h4>
+                  <p className="text-sm">{t.ai.disclosure.text}</p>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-semibold text-white mb-2">{t.ai.dataCollected}</h4>
+                  <ul className="space-y-1 ml-1">
+                    {t.ai.dataCollectedList.map((item, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-[var(--accent)]">•</span>
+                        <span className="text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-semibold text-white mb-1">{t.ai.processing.title}</h4>
+                  <p className="text-sm">{t.ai.processing.text}</p>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-semibold text-white mb-1">{t.ai.purpose.title}</h4>
+                  <p className="text-sm">{t.ai.purpose.text}</p>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-semibold text-white mb-1">{t.ai.legal.title}</h4>
+                  <p className="text-sm">{t.ai.legal.text}</p>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-semibold text-white mb-1">{t.ai.retention.title}</h4>
+                  <p className="text-sm">{t.ai.retention.text}</p>
+                </div>
+
+                <div>
+                  <h4 className="text-base font-semibold text-white mb-1">{t.ai.rights.title}</h4>
+                  <p className="text-sm">{t.ai.rights.text}</p>
+                </div>
+
+                <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/30">
+                  <h4 className="text-base font-semibold text-green-400 mb-1">{t.ai.noThirdParty.title}</h4>
+                  <p className="text-sm">{t.ai.noThirdParty.text}</p>
+                </div>
+              </div>
+            </section>
+
             {/* Cloudflare */}
             <section>
               <h2 className="text-xl font-semibold mb-4 text-[var(--accent-light)]">
