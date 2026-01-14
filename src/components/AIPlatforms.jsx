@@ -265,7 +265,7 @@ const AIPlatforms = () => {
                 {t.liveDemo.description}
               </p>
               <a
-                href="#contact"
+                href="#kontakt"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-light)] text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105"
               >
                 {t.liveDemo.button}
