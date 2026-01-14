@@ -231,41 +231,51 @@ export const translations = {
         microsoftPrivacyLink: 'https://privacy.microsoft.com/de-de/privacystatement'
       },
       ai: {
-        title: 'KI-Plattform (OpenWebUI)',
-        intro: 'Wir betreiben unter gpt4strali.strali.solutions eine KI-gestützte Chat-Plattform auf Basis von OpenWebUI und lokal gehosteten Large Language Models (LLMs).',
+        title: 'KI-Plattformen und Dienste',
+        intro: 'Wir betreiben mehrere KI-gestützte Dienste auf Basis von lokal gehosteten Large Language Models (LLMs) und Embedding-Modellen.',
+        platforms: {
+          title: 'Unsere KI-Dienste',
+          items: [
+            'gpt4strali.strali.solutions – KI-Chat-Plattform (OpenWebUI mit lokalen LLM-Modellen)',
+            'gpt4strali.strali.solutions/static/search.html – Semantische Suche mit KI-gestützter Vektorsuche',
+            'n8n.strali.solutions – Workflow-Automatisierung mit KI-Integration für RAG-Pipelines'
+          ]
+        },
         disclosure: {
           title: 'Hinweis gemäß EU AI Act',
-          text: 'Bei Nutzung dieser Plattform interagieren Sie mit einem KI-System. Dies wird Ihnen vor der ersten Interaktion deutlich angezeigt.'
+          text: 'Bei Nutzung dieser Dienste interagieren Sie mit KI-Systemen. Dies wird Ihnen vor der ersten Interaktion deutlich angezeigt.'
         },
         dataCollected: 'Verarbeitete Daten',
         dataCollectedList: [
-          'Chat-Nachrichten und Konversationsverläufe',
+          'Chat-Nachrichten und Konversationsverläufe (KI-Chat)',
+          'Suchanfragen und Ergebnisse (Semantische Suche)',
+          'Workflow-Ausführungsdaten (n8n)',
           'Benutzerkonto-Daten (E-Mail-Adresse, Benutzername)',
           'Technische Verbindungsdaten (IP-Adresse, Browser-Informationen)'
         ],
         processing: {
           title: 'Datenverarbeitung',
-          text: 'Alle Daten werden ausschließlich auf unserer eigenen Infrastruktur in der EU verarbeitet. Es erfolgt keine Übermittlung von Chat-Inhalten an externe KI-Anbieter wie OpenAI, Google oder Anthropic. Die LLM-Modelle (Mistral, Llama, Phi-3) laufen lokal auf unseren Servern.'
+          text: 'Alle Daten werden ausschließlich auf unserer eigenen Infrastruktur in der EU verarbeitet. Es erfolgt keine Übermittlung von Inhalten an externe KI-Anbieter wie OpenAI, Google oder Anthropic. Die LLM-Modelle (Mistral, Llama, Phi-3) und Embedding-Modelle (nomic-embed-text) laufen lokal auf unseren Servern.'
         },
         purpose: {
           title: 'Zweck der Verarbeitung',
-          text: 'Die Verarbeitung erfolgt zur Bereitstellung des KI-Chat-Dienstes, zur Verbesserung der Antwortqualität und zur Demonstration von RAG-Architekturen.'
+          text: 'Die Verarbeitung erfolgt zur Bereitstellung der KI-Dienste (Chat, Suche, Workflows), zur Verbesserung der Antwortqualität und zur Demonstration von RAG-Architekturen.'
         },
         legal: {
           title: 'Rechtsgrundlage',
-          text: 'Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) durch Nutzung des Dienstes sowie aufgrund unseres berechtigten Interesses an der Bereitstellung innovativer IT-Demonstrationen (Art. 6 Abs. 1 lit. f DSGVO).'
+          text: 'Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) durch Nutzung der Dienste sowie aufgrund unseres berechtigten Interesses an der Bereitstellung innovativer IT-Demonstrationen (Art. 6 Abs. 1 lit. f DSGVO).'
         },
         retention: {
           title: 'Speicherdauer',
-          text: 'Chat-Verläufe werden für die Dauer Ihrer Nutzung des Dienstes gespeichert. Sie können Ihre Konversationen jederzeit selbst löschen. Bei Löschung Ihres Benutzerkontos werden alle zugehörigen Daten entfernt.'
+          text: 'Chat-Verläufe und Suchanfragen werden für die Dauer Ihrer Nutzung der Dienste gespeichert. Sie können Ihre Daten jederzeit selbst löschen. Bei Löschung Ihres Benutzerkontos werden alle zugehörigen Daten entfernt.'
         },
         rights: {
           title: 'Ihre Rechte bei KI-Verarbeitung',
-          text: 'Sie haben das Recht, nicht einer ausschließlich auf automatisierter Verarbeitung beruhenden Entscheidung unterworfen zu werden (Art. 22 DSGVO). Unser KI-System trifft keine rechtlich bindenden oder erheblich beeinträchtigenden Entscheidungen. Bei Fragen zur KI-Verarbeitung wenden Sie sich an office@strali.solutions.'
+          text: 'Sie haben das Recht, nicht einer ausschließlich auf automatisierter Verarbeitung beruhenden Entscheidung unterworfen zu werden (Art. 22 DSGVO). Unsere KI-Systeme treffen keine rechtlich bindenden oder erheblich beeinträchtigenden Entscheidungen. Bei Fragen zur KI-Verarbeitung wenden Sie sich an office@strali.solutions.'
         },
         noThirdParty: {
           title: 'Keine Drittanbieter-KI',
-          text: 'Im Gegensatz zu vielen Cloud-KI-Diensten übermitteln wir keine Daten an externe KI-Anbieter. Ihre Gespräche verlassen nicht unsere Infrastruktur.'
+          text: 'Im Gegensatz zu vielen Cloud-KI-Diensten übermitteln wir keine Daten an externe KI-Anbieter. Ihre Gespräche und Suchanfragen verlassen nicht unsere Infrastruktur.'
         }
       },
       cloudflare: {
@@ -336,23 +346,31 @@ export const translations = {
         intro: 'Gemäß Artikel 50 der Verordnung (EU) 2024/1689 (EU AI Act) informieren wir Sie über den Einsatz von KI-Systemen:',
         disclosure: {
           title: 'Hinweis auf KI-Interaktion',
-          text: 'Auf unserer Plattform gpt4strali.strali.solutions betreiben wir ein KI-gestütztes Chat-System (OpenWebUI mit lokalen LLM-Modellen). Wenn Sie diesen Dienst nutzen, interagieren Sie mit einem KI-System und nicht mit einem Menschen.'
+          text: 'Auf unseren Plattformen betreiben wir mehrere KI-gestützte Dienste. Wenn Sie diese Dienste nutzen, interagieren Sie mit KI-Systemen und nicht mit Menschen.'
+        },
+        platforms: {
+          title: 'KI-Plattformen und Dienste',
+          items: [
+            'gpt4strali.strali.solutions – KI-Chat-Plattform (OpenWebUI mit lokalen LLM-Modellen) für natürlichsprachliche Interaktion und RAG-Demonstrationen',
+            'gpt4strali.strali.solutions/static/search.html – Semantische Suche mit KI-gestützter Vektorsuche für dokumentenübergreifende Abfragen',
+            'n8n.strali.solutions – Workflow-Automatisierungsplattform mit KI-Integration für visuelle RAG-Pipeline-Demonstrationen'
+          ]
         },
         models: {
           title: 'Eingesetzte KI-Modelle',
-          text: 'Wir verwenden lokal gehostete Large Language Models (LLMs), darunter Mistral 7B, Llama 3 8B und Phi-3 Mini. Diese Modelle werden auf unserer eigenen Infrastruktur betrieben – es erfolgt keine Datenübertragung an externe KI-Anbieter.'
+          text: 'Wir verwenden lokal gehostete Large Language Models (LLMs), darunter Mistral 7B, Llama 3 8B und Phi-3 Mini, sowie Embedding-Modelle (nomic-embed-text) für semantische Suche. Diese Modelle werden auf unserer eigenen Infrastruktur betrieben – es erfolgt keine Datenübertragung an externe KI-Anbieter.'
         },
         purpose: {
           title: 'Zweck und Einsatzbereich',
-          text: 'Das KI-System dient als Demonstrationsplattform für RAG (Retrieval-Augmented Generation) Architekturen und zur Unterstützung bei IT-bezogenen Anfragen. Es handelt sich um ein KI-System mit begrenztem Risiko gemäß EU AI Act.'
+          text: 'Die KI-Systeme dienen als Demonstrationsplattformen für RAG (Retrieval-Augmented Generation) Architekturen, semantische Suche und Workflow-Automatisierung. Es handelt sich um KI-Systeme mit begrenztem Risiko gemäß EU AI Act.'
         },
         limitations: {
           title: 'Einschränkungen und Haftung',
-          text: 'KI-generierte Antworten können fehlerhaft, unvollständig oder veraltet sein. Die Nutzung erfolgt auf eigene Verantwortung. Für geschäftskritische Entscheidungen sollten die Informationen stets unabhängig verifiziert werden.'
+          text: 'KI-generierte Antworten und Suchergebnisse können fehlerhaft, unvollständig oder veraltet sein. Die Nutzung erfolgt auf eigene Verantwortung. Für geschäftskritische Entscheidungen sollten die Informationen stets unabhängig verifiziert werden.'
         },
         operator: {
           title: 'Verantwortlicher Betreiber (Deployer)',
-          text: 'Strali Solutions e.U. ist verantwortlich für den Einsatz des KI-Systems gemäß EU AI Act. Bei Fragen oder Bedenken kontaktieren Sie uns unter office@strali.solutions.'
+          text: 'Strali Solutions e.U. ist verantwortlich für den Einsatz der KI-Systeme gemäß EU AI Act. Bei Fragen oder Bedenken kontaktieren Sie uns unter office@strali.solutions.'
         },
         compliance: {
           title: 'EU AI Act Konformität',
@@ -698,41 +716,51 @@ export const translations = {
         microsoftPrivacyLink: 'https://privacy.microsoft.com/en-us/privacystatement'
       },
       ai: {
-        title: 'AI Platform (OpenWebUI)',
-        intro: 'We operate an AI-powered chat platform at gpt4strali.strali.solutions based on OpenWebUI and locally hosted Large Language Models (LLMs).',
+        title: 'AI Platforms and Services',
+        intro: 'We operate multiple AI-powered services based on locally hosted Large Language Models (LLMs) and embedding models.',
+        platforms: {
+          title: 'Our AI Services',
+          items: [
+            'gpt4strali.strali.solutions – AI chat platform (OpenWebUI with local LLM models)',
+            'gpt4strali.strali.solutions/static/search.html – Semantic search with AI-powered vector search',
+            'n8n.strali.solutions – Workflow automation with AI integration for RAG pipelines'
+          ]
+        },
         disclosure: {
           title: 'Notice under EU AI Act',
-          text: 'When using this platform, you are interacting with an AI system. This is clearly indicated to you before your first interaction.'
+          text: 'When using these services, you are interacting with AI systems. This is clearly indicated to you before your first interaction.'
         },
         dataCollected: 'Data Processed',
         dataCollectedList: [
-          'Chat messages and conversation history',
+          'Chat messages and conversation history (AI chat)',
+          'Search queries and results (Semantic search)',
+          'Workflow execution data (n8n)',
           'User account data (email address, username)',
           'Technical connection data (IP address, browser information)'
         ],
         processing: {
           title: 'Data Processing',
-          text: 'All data is processed exclusively on our own infrastructure within the EU. No chat content is transmitted to external AI providers such as OpenAI, Google, or Anthropic. The LLM models (Mistral, Llama, Phi-3) run locally on our servers.'
+          text: 'All data is processed exclusively on our own infrastructure within the EU. No content is transmitted to external AI providers such as OpenAI, Google, or Anthropic. The LLM models (Mistral, Llama, Phi-3) and embedding models (nomic-embed-text) run locally on our servers.'
         },
         purpose: {
           title: 'Purpose of Processing',
-          text: 'Processing is carried out to provide the AI chat service, improve response quality, and demonstrate RAG architectures.'
+          text: 'Processing is carried out to provide AI services (chat, search, workflows), improve response quality, and demonstrate RAG architectures.'
         },
         legal: {
           title: 'Legal Basis',
-          text: 'Processing is based on your consent (Art. 6(1)(a) GDPR) through use of the service and our legitimate interest in providing innovative IT demonstrations (Art. 6(1)(f) GDPR).'
+          text: 'Processing is based on your consent (Art. 6(1)(a) GDPR) through use of the services and our legitimate interest in providing innovative IT demonstrations (Art. 6(1)(f) GDPR).'
         },
         retention: {
           title: 'Data Retention',
-          text: 'Chat histories are stored for the duration of your use of the service. You can delete your conversations at any time. When your user account is deleted, all associated data is removed.'
+          text: 'Chat histories and search queries are stored for the duration of your use of the services. You can delete your data at any time. When your user account is deleted, all associated data is removed.'
         },
         rights: {
           title: 'Your Rights Regarding AI Processing',
-          text: 'You have the right not to be subject to a decision based solely on automated processing (Art. 22 GDPR). Our AI system does not make legally binding or significantly affecting decisions. For questions about AI processing, contact office@strali.solutions.'
+          text: 'You have the right not to be subject to a decision based solely on automated processing (Art. 22 GDPR). Our AI systems do not make legally binding or significantly affecting decisions. For questions about AI processing, contact office@strali.solutions.'
         },
         noThirdParty: {
           title: 'No Third-Party AI',
-          text: 'Unlike many cloud AI services, we do not transmit data to external AI providers. Your conversations do not leave our infrastructure.'
+          text: 'Unlike many cloud AI services, we do not transmit data to external AI providers. Your conversations and search queries do not leave our infrastructure.'
         }
       },
       cloudflare: {
@@ -803,23 +831,31 @@ export const translations = {
         intro: 'In accordance with Article 50 of Regulation (EU) 2024/1689 (EU AI Act), we inform you about the use of AI systems:',
         disclosure: {
           title: 'AI Interaction Notice',
-          text: 'On our platform gpt4strali.strali.solutions, we operate an AI-powered chat system (OpenWebUI with local LLM models). When using this service, you are interacting with an AI system, not a human.'
+          text: 'On our platforms, we operate multiple AI-powered services. When using these services, you are interacting with AI systems, not humans.'
+        },
+        platforms: {
+          title: 'AI Platforms and Services',
+          items: [
+            'gpt4strali.strali.solutions – AI chat platform (OpenWebUI with local LLM models) for natural language interaction and RAG demonstrations',
+            'gpt4strali.strali.solutions/static/search.html – Semantic search with AI-powered vector search for cross-document queries',
+            'n8n.strali.solutions – Workflow automation platform with AI integration for visual RAG pipeline demonstrations'
+          ]
         },
         models: {
           title: 'AI Models Used',
-          text: 'We use locally hosted Large Language Models (LLMs), including Mistral 7B, Llama 3 8B, and Phi-3 Mini. These models run on our own infrastructure – no data is transmitted to external AI providers.'
+          text: 'We use locally hosted Large Language Models (LLMs), including Mistral 7B, Llama 3 8B, and Phi-3 Mini, as well as embedding models (nomic-embed-text) for semantic search. These models run on our own infrastructure – no data is transmitted to external AI providers.'
         },
         purpose: {
           title: 'Purpose and Scope',
-          text: 'The AI system serves as a demonstration platform for RAG (Retrieval-Augmented Generation) architectures and to assist with IT-related inquiries. It is classified as a limited-risk AI system under the EU AI Act.'
+          text: 'The AI systems serve as demonstration platforms for RAG (Retrieval-Augmented Generation) architectures, semantic search, and workflow automation. They are classified as limited-risk AI systems under the EU AI Act.'
         },
         limitations: {
           title: 'Limitations and Liability',
-          text: 'AI-generated responses may be inaccurate, incomplete, or outdated. Use is at your own risk. For business-critical decisions, information should always be independently verified.'
+          text: 'AI-generated responses and search results may be inaccurate, incomplete, or outdated. Use is at your own risk. For business-critical decisions, information should always be independently verified.'
         },
         operator: {
           title: 'Responsible Operator (Deployer)',
-          text: 'Strali Solutions e.U. is responsible for the deployment of the AI system in accordance with the EU AI Act. For questions or concerns, contact us at office@strali.solutions.'
+          text: 'Strali Solutions e.U. is responsible for the deployment of the AI systems in accordance with the EU AI Act. For questions or concerns, contact us at office@strali.solutions.'
         },
         compliance: {
           title: 'EU AI Act Compliance',
