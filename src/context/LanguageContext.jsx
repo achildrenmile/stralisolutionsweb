@@ -75,7 +75,7 @@ export const translations = {
     },
     aiPlatforms: {
       title: 'AI & Intelligente Plattformen',
-      subtitle: 'Produktionsreife RAG-Plattformen mit Elasticsearch und lokalen LLMs – live demonstrierbar, sofort einsatzbereit.',
+      subtitle: 'RAG-Architekturen mit Elasticsearch und lokalen LLMs – als funktionierende Demo live erlebbar.',
       problem: {
         title: 'Das Problem',
         description: 'Mitarbeiter verbringen bis zu 20% ihrer Arbeitszeit mit der Suche nach Informationen. Wissen liegt verstreut in Dokumenten, E-Mails und Systemen. Herkömmliche Suche findet nur exakte Wörter – nicht die Antwort auf die eigentliche Frage.'
@@ -133,7 +133,7 @@ export const translations = {
       },
       differentiator: {
         title: 'Warum wir',
-        description: 'Keine PowerPoint-Architektur, sondern eine laufende Plattform. Wir zeigen Ihnen live, wie RAG funktioniert – mit Ihren Beispieldokumenten. Alle Komponenten sind Open Source, auf Ihrer Hardware lauffähig, und Sie behalten volle Kontrolle über Ihre Daten. Keine versteckten API-Kosten, keine Cloud-Abhängigkeit.'
+        description: 'Keine PowerPoint-Architektur, sondern eine funktionierende Demo-Plattform. Wir zeigen Ihnen live, wie RAG funktioniert – mit Ihren Beispieldokumenten. Alle Komponenten sind Open Source und auf Ihrer Hardware lauffähig. Keine versteckten API-Kosten, keine Cloud-Abhängigkeit.'
       },
       mcp: {
         title: 'Erweiterung: Alle Systeme verbinden',
@@ -150,10 +150,10 @@ export const translations = {
         notDescription: 'Die KI beantwortet Fragen – sie handelt nicht selbstständig. Alle Zugriffe laufen über kontrollierte Schnittstellen. Ihre Daten verlassen nicht Ihre Systeme.'
       },
       liveDemo: {
-        title: 'Sehen Sie es selbst',
-        description: 'Wir betreiben eine produktionsreife RAG-Plattform. Testen Sie die semantische Suche, laden Sie Dokumente hoch und sehen Sie, wie schnell Sie Antworten erhalten.',
-        button: 'Live-Demo anfragen',
-        note: 'Kostenlos und unverbindlich – wir zeigen Ihnen die Plattform mit Ihren Beispieldokumenten.'
+        title: 'Selbst ausprobieren',
+        description: 'Unsere Demo-Plattform läuft live. Testen Sie die semantische Suche, laden Sie Dokumente hoch und erleben Sie, wie RAG in der Praxis funktioniert.',
+        button: 'Demo-Zugang anfragen',
+        note: 'Kostenlos und unverbindlich – wir richten Ihnen einen Testzugang ein.'
       }
     },
     contact: {
@@ -566,7 +566,7 @@ export const translations = {
     },
     aiPlatforms: {
       title: 'AI & Intelligent Platforms',
-      subtitle: 'Production-ready RAG platforms with Elasticsearch and local LLMs – live demo available, ready to deploy.',
+      subtitle: 'RAG architectures with Elasticsearch and local LLMs – experience it live on our working demo platform.',
       problem: {
         title: 'The Problem',
         description: 'Employees spend up to 20% of their work time searching for information. Knowledge is scattered across documents, emails, and systems. Traditional search only finds exact words – not the answer to the actual question.'
@@ -624,7 +624,7 @@ export const translations = {
       },
       differentiator: {
         title: 'Why Us',
-        description: 'Not a PowerPoint architecture, but a running platform. We show you live how RAG works – with your sample documents. All components are open source, run on your hardware, and you maintain full control over your data. No hidden API costs, no cloud dependency.'
+        description: 'Not a PowerPoint architecture, but a working demo platform. We show you live how RAG works – with your sample documents. All components are open source and can run on your hardware. No hidden API costs, no cloud dependency.'
       },
       mcp: {
         title: 'Extension: Connect All Systems',
@@ -641,10 +641,10 @@ export const translations = {
         notDescription: 'The AI answers questions – it doesn\'t act autonomously. All access runs through controlled interfaces. Your data never leaves your systems.'
       },
       liveDemo: {
-        title: 'See It Yourself',
-        description: 'We operate a production-ready RAG platform. Test the semantic search, upload documents, and see how quickly you get answers.',
-        button: 'Request Live Demo',
-        note: 'Free and non-binding – we\'ll show you the platform with your sample documents.'
+        title: 'Try It Yourself',
+        description: 'Our demo platform is live. Test the semantic search, upload documents, and experience how RAG works in practice.',
+        button: 'Request Demo Access',
+        note: 'Free and non-binding – we\'ll set up a test account for you.'
       }
     },
     contact: {
