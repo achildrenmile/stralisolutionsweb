@@ -123,11 +123,14 @@ const Impressum = () => {
 
               <div>
                 <h3 className="text-base font-semibold text-white mb-2">{t.ai.platforms.title}</h3>
-                <ul className="space-y-1 ml-1">
+                <ul className="space-y-2 ml-1">
                   {t.ai.platforms.items.map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <span className="text-[var(--accent)]">•</span>
-                      <span className="text-sm text-[var(--text-muted)]">{item}</span>
+                      <span className="text-sm text-[var(--text-muted)]">
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-[var(--primary-light)] hover:underline font-medium">{item.name}</a>
+                        {' – '}{item.description}
+                      </span>
                     </li>
                   ))}
                 </ul>

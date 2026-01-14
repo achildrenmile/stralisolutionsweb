@@ -236,9 +236,9 @@ export const translations = {
         platforms: {
           title: 'Unsere KI-Dienste',
           items: [
-            'gpt4strali.strali.solutions – KI-Chat-Plattform (OpenWebUI mit lokalen LLM-Modellen)',
-            'gpt4strali.strali.solutions/static/search.html – Semantische Suche mit KI-gestützter Vektorsuche',
-            'n8n.strali.solutions – Workflow-Automatisierung mit KI-Integration für RAG-Pipelines'
+            { url: 'https://gpt4strali.strali.solutions', name: 'gpt4strali.strali.solutions', description: 'KI-Chat-Plattform (OpenWebUI mit lokalen LLM-Modellen)' },
+            { url: 'https://gpt4strali.strali.solutions/static/search.html', name: 'Semantische Suche', description: 'KI-gestützte Vektorsuche' },
+            { url: 'https://n8n.strali.solutions', name: 'n8n.strali.solutions', description: 'Workflow-Automatisierung mit KI-Integration für RAG-Pipelines' }
           ]
         },
         disclosure: {
@@ -351,9 +351,9 @@ export const translations = {
         platforms: {
           title: 'KI-Plattformen und Dienste',
           items: [
-            'gpt4strali.strali.solutions – KI-Chat-Plattform (OpenWebUI mit lokalen LLM-Modellen) für natürlichsprachliche Interaktion und RAG-Demonstrationen',
-            'gpt4strali.strali.solutions/static/search.html – Semantische Suche mit KI-gestützter Vektorsuche für dokumentenübergreifende Abfragen',
-            'n8n.strali.solutions – Workflow-Automatisierungsplattform mit KI-Integration für visuelle RAG-Pipeline-Demonstrationen'
+            { url: 'https://gpt4strali.strali.solutions', name: 'gpt4strali.strali.solutions', description: 'KI-Chat-Plattform (OpenWebUI mit lokalen LLM-Modellen) für natürlichsprachliche Interaktion und RAG-Demonstrationen' },
+            { url: 'https://gpt4strali.strali.solutions/static/search.html', name: 'Semantische Suche', description: 'KI-gestützte Vektorsuche für dokumentenübergreifende Abfragen' },
+            { url: 'https://n8n.strali.solutions', name: 'n8n.strali.solutions', description: 'Workflow-Automatisierungsplattform mit KI-Integration für visuelle RAG-Pipeline-Demonstrationen' }
           ]
         },
         models: {
@@ -721,9 +721,9 @@ export const translations = {
         platforms: {
           title: 'Our AI Services',
           items: [
-            'gpt4strali.strali.solutions – AI chat platform (OpenWebUI with local LLM models)',
-            'gpt4strali.strali.solutions/static/search.html – Semantic search with AI-powered vector search',
-            'n8n.strali.solutions – Workflow automation with AI integration for RAG pipelines'
+            { url: 'https://gpt4strali.strali.solutions', name: 'gpt4strali.strali.solutions', description: 'AI chat platform (OpenWebUI with local LLM models)' },
+            { url: 'https://gpt4strali.strali.solutions/static/search.html', name: 'Semantic Search', description: 'AI-powered vector search' },
+            { url: 'https://n8n.strali.solutions', name: 'n8n.strali.solutions', description: 'Workflow automation with AI integration for RAG pipelines' }
           ]
         },
         disclosure: {
@@ -836,9 +836,9 @@ export const translations = {
         platforms: {
           title: 'AI Platforms and Services',
           items: [
-            'gpt4strali.strali.solutions – AI chat platform (OpenWebUI with local LLM models) for natural language interaction and RAG demonstrations',
-            'gpt4strali.strali.solutions/static/search.html – Semantic search with AI-powered vector search for cross-document queries',
-            'n8n.strali.solutions – Workflow automation platform with AI integration for visual RAG pipeline demonstrations'
+            { url: 'https://gpt4strali.strali.solutions', name: 'gpt4strali.strali.solutions', description: 'AI chat platform (OpenWebUI with local LLM models) for natural language interaction and RAG demonstrations' },
+            { url: 'https://gpt4strali.strali.solutions/static/search.html', name: 'Semantic Search', description: 'AI-powered vector search for cross-document queries' },
+            { url: 'https://n8n.strali.solutions', name: 'n8n.strali.solutions', description: 'Workflow automation platform with AI integration for visual RAG pipeline demonstrations' }
           ]
         },
         models: {
