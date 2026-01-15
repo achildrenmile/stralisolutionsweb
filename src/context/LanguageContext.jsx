@@ -153,9 +153,9 @@ export const translations = {
         title: 'Selbst ausprobieren',
         description: 'Unsere RAG-Referenzarchitektur läuft live. Erkunden Sie die Dokumentation, testen Sie die semantische Suche, oder fordern Sie Zugang zur vollständigen Chat-Demo an.',
         showcaseButton: 'Architektur erkunden',
-        showcaseUrl: 'https://ai4u.strali.solutions/static/showcase.html',
+        showcaseUrl: 'https://ai4u.strali.solutions/showcase',
         searchButton: 'Semantische Suche testen',
-        searchUrl: 'https://ai4u.strali.solutions/static/search.html',
+        searchUrl: 'https://ai4u.strali.solutions/search',
         requestButton: 'Vollständige Demo anfragen',
         note: 'Showcase und Suche sind öffentlich zugänglich. Für die vollständige Demo mit AI-Chat richten wir Ihnen gerne einen Zugang ein.'
       }
@@ -247,7 +247,7 @@ export const translations = {
           title: 'Unsere KI-Dienste',
           items: [
             { url: 'https://ai4u.strali.solutions', name: 'ai4u.strali.solutions', description: 'KI-Chat-Plattform (OpenWebUI mit lokalen LLM-Modellen)' },
-            { url: 'https://ai4u.strali.solutions/static/search.html', name: 'Semantische Suche', description: 'KI-gestützte Vektorsuche' },
+            { url: 'https://ai4u.strali.solutions/search', name: 'Semantische Suche', description: 'KI-gestützte Vektorsuche' },
             { url: 'https://n8n.strali.solutions', name: 'n8n.strali.solutions', description: 'Workflow-Automatisierung mit KI-Integration für RAG-Pipelines' }
           ]
         },
@@ -362,7 +362,7 @@ export const translations = {
           title: 'KI-Plattformen und Dienste',
           items: [
             { url: 'https://ai4u.strali.solutions', name: 'ai4u.strali.solutions', description: 'KI-Chat-Plattform (OpenWebUI mit lokalen LLM-Modellen) für natürlichsprachliche Interaktion und RAG-Demonstrationen' },
-            { url: 'https://ai4u.strali.solutions/static/search.html', name: 'Semantische Suche', description: 'KI-gestützte Vektorsuche für dokumentenübergreifende Abfragen' },
+            { url: 'https://ai4u.strali.solutions/search', name: 'Semantische Suche', description: 'KI-gestützte Vektorsuche für dokumentenübergreifende Abfragen' },
             { url: 'https://n8n.strali.solutions', name: 'n8n.strali.solutions', description: 'Workflow-Automatisierungsplattform mit KI-Integration für visuelle RAG-Pipeline-Demonstrationen' }
           ]
         },
@@ -648,9 +648,9 @@ export const translations = {
         title: 'Try It Yourself',
         description: 'Our RAG reference architecture is live. Explore the documentation, test the semantic search, or request access to the full chat demo.',
         showcaseButton: 'Explore Architecture',
-        showcaseUrl: 'https://ai4u.strali.solutions/static/showcase.html',
+        showcaseUrl: 'https://ai4u.strali.solutions/showcase',
         searchButton: 'Try Semantic Search',
-        searchUrl: 'https://ai4u.strali.solutions/static/search.html',
+        searchUrl: 'https://ai4u.strali.solutions/search',
         requestButton: 'Request Full Demo',
         note: 'Showcase and search are publicly accessible. For the full demo with AI chat, we\'ll set up an account for you.'
       }
@@ -742,7 +742,7 @@ export const translations = {
           title: 'Our AI Services',
           items: [
             { url: 'https://ai4u.strali.solutions', name: 'ai4u.strali.solutions', description: 'AI chat platform (OpenWebUI with local LLM models)' },
-            { url: 'https://ai4u.strali.solutions/static/search.html', name: 'Semantic Search', description: 'AI-powered vector search' },
+            { url: 'https://ai4u.strali.solutions/search', name: 'Semantic Search', description: 'AI-powered vector search' },
             { url: 'https://n8n.strali.solutions', name: 'n8n.strali.solutions', description: 'Workflow automation with AI integration for RAG pipelines' }
           ]
         },
@@ -857,7 +857,7 @@ export const translations = {
           title: 'AI Platforms and Services',
           items: [
             { url: 'https://ai4u.strali.solutions', name: 'ai4u.strali.solutions', description: 'AI chat platform (OpenWebUI with local LLM models) for natural language interaction and RAG demonstrations' },
-            { url: 'https://ai4u.strali.solutions/static/search.html', name: 'Semantic Search', description: 'AI-powered vector search for cross-document queries' },
+            { url: 'https://ai4u.strali.solutions/search', name: 'Semantic Search', description: 'AI-powered vector search for cross-document queries' },
             { url: 'https://n8n.strali.solutions', name: 'n8n.strali.solutions', description: 'Workflow automation platform with AI integration for visual RAG pipeline demonstrations' }
           ]
         },
