@@ -151,9 +151,13 @@ export const translations = {
       },
       liveDemo: {
         title: 'Selbst ausprobieren',
-        description: 'Unsere Demo-Plattform läuft live. Testen Sie die semantische Suche, laden Sie Dokumente hoch und erleben Sie, wie RAG in der Praxis funktioniert.',
-        button: 'Demo-Zugang anfragen',
-        note: 'Kostenlos und unverbindlich – wir richten Ihnen einen Testzugang ein.'
+        description: 'Unsere RAG-Referenzarchitektur läuft live. Erkunden Sie die Dokumentation, testen Sie die semantische Suche, oder fordern Sie Zugang zur vollständigen Chat-Demo an.',
+        showcaseButton: 'Architektur erkunden',
+        showcaseUrl: 'https://gpt4strali.strali.solutions/static/showcase.html',
+        searchButton: 'Semantische Suche testen',
+        searchUrl: 'https://gpt4strali.strali.solutions/static/search.html',
+        requestButton: 'Chat-Zugang anfragen',
+        note: 'Showcase und Suche sind öffentlich zugänglich. Für die vollständige Chat-Demo richten wir Ihnen gerne einen Testzugang ein.'
       }
     },
     contact: {
@@ -642,9 +646,13 @@ export const translations = {
       },
       liveDemo: {
         title: 'Try It Yourself',
-        description: 'Our demo platform is live. Test the semantic search, upload documents, and experience how RAG works in practice.',
-        button: 'Request Demo Access',
-        note: 'Free and non-binding – we\'ll set up a test account for you.'
+        description: 'Our RAG reference architecture is live. Explore the documentation, test the semantic search, or request access to the full chat demo.',
+        showcaseButton: 'Explore Architecture',
+        showcaseUrl: 'https://gpt4strali.strali.solutions/static/showcase.html',
+        searchButton: 'Try Semantic Search',
+        searchUrl: 'https://gpt4strali.strali.solutions/static/search.html',
+        requestButton: 'Request Chat Access',
+        note: 'Showcase and search are publicly accessible. For the full chat demo, we\'ll set up a test account for you.'
       }
     },
     contact: {

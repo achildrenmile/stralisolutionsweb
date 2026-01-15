@@ -267,13 +267,32 @@ const AIPlatforms = () => {
               <p className="text-[var(--text-muted)] mb-6 max-w-xl mx-auto">
                 {t.liveDemo.description}
               </p>
-              <a
-                href="#kontakt"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-light)] text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105"
-              >
-                {t.liveDemo.button}
-                <span className="text-xl">→</span>
-              </a>
+              <div className="flex flex-wrap justify-center gap-4 mb-4">
+                <a
+                  href={t.liveDemo.showcaseUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-light)] text-white font-semibold transition-all duration-300 transform hover:scale-105"
+                >
+                  {t.liveDemo.showcaseButton}
+                  <span>→</span>
+                </a>
+                <a
+                  href={t.liveDemo.searchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary-light)] text-white font-semibold transition-all duration-300 transform hover:scale-105"
+                >
+                  {t.liveDemo.searchButton}
+                  <span>→</span>
+                </a>
+                <a
+                  href="#kontakt"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--accent)] hover:bg-[var(--accent)]/20 text-white font-semibold transition-all duration-300"
+                >
+                  {t.liveDemo.requestButton}
+                </a>
+              </div>
               <p className="mt-4 text-sm text-[var(--text-muted)]">
                 {t.liveDemo.note}
               </p>
