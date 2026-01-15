@@ -112,7 +112,7 @@ export const translations = {
       },
       stack: {
         title: 'Bewährte Technologien',
-        technologies: ['Elasticsearch 9', 'Ollama', 'OpenWebUI', 'n8n', 'Docker', 'Cloudflare Tunnel']
+        technologies: ['Elasticsearch 9', 'Ollama', 'OpenWebUI', 'n8n', 'Vector Search', 'RAG Pipeline']
       },
       useCases: {
         title: 'Konkrete Anwendungen',
@@ -607,7 +607,7 @@ export const translations = {
       },
       stack: {
         title: 'Proven Technologies',
-        technologies: ['Elasticsearch 9', 'Ollama', 'OpenWebUI', 'n8n', 'Docker', 'Cloudflare Tunnel']
+        technologies: ['Elasticsearch 9', 'Ollama', 'OpenWebUI', 'n8n', 'Vector Search', 'RAG Pipeline']
       },
       useCases: {
         title: 'Real-World Applications',
