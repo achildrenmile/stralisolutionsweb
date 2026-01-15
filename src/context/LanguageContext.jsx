@@ -156,8 +156,8 @@ export const translations = {
         showcaseUrl: 'https://gpt4strali.strali.solutions/static/showcase.html',
         searchButton: 'Semantische Suche testen',
         searchUrl: 'https://gpt4strali.strali.solutions/static/search.html',
-        requestButton: 'Chat-Zugang anfragen',
-        note: 'Showcase und Suche sind öffentlich zugänglich. Für die vollständige Chat-Demo richten wir Ihnen gerne einen Testzugang ein.'
+        requestButton: 'Vollständige Demo anfragen',
+        note: 'Showcase und Suche sind öffentlich zugänglich. Für die vollständige Demo mit AI-Chat richten wir Ihnen gerne einen Zugang ein.'
       }
     },
     contact: {
@@ -651,8 +651,8 @@ export const translations = {
         showcaseUrl: 'https://gpt4strali.strali.solutions/static/showcase.html',
         searchButton: 'Try Semantic Search',
         searchUrl: 'https://gpt4strali.strali.solutions/static/search.html',
-        requestButton: 'Request Chat Access',
-        note: 'Showcase and search are publicly accessible. For the full chat demo, we\'ll set up a test account for you.'
+        requestButton: 'Request Full Demo',
+        note: 'Showcase and search are publicly accessible. For the full demo with AI chat, we\'ll set up an account for you.'
       }
     },
     contact: {
