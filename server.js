@@ -125,10 +125,27 @@ app.post('/api/contact', limiter, async (req, res) => {
 
 // Serve the React app
 const buildPath = path.join(__dirname, 'dist');
-app.use(express.static(buildPath));
 
-// Fallback route for React SPA
+// Serve assets with long cache (files have version hashes)
+app.use('/assets', express.static(path.join(buildPath, 'assets'), {
+  maxAge: '1y',
+  immutable: true
+}));
+
+// Serve other static files with short cache
+app.use(express.static(buildPath, {
+  maxAge: '1h',
+  setHeaders: (res, filePath) => {
+    // Never cache index.html
+    if (filePath.endsWith('index.html')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+  }
+}));
+
+// Fallback route for React SPA - no cache for HTML
 app.get('*', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.sendFile(path.join(buildPath, 'index.html'));
 });
 
