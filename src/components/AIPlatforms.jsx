@@ -277,6 +277,18 @@ const AIPlatforms = () => {
                   {t.liveDemo.showcaseButton}
                   <span>→</span>
                 </a>
+                {t.liveDemo.graphRagUrl && (
+                  <a
+                    href={t.liveDemo.graphRagUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105"
+                    style={{ background: 'linear-gradient(135deg, #10b981, var(--accent))' }}
+                  >
+                    {t.liveDemo.graphRagButton}
+                    <span>→</span>
+                  </a>
+                )}
                 <a
                   href={t.liveDemo.searchUrl}
                   target="_blank"

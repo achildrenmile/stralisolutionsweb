@@ -98,7 +98,7 @@ export const translations = {
           },
           retrieve: {
             title: '3. Suche',
-            description: 'Semantisch + Exakt'
+            description: 'Vektor + Graph (Hybrid)'
           },
           generate: {
             title: '4. Antwort',
@@ -112,7 +112,7 @@ export const translations = {
       },
       stack: {
         title: 'Bewährte Technologien',
-        technologies: ['Elasticsearch 9', 'Ollama', 'OpenWebUI', 'n8n', 'Vector Search', 'RAG Pipeline']
+        technologies: ['Elasticsearch 9', 'Neo4j', 'Ollama', 'OpenWebUI', 'n8n', 'Vector Search', 'Knowledge Graph', 'Hybrid RAG']
       },
       useCases: {
         title: 'Konkrete Anwendungen',
@@ -151,13 +151,15 @@ export const translations = {
       },
       liveDemo: {
         title: 'Selbst ausprobieren',
-        description: 'Unsere RAG-Referenzarchitektur läuft live. Erkunden Sie die Dokumentation, testen Sie die semantische Suche, oder fordern Sie Zugang zur vollständigen Chat-Demo an.',
+        description: 'Unsere RAG-Referenzarchitektur läuft live. Erkunden Sie die Dokumentation, testen Sie die semantische Suche mit Knowledge Graph, oder fordern Sie Zugang zur vollständigen Chat-Demo an.',
         showcaseButton: 'Architektur erkunden',
         showcaseUrl: 'https://ai4u.strali.solutions/showcase',
+        graphRagButton: 'Knowledge Graph RAG',
+        graphRagUrl: 'https://ai4u.strali.solutions/graph-rag',
         searchButton: 'Semantische Suche testen',
         searchUrl: 'https://ai4u.strali.solutions/search',
         requestButton: 'Vollständige Demo anfragen',
-        note: 'Showcase und Suche sind öffentlich zugänglich. Für die vollständige Demo mit AI-Chat richten wir Ihnen gerne einen Zugang ein.'
+        note: 'Showcase, Graph RAG und Suche sind öffentlich zugänglich. Für die vollständige Demo mit AI-Chat richten wir Ihnen gerne einen Zugang ein.'
       }
     },
     contact: {
@@ -593,7 +595,7 @@ export const translations = {
           },
           retrieve: {
             title: '3. Search',
-            description: 'Semantic + Exact'
+            description: 'Vector + Graph (Hybrid)'
           },
           generate: {
             title: '4. Answer',
@@ -607,7 +609,7 @@ export const translations = {
       },
       stack: {
         title: 'Proven Technologies',
-        technologies: ['Elasticsearch 9', 'Ollama', 'OpenWebUI', 'n8n', 'Vector Search', 'RAG Pipeline']
+        technologies: ['Elasticsearch 9', 'Neo4j', 'Ollama', 'OpenWebUI', 'n8n', 'Vector Search', 'Knowledge Graph', 'Hybrid RAG']
       },
       useCases: {
         title: 'Real-World Applications',
@@ -646,13 +648,15 @@ export const translations = {
       },
       liveDemo: {
         title: 'Try It Yourself',
-        description: 'Our RAG reference architecture is live. Explore the documentation, test the semantic search, or request access to the full chat demo.',
+        description: 'Our RAG reference architecture is live. Explore the documentation, test semantic search with Knowledge Graph, or request access to the full chat demo.',
         showcaseButton: 'Explore Architecture',
         showcaseUrl: 'https://ai4u.strali.solutions/showcase',
+        graphRagButton: 'Knowledge Graph RAG',
+        graphRagUrl: 'https://ai4u.strali.solutions/graph-rag',
         searchButton: 'Try Semantic Search',
         searchUrl: 'https://ai4u.strali.solutions/search',
         requestButton: 'Request Full Demo',
-        note: 'Showcase and search are publicly accessible. For the full demo with AI chat, we\'ll set up an account for you.'
+        note: 'Showcase, Graph RAG, and search are publicly accessible. For the full demo with AI chat, we\'ll set up an account for you.'
       }
     },
     contact: {
