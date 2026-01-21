@@ -270,8 +270,6 @@ const AIPlatforms = () => {
               <div className="flex flex-wrap justify-center gap-4 mb-4">
                 <a
                   href={t.liveDemo.showcaseUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-light)] text-white font-semibold transition-all duration-300 transform hover:scale-105"
                 >
                   {t.liveDemo.showcaseButton}
@@ -280,8 +278,6 @@ const AIPlatforms = () => {
                 {t.liveDemo.graphRagUrl && (
                   <a
                     href={t.liveDemo.graphRagUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105"
                     style={{ background: 'linear-gradient(135deg, #10b981, var(--accent))' }}
                   >
@@ -291,8 +287,6 @@ const AIPlatforms = () => {
                 )}
                 <a
                   href={t.liveDemo.searchUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary-light)] text-white font-semibold transition-all duration-300 transform hover:scale-105"
                 >
                   {t.liveDemo.searchButton}
