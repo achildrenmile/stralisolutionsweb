@@ -468,7 +468,7 @@ export const translations = {
       locationValue: 'Online oder vor Ort (Raum Kärnten)',
       expert: 'Ihr Ansprechpartner',
       expertValue: 'Michael Linder',
-      credibility: 'Michael Linder — Senior IT-Architekt mit über 15 Jahren Erfahrung in Enterprise-Umgebungen (Halbleiter, öffentlicher Sektor, Retail). Aktuell unterstütze ich Teams mit 40+ Mitarbeitern bei der Integration von KI in bestehende Arbeitsprozesse und Systemlandschaften.',
+      credibility: 'Michael Linder — Senior IT Solutions & Software Architekt. Über 15 Jahre Erfahrung in der Planung und Umsetzung von IT-Lösungen in Enterprise-Umgebungen — von Halbleiter über den öffentlichen Sektor bis Retail. Als Architekt, Projektleiter und Berater unterstütze ich Unternehmen dabei, KI sinnvoll in bestehende Prozesse und Systemlandschaften zu integrieren.',
       ctaTitle: 'Bereit, Ihr KI-Potenzial zu entdecken?',
       ctaSubtitle: 'Buchen Sie Ihren kostenlosen KI-Potenzialcheck und erfahren Sie, welche Quick Wins in Ihrem Unternehmen möglich sind.',
       redirectNote: 'Sie werden zu Microsoft Bookings weitergeleitet'
@@ -966,7 +966,7 @@ export const translations = {
       locationValue: 'Online or on-site (Carinthia region)',
       expert: 'Your Contact',
       expertValue: 'Michael Linder',
-      credibility: 'Michael Linder — Senior IT Architect with over 15 years of experience in enterprise environments (semiconductors, public sector, retail). Currently supporting teams of 40+ employees in integrating AI into existing workflows and system landscapes.',
+      credibility: 'Michael Linder — Senior IT Solutions & Software Architect. Over 15 years of experience in planning and implementing IT solutions in enterprise environments — from semiconductors to the public sector to retail. As an architect, project lead, and consultant, I help companies integrate AI meaningfully into existing processes and system landscapes.',
       ctaTitle: 'Ready to Discover Your AI Potential?',
       ctaSubtitle: 'Book your free AI potential check and find out which quick wins are possible in your organization.',
       redirectNote: 'You will be redirected to Microsoft Bookings'
