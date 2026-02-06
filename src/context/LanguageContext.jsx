@@ -24,14 +24,14 @@ export const translations = {
       services: 'Leistungen',
       aiPlatforms: 'AI-Plattformen',
       contact: 'Kontakt',
-      assessment: 'IT-Assessment'
+      assessment: 'KI-Potenzialcheck'
     },
     hero: {
       welcome: 'Willkommen bei Strali Solutions',
       tagline: 'Schnell. Direkt. Unkompliziert.',
       subline: 'Wir bringen Klarheit in komplexe IT-Entscheidungen – durch Assessment, Struktur und die richtigen Werkzeuge.',
       contactButton: 'Kontakt aufnehmen',
-      assessmentButton: 'Kostenloses IT-Assessment'
+      assessmentButton: 'Kostenloser KI-Potenzialcheck'
     },
     about: {
       title: 'Über uns',
@@ -442,34 +442,35 @@ export const translations = {
       }
     },
     assessment: {
-      title: 'Kostenloses IT-Assessment',
-      subtitle: 'Buchen Sie ein unverbindliches Erstgespräch und erfahren Sie, wie wir Ihre IT optimieren können.',
-      bookNow: 'Jetzt Termin buchen',
+      title: 'Kostenloser KI-Potenzialcheck',
+      subtitle: 'Finden Sie heraus, wo Künstliche Intelligenz Ihnen heute schon Zeit und Geld spart — und wo nicht.',
+      bookNow: 'Jetzt KI-Potenzial entdecken',
       whatYouGet: 'Das erwartet Sie',
       benefits: [
-        'Analyse Ihrer aktuellen IT-Infrastruktur',
-        'Identifikation von Optimierungspotenzialen',
-        'Individuelle Handlungsempfehlungen',
-        'Kostenlose Erstberatung ohne Verpflichtungen',
-        'Persönliches Gespräch mit IT-Experten'
+        'Analyse Ihrer Arbeitsabläufe auf KI-Potenzial',
+        'Ehrliche Einschätzung: Was bringt wirklich etwas — und was ist nur Hype',
+        '2–3 konkrete Bereiche mit dem größten Optimierungspotenzial durch KI',
+        'Ein realistischer nächster Schritt, den Sie sofort umsetzen können',
+        'Persönliches Gespräch mit einem erfahrenen IT-Architekten'
       ],
       howItWorks: 'So funktioniert es',
       steps: [
         'Wählen Sie einen passenden Termin im Kalender',
         'Wir bestätigen Ihren Termin per E-Mail',
-        'Zum vereinbarten Zeitpunkt führen wir das Gespräch (online oder vor Ort)',
-        'Sie erhalten konkrete Empfehlungen für Ihre IT'
+        'Im Gespräch analysieren wir gemeinsam, wo KI in Ihrem Unternehmen den größten Hebel hat (online oder vor Ort)',
+        'Sie erhalten eine klare Einschätzung mit konkreten Empfehlungen'
       ],
       duration: 'Dauer',
       durationValue: 'ca. 30 Minuten',
       price: 'Kosten',
-      priceValue: 'Kostenlos',
+      priceValue: 'Kostenlos & unverbindlich',
       location: 'Ort',
-      locationValue: 'Online oder vor Ort',
+      locationValue: 'Online oder vor Ort (Raum Kärnten)',
       expert: 'Ihr Ansprechpartner',
       expertValue: 'Michael Linder',
-      ctaTitle: 'Bereit für den nächsten Schritt?',
-      ctaSubtitle: 'Vereinbaren Sie jetzt Ihr kostenloses IT-Assessment und entdecken Sie das Potenzial Ihrer IT.',
+      credibility: 'Michael Linder — Senior IT-Architekt mit über 15 Jahren Erfahrung in Enterprise-Umgebungen (Halbleiter, öffentlicher Sektor, Retail). Aktuell unterstütze ich Teams mit 40+ Mitarbeitern bei der Integration von KI in bestehende Arbeitsprozesse und Systemlandschaften.',
+      ctaTitle: 'Bereit, Ihr KI-Potenzial zu entdecken?',
+      ctaSubtitle: 'Buchen Sie Ihren kostenlosen KI-Potenzialcheck und erfahren Sie, welche Quick Wins in Ihrem Unternehmen möglich sind.',
       redirectNote: 'Sie werden zu Microsoft Bookings weitergeleitet'
     },
     publicWork: {
@@ -521,14 +522,14 @@ export const translations = {
       services: 'Services',
       aiPlatforms: 'AI Platforms',
       contact: 'Contact',
-      assessment: 'IT Assessment'
+      assessment: 'AI Potential Check'
     },
     hero: {
       welcome: 'Welcome to Strali Solutions',
       tagline: 'Fast. Direct. Uncomplicated.',
       subline: 'Bringing clarity to complex IT decisions — through assessment, structure, and tooling.',
       contactButton: 'Get in Touch',
-      assessmentButton: 'Free IT Assessment'
+      assessmentButton: 'Free AI Potential Check'
     },
     about: {
       title: 'About Us',
@@ -939,34 +940,35 @@ export const translations = {
       }
     },
     assessment: {
-      title: 'Free IT Assessment',
-      subtitle: 'Book a no-obligation consultation and discover how we can optimize your IT.',
-      bookNow: 'Book Appointment',
+      title: 'Free AI Potential Check',
+      subtitle: 'Discover where artificial intelligence can save you time and money today — and where it cannot.',
+      bookNow: 'Discover Your AI Potential',
       whatYouGet: 'What You Get',
       benefits: [
-        'Analysis of your current IT infrastructure',
-        'Identification of optimization potential',
-        'Personalized recommendations',
-        'Free initial consultation with no obligations',
-        'Personal meeting with IT experts'
+        'Analysis of your workflows for AI potential',
+        'Honest assessment: What really delivers value — and what is just hype',
+        '2–3 concrete areas with the highest optimization potential through AI',
+        'A realistic next step you can implement immediately',
+        'Personal conversation with an experienced IT architect'
       ],
       howItWorks: 'How It Works',
       steps: [
         'Choose a suitable time slot in the calendar',
         'We confirm your appointment via email',
-        'At the scheduled time, we conduct the meeting (online or on-site)',
-        'You receive concrete recommendations for your IT'
+        'Together we analyze where AI has the biggest impact in your organization (online or on-site)',
+        'You receive a clear assessment with concrete recommendations'
       ],
       duration: 'Duration',
       durationValue: 'approx. 30 minutes',
       price: 'Cost',
-      priceValue: 'Free',
+      priceValue: 'Free & no obligation',
       location: 'Location',
-      locationValue: 'Online or on-site',
+      locationValue: 'Online or on-site (Carinthia region)',
       expert: 'Your Contact',
       expertValue: 'Michael Linder',
-      ctaTitle: 'Ready for the Next Step?',
-      ctaSubtitle: 'Schedule your free IT assessment now and discover your IT potential.',
+      credibility: 'Michael Linder — Senior IT Architect with over 15 years of experience in enterprise environments (semiconductors, public sector, retail). Currently supporting teams of 40+ employees in integrating AI into existing workflows and system landscapes.',
+      ctaTitle: 'Ready to Discover Your AI Potential?',
+      ctaSubtitle: 'Book your free AI potential check and find out which quick wins are possible in your organization.',
       redirectNote: 'You will be redirected to Microsoft Bookings'
     },
     publicWork: {

@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Clock, Gift, MapPin, User, Check } from 'lucide-react';
 
-// Structured data for the free IT Assessment offer
+// Structured data for the free AI Potential Check offer
 const assessmentSchema = {
   '@context': 'https://schema.org',
   '@type': 'Offer',
-  name: 'Kostenloses IT-Assessment',
-  description: 'Kostenlose IT-Beratung und Analyse Ihrer IT-Infrastruktur',
+  name: 'Kostenloser KI-Potenzialcheck',
+  description: 'Kostenlose KI-Beratung: Finden Sie heraus, wo Künstliche Intelligenz Ihnen heute schon Zeit und Geld spart.',
   price: '0',
   priceCurrency: 'EUR',
   availability: 'https://schema.org/InStock',
@@ -33,21 +33,21 @@ const ITAssessment = () => {
   return (
     <>
       <Helmet>
-        <title>{isGerman ? 'Kostenloses IT-Assessment | Strali Solutions' : 'Free IT Assessment | Strali Solutions'}</title>
+        <title>{isGerman ? 'Kostenloser KI-Potenzialcheck | Strali Solutions' : 'Free AI Potential Check | Strali Solutions'}</title>
         <meta
           name="description"
           content={isGerman
-            ? 'Buchen Sie Ihr kostenloses IT-Assessment. Analyse Ihrer IT-Infrastruktur, individuelle Empfehlungen und persönliche Beratung - unverbindlich und kostenlos.'
-            : 'Book your free IT assessment. Analysis of your IT infrastructure, personalized recommendations and expert consultation - no obligation, completely free.'}
+            ? 'Kostenloser KI-Potenzialcheck: Finden Sie heraus, wo Künstliche Intelligenz Ihnen Zeit und Geld spart. Ehrliche Einschätzung von einem erfahrenen IT-Architekten.'
+            : 'Free AI Potential Check: Discover where artificial intelligence can save you time and money today. Honest assessment from an experienced IT architect.'}
         />
         <link rel="canonical" href="https://strali.solutions/assessment" />
         <link rel="alternate" hrefLang="de" href="https://strali.solutions/assessment" />
         <link rel="alternate" hrefLang="en" href="https://strali.solutions/assessment" />
         <link rel="alternate" hrefLang="x-default" href="https://strali.solutions/assessment" />
-        <meta property="og:title" content={isGerman ? 'Kostenloses IT-Assessment | Strali Solutions' : 'Free IT Assessment | Strali Solutions'} />
+        <meta property="og:title" content={isGerman ? 'Kostenloser KI-Potenzialcheck | Strali Solutions' : 'Free AI Potential Check | Strali Solutions'} />
         <meta property="og:description" content={isGerman
-          ? 'Kostenlose IT-Beratung und Analyse Ihrer IT-Infrastruktur - unverbindlich.'
-          : 'Free IT consultation and analysis of your IT infrastructure - no obligation.'} />
+          ? 'Finden Sie heraus, wo KI Ihnen heute schon Zeit und Geld spart — und wo nicht.'
+          : 'Discover where AI can save you time and money today — and where it cannot.'} />
         <meta property="og:url" content="https://strali.solutions/assessment" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://strali.solutions/og-image.png" />
@@ -166,6 +166,20 @@ const ITAssessment = () => {
             <p className="text-gray-400 text-sm">{t.expertValue}</p>
           </div>
         </motion.div>
+
+        {/* Credibility Block */}
+        {t.credibility && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mb-12"
+          >
+            <div className="card-dark rounded-2xl p-6 border-l-4 border-[var(--accent)]">
+              <p className="text-gray-300 italic leading-relaxed">{t.credibility}</p>
+            </div>
+          </motion.div>
+        )}
 
         {/* Bottom CTA */}
         <motion.div
