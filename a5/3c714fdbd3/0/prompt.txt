@@ -1,0 +1,140 @@
+Implement the following plan:
+
+# Plan: Make strali.solutions Crawlable via Build-Time Prerendering
+
+## Context
+
+strali.solutions is a React SPA. When bots, LLMs, or `curl` request any page, they get an empty `<div id="root"></div>` — no content. The site has `react-snap` (unmaintained since 2020, uses puppeteer 1.x) but Docker skips it. This plan replaces react-snap with a custom Puppeteer-based prerender script that runs during Docker build, producing static HTML for every route.
+
+**Language strategy: Option A** — Prerender German only (primary Austrian business audience). English loads via JS hydration. No route restructuring needed.
+
+---
+
+## Files to Modify
+
+| File | Action |
+|------|--------|
+| `package.json` | Remove react-snap, add puppeteer-core, update scripts |
+| `scripts/prerender.mjs` | **New** — custom Puppeteer prerender script |
+| `src/main.jsx` | Switch to hydrateRoot for prerendered pages |
+| `server.js` | Route-aware HTML serving + SPA fallback to 200.html |
+| `Dockerfile` | Install Chromium in build stage, use `npm run build` |
+| `public/llms.txt` | Add page URLs, update KI-Potenzialcheck references |
+| `public/sitemap.xml` | Update lastmod dates |
+
+---
+
+## Step 1: package.json
+
+- Remove `react-snap` from dependencies
+- Remove entire `reactSnap` config block (lines 45-70)
+- Add `puppeteer-core` to devDependencies
+- Update scripts:
+  - `"build": "vite build && node scripts/prerender.mjs"`
+  - `"build:no-prerender": "vite build"` (rename from `build:no-snap`)
+
+## Step 2: scripts/prerender.mjs (new file)
+
+Custom prerender script that:
+1. Copies `dist/index.html` → `dist/200.html` (SPA shell backup)
+2. Starts a minimal local static server serving `dist/`
+3. Launches Puppeteer with system Chromium (`PUPPETEER_EXECUTABLE_PATH`)
+4. For each route (`/`, `/impressum`, `/datenschutz`, `/assessment`, plus a 404 page):
+   - Override `navigator.language` to `'de'` via `evaluateOnNewDocument`
+   - Pre-set `localStorage.cookie-consent` to suppress cookie banner
+   - Navigate with `waitUntil: 'networkidle0'`
+   - Wait for `#root` to have children
+   - Capture HTML with `page.content()`
+   - Write to: `/` → `dist/index.html`, `/impressum` → `dist/impressum/index.html`, etc.
+   - 404 → `dist/404.html`
+5. Exit with code 1 on failure (fails the Docker build)
+
+## Step 3: src/main.jsx
+
+Replace the broken dual-branch `createRoot` with proper hydration:
+
+```jsx
+import { createRoot, hydrateRoot } from 'react-dom/client'
+
+const app = (
+  <StrictMode>
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  </StrictMode>
+);
+
+if (root.hasChildNodes()) {
+  hydrateRoot(root, app);  // Prerendered — hydrate
+} else {
+  createRoot(root).render(app);  // SPA shell — full render
+}
+```
+
+## Step 4: server.js
+
+Replace the SPA fallback (`app.get('*')`) with route-aware serving:
+- Known prerendered routes (`/`, `/impressum`, `/datenschutz`, `/assessment`) → serve their prerendered HTML file
+- Unknown routes → serve `dist/200.html` (SPA shell) so React Router handles 404 client-side
+- Graceful fallback to `index.html` if `200.html` doesn't exist (local dev without prerendering)
+
+## Step 5: Dockerfile
+
+Build stage changes only (production stage unchanged):
+```dockerfile
+FROM node:22.12-alpine AS build
+WORKDIR /app
+RUN apk add --no-cache chromium
+ENV REDACTED
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build    # was: npm run build:no-snap
+```
+
+Chromium only exists in the build stage — production image stays the same size.
+
+## Step 6: public/llms.txt
+
+- Update "Free IT Assessment" → "KI-Potenzialcheck" references
+- Add page URLs listing section
+- Add AI demo platform mention (ai4u.strali.solutions)
+
+## Step 7: public/sitemap.xml
+
+- Update all `<lastmod>` dates to `2026-02-10`
+
+---
+
+## Verification
+
+After Docker build:
+```bash
+curl -s localhost:8080/ | grep "Strali Solutions"         # Homepage content
+curl -s localhost:8080/ | grep "IT Consulting"            # Services content
+curl -s localhost:8080/assessment | grep "KI-Potenzialcheck" # Assessment page
+curl -s localhost:8080/impressum | grep "Impressum"       # Legal page
+curl -s localhost:8080/datenschutz | grep "Datenschutz"   # Privacy page
+curl -s localhost:8080/nonexistent | grep '<div id="root">' # SPA shell fallback
+```
+
+All existing functionality preserved: contact form, chat widget, cookie consent, analytics, language toggle, animations.
+
+
+If you need specific details from before exiting plan mode (like exact code snippets, error messages, or content you generated), read the full transcript at: /home/achildrenmile/.REDACTED.jsonl
+
+---
+
+is it really prerendered. claude.ai can still not read the page
+
+---
+
+The page returned very little text content — it appears to be heavily JavaScript-rendered, so the fetcher only captured the page title. Let me try fetching some subpages to get more content.
+
+
+Searched the web
+
+
+
+Unfortunately, the site is heavily JavaScript-rendered (likely a single-page application), so the fetcher can only grab the page title and not the actual body content. Here's what I was able to piece together from search engine caches:
