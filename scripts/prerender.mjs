@@ -160,8 +160,15 @@ async function prerender() {
       });
     });
 
-    const html = await page.content();
+    let html = await page.content();
     await page.close();
+
+    // Pretty-print HTML: insert newlines before block-level elements so that
+    // simple HTML-to-text parsers (like Claude.ai's web fetcher) can process it.
+    // Puppeteer outputs the entire DOM on ~1 line which chokes many extractors.
+    html = html
+      .replace(/></g, '>\n<')
+      .replace(/>\s*\n\s*\n+\s*</g, '>\n<');
 
     // Write output file
     const outPath = path.join(DIST, route.output);
