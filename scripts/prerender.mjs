@@ -131,8 +131,34 @@ async function prerender() {
       { timeout: 15000 }
     );
 
-    // Small extra wait for animations/lazy content to settle
-    await new Promise((r) => setTimeout(r, 500));
+    // Scroll through the entire page to trigger IntersectionObserver-based
+    // Framer Motion animations (they start with opacity:0 until scrolled into view)
+    await page.evaluate(async () => {
+      const scrollStep = 400;
+      const delay = 100;
+      const maxScroll = document.body.scrollHeight;
+      for (let y = 0; y <= maxScroll; y += scrollStep) {
+        window.scrollTo(0, y);
+        await new Promise((r) => setTimeout(r, delay));
+      }
+      // Scroll back to top
+      window.scrollTo(0, 0);
+    });
+
+    // Wait for all animations to complete
+    await new Promise((r) => setTimeout(r, 1000));
+
+    // Force all elements to be visible — remove Framer Motion's opacity:0 inline styles
+    // so that content extractors (LLMs, bots) can see all text
+    await page.evaluate(() => {
+      document.querySelectorAll('[style]').forEach((el) => {
+        const style = el.getAttribute('style');
+        if (style && style.includes('opacity: 0')) {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        }
+      });
+    });
 
     const html = await page.content();
     await page.close();
