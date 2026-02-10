@@ -1,0 +1,27 @@
+{
+  "cli_version": "0.4.2",
+  "checkpoint_id": "37a269a40b1a",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "src/components/ITAssessment.jsx",
+    "src/context/LanguageContext.jsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/37/a269a40b1a/0/metadata.json",
+      "transcript": "/37/a269a40b1a/0/full.jsonl",
+      "context": "/37/a269a40b1a/0/context.md",
+      "content_hash": "/37/a269a40b1a/0/content_hash.txt",
+      "prompt": "/37/a269a40b1a/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 1907,
+    "cache_creation_tokens": 401496,
+    "cache_read_tokens": 6100166,
+    "output_tokens": 16861,
+    "api_call_count": 85
+  }
+}

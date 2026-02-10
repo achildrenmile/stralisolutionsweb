@@ -1,0 +1,30 @@
+{
+  "cli_version": "0.4.2",
+  "checkpoint_id": "37a269a40b1a",
+  "session_id": "4e278bfd-44ea-4de4-96bf-215a5b0b9f0b",
+  "strategy": "manual-commit",
+  "created_at": "2026-02-10T18:37:28.903617239Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "src/components/ITAssessment.jsx",
+    "src/context/LanguageContext.jsx"
+  ],
+  "agent": "Claude Code",
+  "token_usage": {
+    "input_tokens": 1907,
+    "cache_creation_tokens": 401496,
+    "cache_read_tokens": 6100166,
+    "output_tokens": 16861,
+    "api_call_count": 85
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-02-10T18:37:28.476853186Z",
+    "agent_lines": 0,
+    "human_added": 230,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 230,
+    "agent_percentage": 0
+  }
+}
