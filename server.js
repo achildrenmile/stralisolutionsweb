@@ -143,9 +143,30 @@ app.use(express.static(buildPath, {
   }
 }));
 
-// Fallback route for React SPA - no cache for HTML
+// Prerendered routes — serve their static HTML directly
+const prerenderedRoutes = ['/', '/impressum', '/datenschutz', '/assessment'];
+
 app.get('*', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+
+  if (prerenderedRoutes.includes(req.path)) {
+    // Serve the prerendered HTML for known routes
+    const htmlFile = req.path === '/'
+      ? path.join(buildPath, 'index.html')
+      : path.join(buildPath, req.path, 'index.html');
+
+    if (fs.existsSync(htmlFile)) {
+      return res.sendFile(htmlFile);
+    }
+  }
+
+  // Unknown routes: serve SPA shell (200.html) so React Router handles 404 client-side
+  const spaShell = path.join(buildPath, '200.html');
+  if (fs.existsSync(spaShell)) {
+    return res.sendFile(spaShell);
+  }
+
+  // Fallback if 200.html doesn't exist (local dev without prerendering)
   res.sendFile(path.join(buildPath, 'index.html'));
 });
 

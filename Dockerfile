@@ -1,19 +1,24 @@
-# Build stage for React app
+# Build stage for React app (includes Chromium for prerendering)
 FROM node:22.12-alpine AS build
 
 WORKDIR /app
 
+# Install Chromium for build-time prerendering
+RUN apk add --no-cache chromium
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+
 # Copy package files for dependency installation
 COPY package*.json ./
 
-# Install dependencies
+# Install dependencies (including devDependencies for puppeteer-core)
 RUN npm ci
 
 # Copy source code
 COPY . .
 
-# Build the React app using Vite (without react-snap)
-RUN npm run build:no-snap
+# Build the React app and prerender static HTML
+RUN npm run build
 
 # Production stage for Node.js server
 FROM node:22.12-alpine
